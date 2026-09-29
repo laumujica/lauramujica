@@ -14,7 +14,6 @@ const pageUrls = {
   home: '/',
   about: '/pages/about/',
   projects: '/pages/projects/',
-  'project-volka': '/pages/projects/volka.html',
   services: '/pages/services/',
   playground: '/pages/playground/',
   'playground-type': '/pages/playground/type.html',
