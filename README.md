@@ -4,8 +4,8 @@ Static HTML site hosted on Firebase Hosting (`lauramujica-fbc70`). The shared st
 
 ## Editing pages
 
-Each view is a complete HTML file at the repository root. Edit `projects.html` for the project list and `project-volka.html` for the current case study. The homepage is `index.html`; other files are named after their view, such as `about.html` and `contact.html`.
+The visible homepage and menu are in `index.html`. Each other view is a complete HTML file in its section folder under `pages/`. Edit `pages/projects/index.html` for the project list and `pages/projects/volka.html` for the current case study. Playground experiments live in `pages/playground/`.
 
-`showPage('projects')` in the existing buttons and links opens `projects.html`. The Projects page is intentionally absent from the public menu at present; its direct local URL is `/projects.html`. Keep the menu and shared video modal consistent when changing their markup across pages.
+The menu uses direct links to About, Services, and Contact. Existing buttons that call `showPage('projects')` open `/pages/projects/`. The Projects page is intentionally absent from the public menu at present. Keep the shared menu and video modal consistent when changing their markup across pages.
 
 For a local preview, run `python3 -m http.server 8000` in this folder and open `http://localhost:8000`. Firebase Hosting serves the files directly from this folder as configured in `firebase.json`. Publishing a GitHub commit alone does not deploy to Firebase.

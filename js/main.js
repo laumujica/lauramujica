@@ -8,26 +8,26 @@ burger.addEventListener('click', () => {
   overlay.classList.toggle('open', menuOpen);
 });
 
-// Every view is a standalone HTML document, so its content is available
-// directly at a URL and can be edited independently of index.html.
+// Every view is a standalone HTML document in its section folder,
+// available directly at a URL and editable independently of index.html.
 const pageUrls = {
-  home: 'index.html',
-  about: 'about.html',
-  projects: 'projects.html',
-  'project-volka': 'project-volka.html',
-  services: 'services.html',
-  playground: 'playground.html',
-  'playground-type': 'playground-type.html',
-  'playground-illustration': 'playground-illustration.html',
-  'playground-motion': 'playground-motion.html',
-  'playground-pattern': 'playground-pattern.html',
-  contact: 'contact.html'
+  home: '/',
+  about: '/pages/about/',
+  projects: '/pages/projects/',
+  'project-volka': '/pages/projects/volka.html',
+  services: '/pages/services/',
+  playground: '/pages/playground/',
+  'playground-type': '/pages/playground/type.html',
+  'playground-illustration': '/pages/playground/illustration.html',
+  'playground-motion': '/pages/playground/motion.html',
+  'playground-pattern': '/pages/playground/pattern.html',
+  contact: '/pages/contact/'
 };
 
 function showPage(id) {
   if (!Object.hasOwn(pageUrls, id)) return;
   const destination = pageUrls[id];
-  if (location.pathname.endsWith('/' + destination) || (id === 'home' && location.pathname.endsWith('/'))) {
+  if (location.pathname === destination || (destination === '/' && location.pathname === '/index.html')) {
     menuOpen = false;
     burger.classList.remove('open');
     overlay.classList.remove('open');
