@@ -8,21 +8,36 @@ burger.addEventListener('click', () => {
   overlay.classList.toggle('open', menuOpen);
 });
 
+// Every view is a standalone HTML document, so its content is available
+// directly at a URL and can be edited independently of index.html.
+const pageUrls = {
+  home: 'index.html',
+  about: 'about.html',
+  projects: 'projects.html',
+  'project-volka': 'project-volka.html',
+  services: 'services.html',
+  playground: 'playground.html',
+  'playground-type': 'playground-type.html',
+  'playground-illustration': 'playground-illustration.html',
+  'playground-motion': 'playground-motion.html',
+  'playground-pattern': 'playground-pattern.html',
+  contact: 'contact.html'
+};
+
 function showPage(id) {
-  menuOpen = false;
-  burger.classList.remove('open');
-  overlay.classList.remove('open');
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.menu-overlay a[data-page]').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === id || (id === 'project-volka' && a.dataset.page === 'projects'));
-  });
-  const pg = document.getElementById(id);
-  if (pg) {
-    pg.classList.add('active');
+  if (!Object.hasOwn(pageUrls, id)) return;
+  const destination = pageUrls[id];
+  if (location.pathname.endsWith('/' + destination) || (id === 'home' && location.pathname.endsWith('/'))) {
+    menuOpen = false;
+    burger.classList.remove('open');
+    overlay.classList.remove('open');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (id === 'projects') animateCounters();
+    return;
   }
+  location.assign(destination);
 }
+
+if (document.getElementById('projects')) animateCounters();
 
 function toggleVideo() {
   const video = document.getElementById('featuredVideo');

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows
+</title>
+<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+
+<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
+<meta property="og:description" content="Designing better systems for how creative work gets done.">
+<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lauramujica.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpg" href="./img/Favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<canvas class="noise" id="noiseCanvas"></canvas>
+
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home');return false">LM</a>
+   <a href="#" class="nav-logo" onclick="showPage('home');return false">
+  <!-- <img src="./img/iso.png" alt="Laura Mujica isologo"> -->
+</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="#" onclick="showPage('home');return false" data-page="home">Home</a>
+  <a href="#" onclick="showPage('about');return false" data-page="about">About me</a>
+  <a href="#" onclick="showPage('services');return false" data-page="services">Services</a>
+  <a href="#" onclick="showPage('contact');return false" data-page="contact">Contact</a>
+  <div class="menu-footer-links">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- PROJECTS LIST -->
+<div id="projects" class="page active">
+  <div class="page-inner">
+    <div class="page-eyebrow">Projects</div>
+    <h2 class="page-title">Selected work.</h2>
+
+    <div class="proj-stats">
+      <div class="proj-stat">
+        <div class="proj-stat-num" data-target="10">0</div>
+        <div class="proj-stat-label">Projects completed</div>
+      </div>
+      <div class="proj-stat">
+        <div class="proj-stat-num" data-target="8">0</div>
+        <div class="proj-stat-label">Happy clients</div>
+      </div>
+      <div class="proj-stat">
+        <div class="proj-stat-num" data-target="3">0</div>
+        <div class="proj-stat-label">Years of experience</div>
+      </div>
+      <div class="proj-stat">
+        <div class="proj-stat-num" data-target="4">0</div>
+        <div class="proj-stat-label">Design disciplines</div>
+      </div>
+    </div>
+    <div class="proj-grid">
+      <a class="proj-card" href="#" onclick="showPage('project-volka');return false">
+        <div class="proj-tag">Brand Identity · Packaging</div>
+        <div class="proj-name">Volka Studio</div>
+        <div class="proj-desc">Full brand identity for a Scandinavian-inspired ceramics studio. From naming rationale to packaging system.</div>
+        <div class="proj-year">2024</div>
+        <div class="proj-arrow">↗</div>
+      </a>
+      <a class="proj-card" href="#" onclick="return false">
+        <div class="proj-tag">UI Design · Design System</div>
+        <div class="proj-name">Project 02</div>
+        <div class="proj-desc">Your next project goes here.</div>
+        <div class="proj-year">2024</div>
+        <div class="proj-arrow">↗</div>
+      </a>
+      <a class="proj-card" href="#" onclick="return false">
+        <div class="proj-tag">Visual Design · Campaign</div>
+        <div class="proj-name">Project 03</div>
+        <div class="proj-desc">Your next project goes here.</div>
+        <div class="proj-year">2023</div>
+        <div class="proj-arrow">↗</div>
+      </a>
+      <a class="proj-card" href="#" onclick="return false">
+        <div class="proj-tag">Web Design · Development</div>
+        <div class="proj-name">Project 04</div>
+        <div class="proj-desc">Your next project goes here.</div>
+        <div class="proj-year">2023</div>
+        <div class="proj-arrow">↗</div>
+      </a>
+    </div>
+    <p style="font-size:0.78rem;color:var(--white80);margin-top:1.5rem">
+      Full portfolio on <a href="https://www.behance.net/laura_mujica" target="_blank" style="color:var(--yellow);text-decoration:none;font-weight:500">Behance ↗</a>
+    </p>
+
+    <div class="section-divider"></div>
+
+    <div class="page-eyebrow">Client references</div>
+    <h3 class="testimonials-title">People I've worked with.</h3>
+    <p style="font-size:0.88rem;color:var(--white80);font-weight:300;line-height:1.75;max-width:520px;margin-bottom:2.5rem">Real projects, real results. Here's what some of them had to say — and where to find their work.</p>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Laura completely transformed how we show up. She understood our brand before we did — the result was cleaner, bolder, and exactly right. Our inquiries doubled in the first two months."</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Sofía Ramírez</div>
+            <div class="testimonial-role">Founder · Estudio Flor · Brand Identity</div>
+          </div>
+          <a href="https://instagram.com" target="_blank" class="testimonial-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @estudioflorba
+          </a>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Working with Laura was the best investment we made for our relaunch. She's strategic, fast, and deeply detail-oriented. The brand guidelines she delivered were so clear our whole team could follow them immediately."</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Martín Ochoa</div>
+            <div class="testimonial-role">CEO · Nómade Studio · Visual Design</div>
+          </div>
+          <a href="https://nomadestudio.com" target="_blank" class="testimonial-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            nomadestudio.com
+          </a>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"She doesn't just make things pretty — she makes them make sense. Laura asked questions no other designer had asked us before, and that made all the difference. Our packaging finally looks as good as our product."</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Valentina Cruz</div>
+            <div class="testimonial-role">Co-founder · Raíz Cosmética · Packaging & Brand</div>
+          </div>
+          <a href="https://instagram.com" target="_blank" class="testimonial-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @raizcosmetica
+          </a>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Laura built our entire web presence from scratch — design and code. The site launched on time, looked better than anything we'd imagined, and our conversion rate went up 35% in the first month. Hire her."</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Diego Ferenczi</div>
+            <div class="testimonial-role">Founder · Forma Arquitectura · Web & Brand</div>
+          </div>
+          <a href="https://formaarquitectura.com" target="_blank" class="testimonial-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            formaarquitectura.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-cta-block">
+      <div class="page-cta-left">
+        <div class="page-cta-title">Like what you see? <span>Let's work together.</span></div>
+        <p class="page-cta-sub">Whether you have a brief ready or just an idea — reach out and let's figure out the rest together.</p>
+      </div>
+      <button class="page-cta-btn" onclick="showPage('contact')">Start a project →</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
+   <a href="#" class="footer-logo" onclick="showPage('home');return false">
+  <img src="./img/iso.png" alt="Laura Mujica isologo">
+</a>
+  <span class="footer-copy">© 2026 Laura Mujica · All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false">About</a>
+    <a href="#" onclick="showPage('services');return false">Services</a>
+    <a href="#" onclick="showPage('contact');return false">Contact</a>
+  </div>
+</footer> -->
+
+
+<script src="js/main.js?v=2"></script>
+<!-- VIDEO INTRO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <div class="video-modal-frame">
+      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+      <div class="video-modal-placeholder">
+        <span class="big-bolt">⚡</span>
+        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+      </div>
+    </div>
+    <div class="video-modal-meta">
+      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
+      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

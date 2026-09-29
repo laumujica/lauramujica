@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows
+</title>
+<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+
+<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
+<meta property="og:description" content="Designing better systems for how creative work gets done.">
+<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lauramujica.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpg" href="./img/Favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<canvas class="noise" id="noiseCanvas"></canvas>
+
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home');return false">LM</a>
+   <a href="#" class="nav-logo" onclick="showPage('home');return false">
+  <!-- <img src="./img/iso.png" alt="Laura Mujica isologo"> -->
+</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="#" onclick="showPage('home');return false" data-page="home">Home</a>
+  <a href="#" onclick="showPage('about');return false" data-page="about">About me</a>
+  <a href="#" onclick="showPage('services');return false" data-page="services">Services</a>
+  <a href="#" onclick="showPage('contact');return false" data-page="contact">Contact</a>
+  <div class="menu-footer-links">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- PROJECT DETAIL: VOLKA STUDIO -->
+<div id="project-volka" class="page active">
+  <div class="page-inner">
+    <button class="back-btn" onclick="showPage('projects')">← Back to projects</button>
+
+    <div class="proj-detail-tag">Brand Identity · Packaging · Print</div>
+    <h1 class="proj-detail-title">Volka<br>Studio</h1>
+
+    <div class="proj-meta-row">
+      <div class="proj-meta-cell">
+        <label>Client</label>
+        <span>Volka Studio</span>
+      </div>
+      <div class="proj-meta-cell">
+        <label>Year</label>
+        <span>2024</span>
+      </div>
+      <div class="proj-meta-cell">
+        <label>Scope</label>
+        <span>Brand Identity, Packaging, Web</span>
+      </div>
+    </div>
+
+    <!-- Hero mockup -->
+    <div class="proj-hero-block">
+      <div class="proj-hero-img" style="background:linear-gradient(135deg,#2a2a2a 0%,#1a1a1a 100%);">
+        <span style="opacity:0.15;font-size:clamp(4rem,14vw,9rem);letter-spacing:-0.04em">VOLKA</span>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <div class="proj-section-label">Overview</div>
+    <h3 class="proj-section-title">A ceramics studio that needed to feel like a museum piece itself.</h3>
+    <p class="proj-body">Volka Studio is a small-batch ceramics workshop based in Copenhagen, specialising in functional objects with a quiet, sculptural quality. The founders approached me with a clear brief: they didn't want to look "handmade and cosy" — they wanted something precise, confident, and shelf-worthy.</p>
+    <p class="proj-body">The challenge was building a brand that felt premium without being cold, minimal without being empty, and crafted without leaning on the usual artisan tropes.</p>
+
+    <div class="section-divider"></div>
+
+    <!-- Strategy -->
+    <div class="proj-section-label">Strategy</div>
+    <h3 class="proj-section-title">The idea: precision as a form of care.</h3>
+    <p class="proj-body">Through discovery sessions and competitive analysis, we found that most ceramics brands defaulted to warm earth tones, imperfect textures, and handwritten type — signalling approachability at the cost of prestige. Volka's work was different: exact, considered, almost architectural.</p>
+    <p class="proj-body">The brand strategy centred on the idea that <em>precision is its own form of warmth</em> — that when you make something exactly right, you're showing respect for the person who'll hold it. This informed every visual decision.</p>
+
+    <div class="img-grid-2">
+      <div class="img-block">
+        <div class="img-block-inner" style="background:#1e1e1e;font-size:0.8rem;letter-spacing:0.2em;opacity:0.5">MOODBOARD</div>
+      </div>
+      <div class="img-block">
+        <div class="img-block-inner" style="background:#2d2d2d;font-size:0.8rem;letter-spacing:0.2em;opacity:0.5">REFERENCES</div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Identity -->
+    <div class="proj-section-label">Visual Identity</div>
+    <h3 class="proj-section-title">Logo & mark.</h3>
+    <p class="proj-body">The wordmark uses a custom-spaced version of a geometric serif, with the letterforms optically corrected to feel balanced at all sizes. The "V" was refined into a standalone mark — a precise angle that echoes the rim of a ceramic bowl seen from above.</p>
+
+    <div class="img-grid-2">
+      <div class="img-block">
+        <div class="img-block-inner" style="background:#111;font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;letter-spacing:0.25em;color:rgba(255,255,255,0.9)">VOLKA</div>
+      </div>
+      <div class="img-block">
+        <div class="img-block-inner" style="background:#f0ebe2;font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;letter-spacing:0.25em;color:#111">VOLKA</div>
+      </div>
+    </div>
+
+    <!-- Color -->
+    <div class="proj-section-label" style="margin-top:2rem">Color System</div>
+    <h3 class="proj-section-title">A restrained palette with a single warm break.</h3>
+    <p class="proj-body">The palette is near-monochromatic — deep charcoal, off-white, and warm stone — with a single accent: a dusty terracotta used sparingly to anchor warmth without decorating it to death.</p>
+
+    <div class="color-swatches">
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#1a1a1a"></div>
+        <div class="swatch-label">Obsidian<br>#1A1A1A</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#2f2f2f"></div>
+        <div class="swatch-label">Graphite<br>#2F2F2F</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#f0ebe2"></div>
+        <div class="swatch-label">Bone<br>#F0EBE2</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#e8e0d4"></div>
+        <div class="swatch-label">Stone<br>#E8E0D4</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#b5735a"></div>
+        <div class="swatch-label">Terracotta<br>#B5735A</div>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="proj-section-label" style="margin-top:1rem">Typography</div>
+    <h3 class="proj-section-title">Two voices, one system.</h3>
+    <p class="proj-body">Headlines use a geometric serif — authoritative and architectural. Body copy uses a low-contrast grotesque for readability and modernity. The pairing creates a tension between precision and approachability that mirrors the brand positioning.</p>
+
+    <div class="type-showcase">
+      <div class="font-name">Display — Canela (Geometric Serif)</div>
+      <div class="type-display">Aa Bb Cc<br>Form follows feeling.</div>
+    </div>
+    <div class="type-showcase" style="margin-top:10px">
+      <div class="font-name">Body — Suisse Int'l (Grotesque)</div>
+      <div class="type-body-sample">Every object in the Volka collection is made by hand in our Copenhagen studio. We believe a well-made thing should outlast the trend that inspired it. Our process is slow, deliberate, and deeply considered.</div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Applications -->
+    <div class="proj-section-label">Applications</div>
+    <h3 class="proj-section-title">Packaging & collateral.</h3>
+    <p class="proj-body">The brand system was applied across shipping boxes, tissue paper, care cards, and price labels. Every touchpoint uses the same restrained vocabulary — nothing is decorative unless it's functional.</p>
+
+    <div class="img-grid-3">
+      <div class="img-block img-block-sq">
+        <div class="img-block-inner" style="background:#1a1a1a;font-size:0.7rem;letter-spacing:0.2em;opacity:0.4">BOX</div>
+      </div>
+      <div class="img-block img-block-sq">
+        <div class="img-block-inner" style="background:#f0ebe2;font-size:0.7rem;letter-spacing:0.2em;color:#1a1a1a;opacity:0.4">TISSUE</div>
+      </div>
+      <div class="img-block img-block-sq">
+        <div class="img-block-inner" style="background:#2f2f2f;font-size:0.7rem;letter-spacing:0.2em;opacity:0.4">CARD</div>
+      </div>
+    </div>
+
+    <div class="img-grid-2">
+      <div class="img-block">
+        <div class="img-block-inner" style="background:#1e1e1e;font-size:0.7rem;letter-spacing:0.2em;opacity:0.4">PRODUCT LABEL</div>
+      </div>
+      <div class="img-block">
+        <div class="img-block-inner" style="background:#e8e0d4;font-size:0.7rem;letter-spacing:0.2em;color:#1a1a1a;opacity:0.4">STATIONERY</div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Results -->
+    <div class="proj-section-label">Outcome</div>
+    <h3 class="proj-section-title">The work speaks for itself.</h3>
+    <p class="proj-body">The rebrand launched alongside Volka's first major stockist partnership. Within three months of launch, the studio reported a marked increase in wholesale inquiries and press coverage — attributing both to a more coherent and confident brand presence.</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-num">3×</div>
+        <div class="result-label">Wholesale inquiries in 3 months post-launch</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">+40%</div>
+        <div class="result-label">Average order value increase after rebrand</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">6</div>
+        <div class="result-label">Press features in design and lifestyle media</div>
+      </div>
+    </div>
+
+    <div class="proj-nav">
+      <div style="color:var(--white60);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase">← Previous</div>
+      <button class="proj-nav-item next" onclick="showPage('projects')">
+        <span class="proj-nav-label">Next project →</span>
+        <span class="proj-nav-name">Back to all work</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
+   <a href="#" class="footer-logo" onclick="showPage('home');return false">
+  <img src="./img/iso.png" alt="Laura Mujica isologo">
+</a>
+  <span class="footer-copy">© 2026 Laura Mujica · All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false">About</a>
+    <a href="#" onclick="showPage('services');return false">Services</a>
+    <a href="#" onclick="showPage('contact');return false">Contact</a>
+  </div>
+</footer> -->
+
+
+<script src="js/main.js?v=2"></script>
+<!-- VIDEO INTRO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <div class="video-modal-frame">
+      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+      <div class="video-modal-placeholder">
+        <span class="big-bolt">⚡</span>
+        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+      </div>
+    </div>
+    <div class="video-modal-meta">
+      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
+      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows
+</title>
+<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+
+<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
+<meta property="og:description" content="Designing better systems for how creative work gets done.">
+<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lauramujica.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpg" href="./img/Favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<canvas class="noise" id="noiseCanvas"></canvas>
+
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home');return false">LM</a>
+   <a href="#" class="nav-logo" onclick="showPage('home');return false">
+  <!-- <img src="./img/iso.png" alt="Laura Mujica isologo"> -->
+</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="#" onclick="showPage('home');return false" data-page="home">Home</a>
+  <a href="#" onclick="showPage('about');return false" data-page="about" class="active">About me</a>
+  <a href="#" onclick="showPage('services');return false" data-page="services">Services</a>
+  <a href="#" onclick="showPage('contact');return false" data-page="contact">Contact</a>
+  <div class="menu-footer-links">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page active">
+  <div class="page-inner">
+    <div class="page-eyebrow">About me</div>
+    <h2 class="page-title">Honest design<br>for real people.</h2>
+
+    <div class="about-intro-grid">
+      <div>
+        <p class="about-body">Hi! I'm Laura — a Senior Designer based in Argentina.</p>
+        <p class="about-body" style="margin-top:1rem">I design visual systems, creative workflows, and digital experiences that help ideas move from concept to execution with more clarity, consistency, and less friction.</p>
+        <p class="about-body" style="margin-top:1rem">With a background in brand identity, print production, web, and digital design, I’m especially interested in improving how creative work gets done — combining human judgment, thoughtful systems, and AI-assisted processes when they genuinely make the work better.</p>
+        <p class="about-body" style="margin-top:1rem">I care about creating solutions that are not only visually strong, but also practical, scalable, and built to work in the real world.</p>
+      </div>
+      <div class="about-photo-slot">
+        <div class="about-photo-frame">
+          <img src="./img/Laura_profile.jpg" alt="Laura Mujica">
+        </div>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill">Brand Identity Systems</span>
+      <span class="pill">Visual Systems</span>
+      <span class="pill">Creative Workflow</span>
+      <span class="pill">Process Optimization</span>
+      <span class="pill">Print Production</span>
+      <span class="pill">Web & Digital Design</span>
+      <span class="pill">AI-Assisted Workflows</span>
+      <span class="pill">Art Direction</span>
+      <span class="pill">Editorial Design</span>
+
+    </div>
+
+    <!-- <button class="video-intro-trigger" onclick="openVideoModal()">
+      <div class="vit-play">
+        <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="vit-text">
+        <span class="vit-label">Watch intro</span>
+        <span class="vit-sub">~2 min · Meet me in person</span>
+      </div>
+      <div class="vit-arrow">↗</div>
+    </button> -->
+
+    <div class="section-divider"></div>
+
+    <!-- PERSONAL SECTION -->
+    <div class="page-eyebrow">Beyond the work</div>
+    <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.2rem);line-height:1;color:var(--white);margin-bottom:0.5rem;">Things I love.</h3>
+    <p class="about-body" style="margin-bottom:0">A glimpse into the things that shape how I think, create, and see the world.</p>
+
+    <div class="personal-grid">
+
+      <!-- BOOKS -->
+      <div class="personal-card">
+        <div class="personal-card-header">
+          <span class="personal-card-icon">📚</span>
+          <span class="personal-card-title">Books I recommend</span>
+        </div>
+        <ul class="personal-list">
+          <li><a href="https://en.wikipedia.org/wiki/Sputnik_Sweetheart" target="_blank">Sputnik_Sweetheart</a><span>Haruki Murakami</span></li>
+          <li><a href="https://en.wikipedia.org/wiki/Siddhartha_(novel)" target="_blank">Siddharta</a><span>Hermann Hesse</span></li>
+          <li><a href="https://www.goodreads.com/book/show/129974566-the-truce-by-mario-benedetti-1969-first-u-s-edition?from_search=true&from_srp=true&qid=oVl7CW7NMb&rank=1" target="_blank">The Truce</a><span>Mario Benedetti</span></li>
+          <li><a href="https://en.wikipedia.org/wiki/Homo_Deus:_A_Brief_History_of_Tomorrow" target="_blank">Homo Deus: A Brief History of Tomorrow</a><span>Yuval Noah Harari</span></li>
+          <li><a href="https://www.goodreads.com/book/show/40539212-happy-money" target="_blank">Happy Money</a><span>Ken Honda</span></li>
+        </ul>
+      </div>
+
+      <!-- PLAYLISTS -->
+      <div class="personal-card">
+        <div class="personal-card-header">
+          <span class="personal-card-icon">🎵</span>
+          <span class="personal-card-title">Playlists I design to</span>
+        </div>
+        <ul class="personal-list">
+          <li><a href="https://open.spotify.com/playlist/7ECtNgscDqnx7tdbRBQiKu?si=19677fe364a14b73" target="_blank">Lau Mujica</a><span>Indie · Instrumental</span></li>
+          <li><a href="https://open.spotify.com/playlist/1qf94eHNDQRlI0z3eQlrE8?si=f610a28410a54e87" target="_blank">Designing at night time</a><span>Chill indie for slow nights</span></li>
+          <li><a href="https://open.spotify.com/playlist/2cvwQsFxrLwLbCn2kMvjrn?si=7bc52be634854b98" target="_blank">Dancing my mind away</a><span>When the deadline is close</span></li>
+          <li><a href="https://open.spotify.com/playlist/4QTppkTWlMaGm7mGiqRIWU?si=9de42cb6c74b4d92" target="_blank">Wanna funk?</a><span>Funky grooves</span></li>
+          <li><a href="https://open.spotify.com/playlist/1WS2WKyAbOQcpXqzU1A9d9?si=645cd56f888842bd" target="_blank">Let it go, love is free</a><span>Bittersweet pop & soft grooves</span></li>
+        </ul>
+      </div>
+
+      <!-- MOVIES -->
+      <div class="personal-card">
+        <div class="personal-card-header">
+          <span class="personal-card-icon">🎬</span>
+          <span class="personal-card-title">Movies I keep coming back to</span>
+        </div>
+        <ul class="personal-list">
+          <li><a href="https://www.imdb.com/title/tt0268978/" target="_blank">A Beautiful Mind</a><span>Ron Howard · 2001</span></li>
+          <li><a href="https://www.imdb.com/title/tt1375666/" target="_blank">Inception</a><span>Christopher Nolan · 2010</span></li>
+          <li><a href="https://www.imdb.com/title/tt7282468/" target="_blank">Burning</a><span>
+            Lee Chang-dong · 2018</span></li>
+            <li><a href="https://www.imdb.com/title/tt6710474/" target="_blank">Everything Everywhere All at Once</a><span>Daniel Kwan · Daniel Scheinert · 2022</span></li>
+          <li><a href="https://www.imdb.com/title/tt13238346/" target="_blank">Past Lives
+          </a><span> Celine Song · 2023</span></li>
+        </ul>
+      </div>
+
+      <!-- YOUTUBE -->
+      <div class="personal-card">
+        <div class="personal-card-header">
+          <span class="personal-card-icon">▶️</span>
+          <span class="personal-card-title">YouTube I watch on repeat</span>
+        </div>
+        <ul class="personal-list">
+          <li><a href="https://youtu.be/GLpdY-57Dro" target="_blank">
+WILDFLOWER</a><span>Billie Eilish</span></li>
+          <li><a href="https://youtu.be/pbyyRCr60Q8" target="_blank">COLORS</a><span>Black Pumas</span></li>
+          <li><a href="https://youtu.be/qu577tNp1hA" target="_blank">TAKE AWAY SHOW</a><span>The Dø</span></li>
+          <li><a href="https://youtu.be/2fE4p-E26NQ" target="_blank">MALIBU</a><span>Miley Cirus</span></li>
+          <li><a href="https://youtu.be/BPidLpADlaM" target="_blank">DÍA DE ENERO</a><span>Shakira</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="page-cta-block">
+      <div class="page-cta-left">
+        <div class="page-cta-title">Sounds like a good fit? <span>Let's talk.</span></div>
+        <p class="page-cta-sub">I'm open to new projects and collaborations. If you think we could build something great together, I'd love to hear about it.</p>
+      </div>
+      <button class="page-cta-btn" onclick="showPage('contact')">Get in touch →</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
+   <a href="#" class="footer-logo" onclick="showPage('home');return false">
+  <img src="./img/iso.png" alt="Laura Mujica isologo">
+</a>
+  <span class="footer-copy">© 2026 Laura Mujica · All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false">About</a>
+    <a href="#" onclick="showPage('services');return false">Services</a>
+    <a href="#" onclick="showPage('contact');return false">Contact</a>
+  </div>
+</footer> -->
+
+
+<script src="js/main.js?v=2"></script>
+<!-- VIDEO INTRO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <div class="video-modal-frame">
+      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+      <div class="video-modal-placeholder">
+        <span class="big-bolt">⚡</span>
+        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+      </div>
+    </div>
+    <div class="video-modal-meta">
+      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
+      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
