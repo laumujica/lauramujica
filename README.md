@@ -1,0 +1,11 @@
+# Laura Mujica — website
+
+Static HTML site hosted on Firebase Hosting (`lauramujica-fbc70`). The shared styling is in `css/styles.css` and navigation/interactive behavior is in `js/main.js`.
+
+## Editing pages
+
+The visible homepage and menu are in `index.html`. Each other view is a complete HTML file in its section folder under `pages/`. Edit `pages/projects/index.html` for the project list and `pages/projects/volka.html` for the current case study. Playground experiments live in `pages/playground/`.
+
+The menu uses direct links to About, Services, and Contact. Existing buttons that call `showPage('projects')` open `/pages/projects/`. The Projects page is intentionally absent from the public menu at present. Keep the shared menu and video modal consistent when changing their markup across pages.
+
+For a local preview, run `python3 -m http.server 8000` in this folder and open `http://localhost:8000`. Firebase Hosting serves the files directly from this folder as configured in `firebase.json`. Publishing a GitHub commit alone does not deploy to Firebase.

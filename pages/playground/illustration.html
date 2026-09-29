@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows
+</title>
+<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+
+<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
+<meta property="og:description" content="Designing better systems for how creative work gets done.">
+<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lauramujica.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<canvas class="noise" id="noiseCanvas"></canvas>
+
+<nav>
+  <a href="/" class="nav-logo">LM</a>
+   <a href="/" class="nav-logo">
+  <!-- <img src="/img/iso.png" alt="Laura Mujica isologo"> -->
+</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="/" data-page="home">Home</a>
+  <a href="/pages/about/" data-page="about">About me</a>
+  <a href="/pages/services/" data-page="services">Services</a>
+  <a href="/pages/contact/" data-page="contact">Contact</a>
+  <div class="menu-footer-links">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- PLAYGROUND: ILLUSTRATION -->
+<div id="playground-illustration" class="page active">
+  <div class="illus-page-wrap">
+    <button class="type-back" onclick="showPage('playground')">← Back to playground</button>
+
+    <div class="page-eyebrow">Playground · Illustration</div>
+    <h2 class="page-title">Digital<br>illustration.</h2>
+    <p class="illus-intro">A collection of personal illustration work across different techniques, moods, and tools. Mostly digital — figures, landscapes, abstract explorations, and everything in between. Each piece is its own experiment.</p>
+
+    <!-- FEATURED -->
+    <div class="illus-featured">
+      <div class="illus-img illus-bg-a">
+        <span class="illus-placeholder-text">Your illustration here</span>
+      </div>
+      <div class="illus-meta">
+        <div>
+          <div class="illus-title">The Weight of Quiet Things</div>
+          <p class="illus-concept">An exploration of stillness and interior space. I wanted to capture the feeling of being alone in a room and finding it peaceful rather than lonely — so I played with warm light sources, muted shadows, and a deliberately restricted palette.</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Adobe Fresco</span>
+            <span class="illus-sw-tag">Photoshop</span>
+          </div>
+          <div class="illus-year">2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW: 3 SQUARE CARDS -->
+    <div class="illus-grid" style="margin-top:0">
+      <div class="illus-card">
+        <div class="illus-img illus-bg-b">
+          <span class="illus-placeholder-text">Illustration</span>
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Deep Current</div>
+          <p class="illus-concept">Underwater figure study. Playing with pressure, light refraction, and the distortion that water creates on form.</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Adobe Fresco</span>
+          </div>
+          <div class="illus-year">2024</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img illus-bg-c">
+          <span class="illus-placeholder-text">Illustration</span>
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Root System</div>
+          <p class="illus-concept">A botanical study turned abstract. I traced real leaf structures and then broke them apart into geometric fragments.</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Illustrator</span>
+          </div>
+          <div class="illus-year">2024</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img illus-bg-d">
+          <span class="illus-placeholder-text">Illustration</span>
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Golden Hour, Nowhere</div>
+          <p class="illus-concept">Landscape study focusing on how light collapses at dusk — the moment before everything turns blue.</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Adobe Fresco</span>
+            <span class="illus-sw-tag">Photoshop</span>
+          </div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW: ASYMMETRIC 2/3 + 1/3 -->
+    <div class="illus-row-asym" style="margin-top:0">
+      <div class="illus-card">
+        <div class="illus-img illus-bg-e">
+          <span class="illus-placeholder-text">Illustration</span>
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Figura en Rojo</div>
+          <p class="illus-concept">Portrait series exploring emotional states through color temperature alone. No face — just posture, light, and saturation doing the work.</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Procreate</span>
+            <span class="illus-sw-tag">Photoshop</span>
+          </div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img illus-bg-f">
+          <span class="illus-placeholder-text">Illustration</span>
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Signal / Noise</div>
+          <p class="illus-concept">Abstract study on visual interference. When does pattern become chaos?</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Illustrator</span>
+          </div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW: 2 COLS -->
+    <div class="illus-row-2" style="margin-top:0">
+      <div class="illus-card">
+        <div class="illus-img illus-bg-g">
+          <span class="illus-placeholder-text">Illustration</span>
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Soft Architecture</div>
+          <p class="illus-concept">What if buildings were made of fabric? A series imagining rigid structures as draped, folded forms — organic and architectural at once.</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Adobe Fresco</span>
+            <span class="illus-sw-tag">Illustrator</span>
+          </div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img illus-bg-a" style="filter:hue-rotate(40deg)">
+          <span class="illus-placeholder-text">Illustration</span>
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Memoria Vegetal</div>
+          <p class="illus-concept">Personal work about memory and nature. Layered textures, plant forms, and handwritten elements mixed into a single composition.</p>
+          <div class="illus-software">
+            <span class="illus-sw-tag">Photoshop</span>
+            <span class="illus-sw-tag">Adobe Fresco</span>
+          </div>
+          <div class="illus-year">2022</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
+   <a href="#" class="footer-logo" onclick="showPage('home');return false">
+  <img src="/img/iso.png" alt="Laura Mujica isologo">
+</a>
+  <span class="footer-copy">© 2026 Laura Mujica · All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false">About</a>
+    <a href="#" onclick="showPage('services');return false">Services</a>
+    <a href="#" onclick="showPage('contact');return false">Contact</a>
+  </div>
+</footer> -->
+
+
+<script src="/js/main.js?v=3"></script>
+<!-- VIDEO INTRO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <div class="video-modal-frame">
+      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+      <div class="video-modal-placeholder">
+        <span class="big-bolt">⚡</span>
+        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+      </div>
+    </div>
+    <div class="video-modal-meta">
+      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
+      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

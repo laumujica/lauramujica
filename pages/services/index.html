@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows
+</title>
+<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+
+<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
+<meta property="og:description" content="Designing better systems for how creative work gets done.">
+<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lauramujica.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<canvas class="noise" id="noiseCanvas"></canvas>
+
+<nav>
+  <a href="/" class="nav-logo">LM</a>
+   <a href="/" class="nav-logo">
+  <!-- <img src="/img/iso.png" alt="Laura Mujica isologo"> -->
+</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="/" data-page="home">Home</a>
+  <a href="/pages/about/" data-page="about">About me</a>
+  <a href="/pages/services/" data-page="services" class="active">Services</a>
+  <a href="/pages/contact/" data-page="contact">Contact</a>
+  <div class="menu-footer-links">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="page active">
+  <div class="page-inner">
+    <div class="page-eyebrow">Services</div>
+    <h2 class="page-title">How I Can Help</h2>
+    <p class="services-intro">Brand identity is more than a logo. I help businesses create visual systems that work consistently across print, digital, and everyday brand applications.
+</p>
+
+    <div class="services-list">
+      <div class="service-row" onclick="showPage('contact')" title="Get in touch about this service">
+        <span class="svc-num">01</span>
+        <div class="svc-content">
+          <div class="svc-name">Brand Identity</div>
+          <div class="svc-desc">A complete brand system built from strategy up. Includes discovery, naming rationale, logo and mark, color, typography, and a brand guidelines document you can actually use.</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Logo & Mark</span>
+            <span class="svc-tag">Color System</span>
+            <span class="svc-tag">Typography</span>
+            <span class="svc-tag">Brand Guidelines</span>
+          </div>
+        </div>
+        <span class="svc-arrow">↗</span>
+      </div>
+      <div class="service-row" onclick="showPage('contact')" title="Get in touch about this service">
+        <span class="svc-num">02</span>
+        <div class="svc-content">
+          <div class="svc-name">Visual Design</div>
+          <div class="svc-desc">Campaigns, art direction, editorial layouts, and print collateral. I help brands communicate clearly and consistently across every surface — digital and physical.</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Art Direction</span>
+            <span class="svc-tag">Campaign Design</span>
+            <span class="svc-tag">Print & Editorial</span>
+            <span class="svc-tag">Packaging</span>
+          </div>
+        </div>
+        <span class="svc-arrow">↗</span>
+      </div>
+      <!-- <div class="service-row" onclick="showPage('contact')" title="Get in touch about this service">
+        <span class="svc-num">03</span>
+        <div class="svc-content">
+          <div class="svc-name">UI / UX Design</div>
+          <div class="svc-desc">Interfaces that are clear, intuitive, and visually cohesive. I design products and systems that feel as good to use as they look — from wireframes to polished UI and design systems.</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Product Design</span>
+            <span class="svc-tag">Design Systems</span>
+            <span class="svc-tag">Wireframing</span>
+            <span class="svc-tag">Prototyping</span>
+          </div>
+        </div>
+        <span class="svc-arrow">↗</span>
+      </div> -->
+      <div class="service-row" onclick="showPage('contact')" title="Get in touch about this service">
+        <span class="svc-num">03</span>
+        <div class="svc-content">
+          <div class="svc-name">Web Design & Development</div>
+          <div class="svc-desc">Design and frontend development for landing pages, portfolio sites, and marketing websites. Clean, fast, and faithful to the brand — no bloated builders.</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Landing Pages</span>
+            <span class="svc-tag">Portfolio Sites</span>
+            <span class="svc-tag">HTML / CSS / JS</span>
+            <span class="svc-tag">Hosting</span>
+            <span class="svc-tag">Firebase</span>
+          </div>
+        </div>
+        <span class="svc-arrow">↗</span>
+      </div>
+      <div class="service-row" onclick="showPage('contact')" title="Get in touch about this service">
+        <span class="svc-num">04</span>
+        <div class="svc-content">
+          <div class="svc-name">Brand Audit & Refresh</div>
+          <div class="svc-desc">Already have a brand but it's not quite working? I'll review what you have, identify what's off, and propose targeted improvements — without throwing everything out.</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Audit</span>
+            <span class="svc-tag">Refresh</span>
+            <span class="svc-tag">Consistency Review</span>
+            <span class="svc-tag">QA Testing</span>
+          </div>
+        </div>
+        <span class="svc-arrow">↗</span>
+      </div>
+    </div>
+
+    <!-- <div class="section-divider"></div> -->
+    <div class="page-eyebrow">Tools & stack</div>
+    <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.3rem,3vw,1.75rem);line-height:1;color:var(--white);margin-bottom:1.25rem;">What I work with.</h3>
+    <div class="tools-grid" style="max-width:600px">
+      <!-- <span class="tool-pill"><span class="tool-emoji">🎨</span> Figma</span> -->
+      <span class="tool-pill"><span class="tool-emoji">✦</span> Illustrator</span>
+      <span class="tool-pill"><span class="tool-emoji">▣</span> Photoshop</span>
+      <span class="tool-pill"><span class="tool-emoji">📐</span> InDesign</span>
+      <span class="tool-pill"><span class="tool-emoji">🎬</span> After Effects</span>
+      <span class="tool-pill"><span class="tool-emoji">▶️</span> Premiere Pro</span>
+      <span class="tool-pill"><span class="tool-emoji">◐</span> Fresco</span>
+      <span class="tool-pill"><span class="tool-emoji">◉</span> Corel Draw</span>
+      <span class="tool-pill"><span class="tool-emoji">&lt;/&gt;</span> VS Code</span>
+      <span class="tool-pill"><span class="tool-emoji">⚡</span> Claude</span>
+      <span class="tool-pill"><span class="tool-emoji">🗂️</span> ChatGPT</span>
+      <span class="tool-pill"><span class="tool-emoji">📷</span> Gemini</span>
+    </div>
+
+    <div class="page-cta-block">
+      <div class="page-cta-left">
+        <div class="page-cta-title">Not sure what you need? <span>Let's figure it out.</span></div>
+        <p class="page-cta-sub">No pressure, no pitch — just a quick call to understand your project and see if we're a good match.</p>
+      </div>
+      <button class="page-cta-btn" onclick="showPage('contact')">Book a free call →</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
+   <a href="#" class="footer-logo" onclick="showPage('home');return false">
+  <img src="/img/iso.png" alt="Laura Mujica isologo">
+</a>
+  <span class="footer-copy">© 2026 Laura Mujica · All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false">About</a>
+    <a href="#" onclick="showPage('services');return false">Services</a>
+    <a href="#" onclick="showPage('contact');return false">Contact</a>
+  </div>
+</footer> -->
+
+
+<script src="/js/main.js?v=3"></script>
+<!-- VIDEO INTRO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <div class="video-modal-frame">
+      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+      <div class="video-modal-placeholder">
+        <span class="big-bolt">⚡</span>
+        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+      </div>
+    </div>
+    <div class="video-modal-meta">
+      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
+      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

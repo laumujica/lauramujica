@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows
+</title>
+<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+
+<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
+<meta property="og:description" content="Designing better systems for how creative work gets done.">
+<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lauramujica.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<canvas class="noise" id="noiseCanvas"></canvas>
+
+<nav>
+  <a href="/" class="nav-logo">LM</a>
+   <a href="/" class="nav-logo">
+  <!-- <img src="/img/iso.png" alt="Laura Mujica isologo"> -->
+</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="/" data-page="home">Home</a>
+  <a href="/pages/about/" data-page="about">About me</a>
+  <a href="/pages/services/" data-page="services">Services</a>
+  <a href="/pages/contact/" data-page="contact">Contact</a>
+  <div class="menu-footer-links">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- PLAYGROUND: PATTERN -->
+<div id="playground-pattern" class="page active">
+  <div class="page-inner" style="max-width:960px">
+    <button class="type-back" onclick="showPage('playground')">← Back to playground</button>
+
+    <div class="page-eyebrow">Playground · Pattern</div>
+    <h2 class="page-title">Surface &<br>repetition.</h2>
+    <p class="illus-intro">Pattern design lives at the intersection of logic and aesthetics — a single motif, multiplied into a system. These are explorations in tile, texture, geometry, and ornament. Some are digital, some start on paper.</p>
+
+    <!-- FEATURED PATTERN — full width hero -->
+    <div style="width:100%;border-radius:20px;overflow:hidden;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,0.15)">
+      <div style="width:100%;aspect-ratio:21/9;position:relative;overflow:hidden;
+        background:
+          repeating-linear-gradient(60deg, rgba(245,208,82,0.18) 0px, rgba(245,208,82,0.18) 1px, transparent 1px, transparent 32px),
+          repeating-linear-gradient(-60deg, rgba(245,208,82,0.18) 0px, rgba(245,208,82,0.18) 1px, transparent 1px, transparent 32px),
+          repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 32px),
+          #1a0a35;">
+      </div>
+      <div style="background:rgba(255,255,255,0.18);border-top:1px solid rgba(255,255,255,0.2);padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap">
+        <div>
+          <div class="illus-title" style="margin-bottom:0.4rem">Hexagonal Grid System</div>
+          <p class="illus-concept" style="max-width:520px">A modular grid built on a 60° angle, originally designed as a textile pattern. The geometry creates a secondary diamond motif at every intersection — unplanned, but kept. Tiling units at 32px.</p>
+          <div class="illus-software" style="margin-top:0.75rem">
+            <span class="illus-sw-tag">Illustrator</span>
+            <span class="illus-sw-tag">Pattern Repeat</span>
+            <span class="illus-sw-tag">2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 1: 3 square pattern tiles -->
+    <div class="illus-grid">
+      <div class="illus-card">
+        <div class="illus-img" style="aspect-ratio:1;background:
+          repeating-conic-gradient(#2d1060 0% 25%, #4a1a8a 25% 50%) 0 0 / 28px 28px;">
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Checkerboard Gradient</div>
+          <p class="illus-concept">A classic checkerboard morphed with a radial gradient — the tile stays geometric but gains a sense of depth and light.</p>
+          <div class="illus-software"><span class="illus-sw-tag">Illustrator</span><span class="illus-sw-tag">CSS</span></div>
+          <div class="illus-year">2024</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img" style="aspect-ratio:1;background:
+          repeating-linear-gradient(45deg, rgba(242,64,122,0.3) 0px, rgba(242,64,122,0.3) 2px, transparent 2px, transparent 18px),
+          repeating-linear-gradient(-45deg, rgba(242,64,122,0.3) 0px, rgba(242,64,122,0.3) 2px, transparent 2px, transparent 18px),
+          #0f0520;">
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Crosshatch Fine</div>
+          <p class="illus-concept">Inspired by engraving and etching techniques — the diagonal lines at opposing angles create a woven feel at any scale.</p>
+          <div class="illus-software"><span class="illus-sw-tag">Illustrator</span></div>
+          <div class="illus-year">2024</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img" style="aspect-ratio:1;background:
+          radial-gradient(circle at 50% 50%, rgba(245,208,82,0.5) 4px, transparent 4px),
+          radial-gradient(circle at 0% 50%, rgba(245,208,82,0.25) 4px, transparent 4px),
+          radial-gradient(circle at 100% 50%, rgba(245,208,82,0.25) 4px, transparent 4px),
+          #1a1a2e;
+          background-size: 32px 32px, 32px 32px, 32px 32px, auto;">
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Dot Matrix</div>
+          <p class="illus-concept">A halftone-inspired dot grid — varying opacity to simulate screen printing and vintage riso aesthetics.</p>
+          <div class="illus-software"><span class="illus-sw-tag">Photoshop</span><span class="illus-sw-tag">Illustrator</span></div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: asymmetric — wide organic + narrow geometric -->
+    <div class="illus-row-asym">
+      <div class="illus-card">
+        <div class="illus-img" style="aspect-ratio:3/2;background:
+          repeating-linear-gradient(30deg, transparent, transparent 18px, rgba(255,255,255,0.07) 18px, rgba(255,255,255,0.07) 19px),
+          repeating-linear-gradient(150deg, transparent, transparent 18px, rgba(255,255,255,0.07) 18px, rgba(255,255,255,0.07) 19px),
+          repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(255,255,255,0.04) 18px, rgba(255,255,255,0.04) 19px),
+          linear-gradient(135deg, #1a3a4a 0%, #0d2233 100%);">
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Woven Textile Simulation</div>
+          <p class="illus-concept">Three directional line sets at 30°, 90°, and 150° to mimic the structure of a plain-weave fabric. Designed as a surface for a packaging concept — the final use was a tissue paper lining.</p>
+          <div class="illus-software"><span class="illus-sw-tag">Illustrator</span><span class="illus-sw-tag">Packaging</span></div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img" style="aspect-ratio:3/4;background:
+          repeating-conic-gradient(from 0deg at 50% 50%, #3d0a5e 0deg 45deg, #6a1a9a 45deg 90deg) 0 0 / 24px 24px;">
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Pinwheel Tile</div>
+          <p class="illus-concept">A rotational 4-way tile that generates a windmill motif. Works as wallpaper or as a background texture for brand applications.</p>
+          <div class="illus-software"><span class="illus-sw-tag">Illustrator</span></div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 3: 2 cols — botanical + abstract wave -->
+    <div class="illus-row-2">
+      <div class="illus-card">
+        <div class="illus-img" style="aspect-ratio:4/3;background:
+          repeating-linear-gradient(0deg, rgba(100,200,120,0.12) 0px, rgba(100,200,120,0.12) 1px, transparent 1px, transparent 12px),
+          repeating-linear-gradient(90deg, rgba(100,200,120,0.08) 0px, rgba(100,200,120,0.08) 1px, transparent 1px, transparent 12px),
+          radial-gradient(ellipse at 30% 60%, rgba(40,120,60,0.4) 0%, transparent 55%),
+          radial-gradient(ellipse at 70% 30%, rgba(20,80,40,0.3) 0%, transparent 50%),
+          #0a1f10;">
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Botanical Grid</div>
+          <p class="illus-concept">A leaf-inspired surface pattern — the repeat unit is drawn from a simplified monstera silhouette, deconstructed into a flat geometric form that tiles seamlessly.</p>
+          <div class="illus-software"><span class="illus-sw-tag">Adobe Fresco</span><span class="illus-sw-tag">Illustrator</span></div>
+          <div class="illus-year">2023</div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <div class="illus-img" style="aspect-ratio:4/3;background:
+          repeating-linear-gradient(180deg, transparent 0px, transparent 10px, rgba(242,64,122,0.15) 10px, rgba(242,64,122,0.15) 11px, transparent 11px, transparent 22px),
+          repeating-linear-gradient(90deg, transparent 0px, transparent 20px, rgba(245,208,82,0.08) 20px, rgba(245,208,82,0.08) 21px),
+          linear-gradient(160deg, #1a0530 0%, #3a0a5e 50%, #1a0530 100%);">
+        </div>
+        <div class="illus-meta">
+          <div class="illus-title">Signal Lines</div>
+          <p class="illus-concept">Horizontal stripe system with variable spacing — a reference to oscilloscope readouts and analog signal displays. Used as a background element in a music brand project.</p>
+          <div class="illus-software"><span class="illus-sw-tag">Illustrator</span><span class="illus-sw-tag">Brand</span></div>
+          <div class="illus-year">2022</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
+   <a href="#" class="footer-logo" onclick="showPage('home');return false">
+  <img src="/img/iso.png" alt="Laura Mujica isologo">
+</a>
+  <span class="footer-copy">© 2026 Laura Mujica · All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false">About</a>
+    <a href="#" onclick="showPage('services');return false">Services</a>
+    <a href="#" onclick="showPage('contact');return false">Contact</a>
+  </div>
+</footer> -->
+
+
+<script src="/js/main.js?v=3"></script>
+<!-- VIDEO INTRO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <div class="video-modal-frame">
+      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+      <div class="video-modal-placeholder">
+        <span class="big-bolt">⚡</span>
+        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+      </div>
+    </div>
+    <div class="video-modal-meta">
+      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
+      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

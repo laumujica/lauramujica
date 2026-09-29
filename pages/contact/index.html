@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows
+</title>
+<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+
+<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
+<meta property="og:description" content="Designing better systems for how creative work gets done.">
+<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lauramujica.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<canvas class="noise" id="noiseCanvas"></canvas>
+
+<nav>
+  <a href="/" class="nav-logo">LM</a>
+   <a href="/" class="nav-logo">
+  <!-- <img src="/img/iso.png" alt="Laura Mujica isologo"> -->
+</a>
+  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="/" data-page="home">Home</a>
+  <a href="/pages/about/" data-page="about">About me</a>
+  <a href="/pages/services/" data-page="services">Services</a>
+  <a href="/pages/contact/" data-page="contact" class="active">Contact</a>
+  <div class="menu-footer-links">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page active">
+  <div class="page-inner">
+    <div class="page-eyebrow">Contact</div>
+    <div class="contact-big">Let's make<br>something <span>great.</span></div>
+    <p class="contact-sub">Got a project in mind? Fill out the form and I'll get back to you within 48 hours.</p>
+
+    <div class="contact-layout">
+
+      <!-- LEFT: FORM -->
+      <div>
+        <div class="contact-form" id="contactForm">
+          <form action="https://formsubmit.co/lauraamujica@gmail.com" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Name*</label>
+              <input type="text" id="cf-name" name="Name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email*</label>
+              <input type="email" id="cf-email" name="Email" required placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-subject">What are you looking for?</label>
+            <select id="cf-subject" name="Subject" >
+              <option value="" required disabled selected>Select a service…*</option>
+              <option>Brand Identity</option>
+              <option>Visual Design</option>
+              <!-- <option>UI / UX Design</option> -->
+              <option>Web Design & Development</option>
+              <option>Brand Audit & Refresh</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-budget">Budget range</label>
+            <select id="cf-budget" name="Budget range">
+              <option value="" disabled selected>Approximate budget…</option>
+              <option>Under $500</option>
+              <option>$500 – $1,500</option>
+              <option>$1,500 – $5,000</option>
+              <option>$5,000+</option>
+              <option>Let's talk</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Tell me about your project*</label>
+            <textarea id="cf-message" name="Message" required placeholder="A few lines about what you need, your timeline, any relevant context…"></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">Send message ⚡</button>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">⚡</div>
+          <h4>Message sent!</h4>
+          <p>Thanks for reaching out. I'll get back to you within 48 hours.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: LINKS + CTA -->
+      <div class="contact-right-col">
+        <div>
+          <p class="contact-sub" style="font-size:0.85rem;margin-bottom:1.5rem">Or, if you'd rather talk directly —</p>
+          <a href="https://turnito.app/p/393axe7hz264558o" class="btn-primary btn-yellow" target="_blank" style="width:100%;justify-content:center;margin-bottom:2rem">Schedule a call <!-- ⚡ --></a>
+        </div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank" class="contact-link">
+            <div class="cl-left">
+              <span class="cl-label">LinkedIn</span>
+              <span class="cl-sub">linkedin.com/in/lauraamujica</span>
+            </div>
+            <span class="cl-arrow">↗</span>
+          </a>
+          <a href="https://www.behance.net/laura_mujica" target="_blank" class="contact-link">
+            <div class="cl-left">
+              <span class="cl-label">Behance</span>
+              <span class="cl-sub">behance.net/laura_mujica</span>
+            </div>
+            <span class="cl-arrow">↗</span>
+          </a>
+          <a href="https://github.com/laumujica" target="_blank" class="contact-link">
+            <div class="cl-left">
+              <span class="cl-label">GitHub</span>
+              <span class="cl-sub">github.com/laumujica</span>
+            </div>
+            <span class="cl-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- <footer>
+  <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
+   <a href="#" class="footer-logo" onclick="showPage('home');return false">
+  <img src="/img/iso.png" alt="Laura Mujica isologo">
+</a>
+  <span class="footer-copy">© 2026 Laura Mujica · All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('about');return false">About</a>
+    <a href="#" onclick="showPage('services');return false">Services</a>
+    <a href="#" onclick="showPage('contact');return false">Contact</a>
+  </div>
+</footer> -->
+
+
+<script src="/js/main.js?v=3"></script>
+<!-- VIDEO INTRO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideoModal()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <div class="video-modal-frame">
+      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+      <div class="video-modal-placeholder">
+        <span class="big-bolt">⚡</span>
+        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+      </div>
+    </div>
+    <div class="video-modal-meta">
+      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
+      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
