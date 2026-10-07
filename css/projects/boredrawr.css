@@ -62,3 +62,13 @@ h2,.lede{text-wrap:balance}.keep{white-space:nowrap}.accent{color:#FF4600}
 .placeholder.project-image-frame{padding:0}
 .project-image-frame:before,.project-image-frame:after{display:none}
 .project-image-frame img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+
+/* Approved adjustments for individual image frames. */
+.placeholder.naming-image-frame{background:#fff}
+.body .project-image-frame.image-sized-frame{aspect-ratio:auto;min-height:0}
+.image-sized-frame img{position:static;height:auto}
+.body .project-image-frame.interface-image-frame{aspect-ratio:16/9;min-height:0}
+.interface-image-frame img{object-fit:cover}
+.statement-grid .short-logo.logo-image-frame{height:auto;min-height:0;aspect-ratio:auto;padding:0}
+.logo-image-frame:before,.logo-image-frame:after{display:none}
+.logo-image-frame img{display:block;width:100%;height:auto}
