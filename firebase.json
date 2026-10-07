@@ -5,7 +5,11 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "content/**"
+      "content/**",
+      "pages/projects/**",
+      "css/projects/**",
+      "js/projects/**",
+      "img/projects/**"
     ]
   }
 }
