@@ -1,0 +1,24 @@
+name: Preview Projects on Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy preview channel
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LAURAMUJICA_FBC70 }}
+        run: |
+          credentials_file="$(mktemp "$RUNNER_TEMP/firebase-sa.XXXXXX")"
+          trap 'rm -f "$credentials_file"' EXIT
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$credentials_file"
+          export GOOGLE_APPLICATION_CREDENTIALS="$credentials_file"
+          npx --yes firebase-tools@latest hosting:channel:deploy projects-preview --config firebase.preview.json --project lauramujica-fbc70 --expires 30d --json

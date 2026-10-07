@@ -6,11 +6,7 @@
       "firebase.preview.json",
       "**/.*",
       "**/node_modules/**",
-      "content/**",
-      "pages/projects/**",
-      "css/projects/**",
-      "js/projects/**",
-      "img/projects/**"
+      "content/**"
     ]
   }
 }
