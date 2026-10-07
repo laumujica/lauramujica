@@ -663,8 +663,10 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
   position:relative;overflow:hidden;
   text-decoration:none;display:block;color:inherit;
 }
-.proj-card-thumbnail{display:block;width:100%;height:auto;aspect-ratio:1505/847;object-fit:cover;border-radius:8px;margin-bottom:1.25rem}
 .proj-card:hover{background:rgba(255,255,255,0.22);transform:translateY(-3px)}
+.proj-card--in-progress{cursor:default}
+.proj-card--in-progress:hover{background:var(--white15);transform:none}
+.proj-status{display:inline-block;margin-top:1rem;padding:0.35rem 0.65rem;border:1px solid var(--white40);border-radius:999px;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow)}
 .proj-tag{
   font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
   color:var(--yellow);margin-bottom:0.9rem;

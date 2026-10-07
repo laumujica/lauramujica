@@ -6,7 +6,10 @@
       "firebase.preview.json",
       "**/.*",
       "**/node_modules/**",
-      "content/**"
+      "content/**",
+      "pages/projects/futurescape/**",
+      "css/projects/futurescape.css",
+      "img/projects/futurescape/**"
     ]
   }
 }
