@@ -48,7 +48,7 @@ h2,.lede{text-wrap:balance}.keep{white-space:nowrap}.accent{color:#FF4600}
 .identity-chapter h2+p{margin-top:0}
 .nav a[aria-current=page]{text-decoration-color:#F5D052}
 .statement-grid{align-items:start}.statement-grid .slogan{font-size:68px;line-height:1.05;margin:0;letter-spacing:-.03em}
-.slogan span,.slogan em{display:block;white-space:nowrap}
+.slogan>span,.slogan>em{display:block;white-space:nowrap}
 .statement-grid .short-logo{height:var(--slogan-height,140px);min-height:0;aspect-ratio:auto;margin:0;padding:12px;width:100%}
 .workflow p+p{margin-top:16px}
 @media(max-width:400px){h2{font-size:30px}.keep{white-space:normal}}
@@ -82,3 +82,10 @@ h2,.lede{text-wrap:balance}.keep{white-space:nowrap}.accent{color:#FF4600}
 .project-image-dialog::backdrop{background:rgba(0,0,0,.8)}
 .project-image-dialog>img{display:block;max-width:calc(96vw - 30px);max-height:calc(96dvh - 60px);width:auto;height:auto;object-fit:contain}
 .image-dialog-close{position:absolute;top:4px;right:8px;padding:0 6px;border:0;background:transparent;color:#000;font:700 28px/1 Author,Arial,sans-serif;cursor:pointer}
+
+/* Keep the slogan within its grid column at mobile widths. */
+.statement-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.statement-grid .slogan{min-width:0;width:100%;max-width:100%}
+.statement-grid .slogan>em{color:inherit}
+.statement-grid .slogan>em>.accent{display:inline;color:var(--orange)}
+@media(max-width:650px){.statement-grid{grid-template-columns:minmax(0,1fr)}}

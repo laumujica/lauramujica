@@ -1,7 +1,7 @@
 (() => {
  const grid=document.querySelector('.statement-grid');
  const slogan=grid.querySelector('.slogan');
- const first=slogan.querySelector('span');
+ const lines=Array.from(slogan.children);
  let queued=false;
  function fit(){
   queued=false;
@@ -9,7 +9,7 @@
   for(let i=0;i<12;i++){
    const mid=(low+high)/2;
    slogan.style.fontSize=mid+'px';
-   if(first.scrollWidth<=slogan.clientWidth)low=mid;else high=mid;
+   if(lines.every(line=>line.scrollWidth<=slogan.clientWidth))low=mid;else high=mid;
   }
   slogan.style.fontSize=low+'px';
   grid.style.setProperty('--slogan-height',slogan.getBoundingClientRect().height+'px');
