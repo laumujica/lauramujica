@@ -72,3 +72,13 @@ h2,.lede{text-wrap:balance}.keep{white-space:nowrap}.accent{color:#FF4600}
 .statement-grid .short-logo.logo-image-frame{height:auto;min-height:0;aspect-ratio:auto;padding:0}
 .logo-image-frame:before,.logo-image-frame:after{display:none}
 .logo-image-frame img{display:block;width:100%;height:auto}
+
+/* Final frame proportions and restrained slogan-strip logo. */
+.statement-grid .short-logo.logo-image-frame{width:auto;max-width:100%;height:var(--slogan-height,140px);aspect-ratio:728/302;border:0;justify-self:center;background:transparent}
+.logo-image-frame img{width:100%;height:100%;object-fit:contain}
+.image-zoom-trigger{display:none}
+@media(min-width:651px){.image-zoom-trigger{display:block;position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:zoom-in}}
+.project-image-dialog{width:max-content;max-width:96vw;max-height:96dvh;margin:auto;padding:42px 12px 12px;border:3px solid #000;background:#fff;overflow:auto}
+.project-image-dialog::backdrop{background:rgba(0,0,0,.8)}
+.project-image-dialog>img{display:block;max-width:calc(96vw - 30px);max-height:calc(96dvh - 60px);width:auto;height:auto;object-fit:contain}
+.image-dialog-close{position:absolute;top:4px;right:8px;padding:0 6px;border:0;background:transparent;color:#000;font:700 28px/1 Author,Arial,sans-serif;cursor:pointer}
