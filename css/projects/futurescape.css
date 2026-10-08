@@ -11,7 +11,7 @@
 .futurescape .case-nav a[aria-current]{text-decoration:underline;text-decoration-color:var(--acid);text-decoration-thickness:3px;text-underline-offset:7px}
 .hero-band{background:radial-gradient(ellipse at 74% 16%,#b6f3ff 0,transparent 40%),radial-gradient(ellipse at 17% 70%,#e7c4f6 0,transparent 49%),radial-gradient(ellipse at 82% 86%,#b7a9f2 0,transparent 50%),#e7e1f8;padding:clamp(54px,6vw,88px) 0 58px}
 .project-topline{display:flex;justify-content:space-between;gap:20px;margin-bottom:40px;font:600 .78rem/1.4 Inter,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase}
-.project-topline strong{font-weight:900;color:#211269;font-family:Syne,Inter,Arial,sans-serif;letter-spacing:.045em}
+.project-topline strong{font-weight:800;color:#211269}
 .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(34px,5vw,76px);align-items:center}
 .project-meta span,.tools-label,.asset-slot span,.chapter-index span{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.065em;text-transform:uppercase}
 .hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(3.1rem,5.4vw,5.6rem);font-weight:400;letter-spacing:-.07em;line-height:1.03;margin:0;max-width:850px;text-wrap:balance}
@@ -48,10 +48,10 @@
 .cover-slot:nth-child(2){background:linear-gradient(145deg,#e1dcfb,#cdf0ed 70%,#e7e0fb)}
 .cover-slot:nth-child(3){background:linear-gradient(145deg,#d7e8fa,#efd3f4 65%,#e3d4fc)}
 .premise-chapter,.process-chapter,.motion-chapter{position:relative;isolation:isolate}
-.premise-chapter::before,.process-chapter::before,.motion-chapter::before{content:"";position:absolute;pointer-events:none;z-index:-1;aspect-ratio:1;background-position:center;background-repeat:no-repeat;background-size:contain;filter:grayscale(1) brightness(.48);opacity:.29}
-.premise-chapter::before{background-image:url('/img/projects/futurescape/shape-eight.png');width:480px;right:calc((100% - 100vw)/2 - 120px);top:105px}
-.process-chapter::before{background-image:url('/img/projects/futurescape/shape-rings.png');width:360px;left:calc((100% - 100vw)/2 - 100px);top:180px}
-.motion-chapter::before{background-image:url('/img/projects/futurescape/shape-weave.png');width:420px;right:calc((100% - 100vw)/2 - 110px);top:190px}
+.premise-chapter::before,.process-chapter::before,.motion-chapter::before{content:"";position:absolute;pointer-events:none;z-index:-1;aspect-ratio:1;background-position:center;background-repeat:no-repeat;background-size:contain;filter:grayscale(1) brightness(.95);opacity:.29}
+.premise-chapter::before{background-image:url('/img/projects/futurescape/shape-eight.png');width:330px;right:-95px;top:75px}
+.process-chapter::before{background-image:url('/img/projects/futurescape/shape-rings.png');width:360px;left:calc((100% - 100vw)/2 - 100px);top:255px}
+.motion-chapter::before{background-image:url('/img/projects/futurescape/shape-weave.png');width:420px;right:calc((100% - 100vw)/2 - 110px);top:30px}
 .interlude{background:var(--ink);color:#fff;padding:46px 0 50px;position:relative;overflow:hidden}
 .interlude::before{content:"";position:absolute;right:6%;top:50%;transform:translateY(-50%);width:280px;height:46px;background:url('/img/projects/futurescape/diagonal-bars.png') center/contain no-repeat;opacity:.9;pointer-events:none}
 .interlude p{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.15rem,4vw,3.65rem);line-height:1.13;letter-spacing:-.045em;margin:0;max-width:900px}.interlude em{color:var(--acid);font-weight:400}
@@ -59,8 +59,9 @@
 .detail-slot{background:#e6d9f5}.detail-slot:nth-child(2){background:#dceafa}
 .detail-figure{margin:0;min-width:0}
 .detail-slot,.evidence-slot{padding:0;display:block;align-self:start}
-.detail-slot img,.evidence-slot img{position:static;display:block;width:100%;height:auto;border-radius:4px}
-.evidence-slot{background:#e2dcf6}.evidence-slot:nth-child(2){background:#e0eafa}
+.detail-slot img{position:static;display:block;width:100%;height:auto;border-radius:4px}
+.evidence-slot{aspect-ratio:1149/710;background:#e2dcf6}.evidence-slot:nth-child(2){background:#e0eafa}
+.evidence-slot img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;border-radius:4px}
 .motion-grid{display:grid;grid-template-columns:minmax(0,256fr) minmax(0,81fr);gap:24px;align-items:start;margin-top:38px}
 .motion-slot{background:linear-gradient(120deg,#d5d0ed,#e9d4f4 60%,#d7ecf4)}
 .video-slot{padding:0;background:var(--ink)}
