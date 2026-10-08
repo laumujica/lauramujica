@@ -1,5 +1,5 @@
 @font-face{font-family:Syne;src:url('/fonts/Syne-VariableFont_wght.ttf') format('truetype');font-weight:400 800;font-display:swap}
-.futurescape{--ink:#211269;--muted:#554d86;--paper:#f3f0fc;--acid:#f5ed41;color:var(--ink);background:var(--paper);font-family:Inter,Arial,sans-serif;line-height:1.6}
+.futurescape{--ink:#211269;--muted:#554d86;--paper:#f3f0fc;--acid:#f5ed41;color:var(--ink);background:var(--paper);font-family:Inter,Arial,sans-serif;line-height:1.6;overflow-x:clip}
 .futurescape .case-container{width:min(1280px,calc(100% - 96px))}
 .project-header{background:#fff}
 .futurescape .project-header .case-header{width:min(1280px,calc(100% - 96px));min-height:88px;color:#000}
@@ -21,12 +21,12 @@
 .tool-grid>div{border-left:2px solid var(--ink);padding-left:15px;min-width:0}
 .tool-grid b{display:block;font-size:.84rem;font-weight:600;line-height:1.35}
 .tool-grid span{display:block;font-size:.75rem;line-height:1.4;color:var(--muted);margin-top:4px}
-.asset-slot{--stroke-width:clamp(70px,20%,135px);background:#e5ddfa;border:1px solid rgba(33,18,105,.45);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2vw,30px);min-width:0;position:relative}
-.asset-slot::before{content:"";position:absolute;top:12px;left:18px;width:var(--stroke-width);height:3px;border-radius:999px;background:var(--acid);pointer-events:none;z-index:2}
-.hero-slot::after,.cover-slot:nth-child(2)::after,.detail-slot:first-child::after,.final-slot::after{content:"";position:absolute;top:5px;left:calc(18px + var(--stroke-width) - 7px);width:14px;height:17px;background:url('/img/projects/futurescape/diamond.png') center/contain no-repeat;pointer-events:none;z-index:2}
-.cover-slot:nth-child(2)::before,.final-slot::before{top:auto;bottom:12px;left:auto;right:18px}
-.cover-slot:nth-child(2)::after,.final-slot::after{top:auto;bottom:5px;left:auto;right:calc(18px + var(--stroke-width) - 7px)}
-.cover-slot:nth-child(3)::before,.detail-slot:nth-child(2)::before,.evidence-slot:nth-child(2)::before{left:auto;right:18px}
+.asset-slot{background:#e5ddfa;border:3px solid var(--acid);border-radius:8px;color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2vw,30px);min-width:0;position:relative}
+.asset-slot::before{content:"";position:absolute;top:-10px;left:24%;width:15px;height:18px;background:url('/img/projects/futurescape/diamond.png') center/contain no-repeat;pointer-events:none;z-index:2}
+.hero-slot::before,.detail-slot:first-child::before,.fast-slot::before{left:70%}
+.cover-slot:nth-child(2)::before,.final-slot::before{top:auto;bottom:-10px;left:38%}
+.cover-slot:nth-child(3)::before,.detail-slot:nth-child(2)::before{top:34%;left:auto;right:-9px}
+.evidence-slot:nth-child(2)::before{top:60%;left:-9px}
 .asset-slot span{color:#65549b}.asset-slot p{font-size:clamp(.96rem,1.2vw,1.1rem);line-height:1.4;font-weight:500;max-width:27ch;margin:20px 0 0}
 .hero-slot{aspect-ratio:4/3;background:linear-gradient(145deg,#e9d9f6,#bcd8f7 58%,#ead7f3)}
 .chapter{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(30px,4vw,55px);padding-block:clamp(70px,7vw,96px);border-bottom:1px solid #bcb3d3}
@@ -39,12 +39,12 @@
 .cover-slot:nth-child(2){background:linear-gradient(145deg,#e1dcfb,#cdf0ed 70%,#e7e0fb)}
 .cover-slot:nth-child(3){background:linear-gradient(145deg,#d7e8fa,#efd3f4 65%,#e3d4fc)}
 .cover-chapter,.process-chapter,.motion-chapter{position:relative;isolation:isolate}
-.cover-chapter::before,.process-chapter::before,.motion-chapter::before{content:"";position:absolute;pointer-events:none;z-index:-1;aspect-ratio:1;background-position:center;background-repeat:no-repeat;background-size:contain}
-.cover-chapter::before{background-image:url('/img/projects/futurescape/shape-eight.png');width:135px;right:12px;top:100px;opacity:.48}
-.process-chapter::before{background-image:url('/img/projects/futurescape/shape-rings.png');width:115px;right:2px;top:115px;opacity:.42}
-.motion-chapter::before{background-image:url('/img/projects/futurescape/shape-weave.png');width:150px;left:24px;top:250px;opacity:.48}
+.cover-chapter::before,.process-chapter::before,.motion-chapter::before{content:"";position:absolute;pointer-events:none;z-index:-1;aspect-ratio:1;background-position:center;background-repeat:no-repeat;background-size:contain;filter:grayscale(1) brightness(.55);opacity:.25}
+.cover-chapter::before{background-image:url('/img/projects/futurescape/shape-eight.png');width:480px;right:-355px;top:105px}
+.process-chapter::before{background-image:url('/img/projects/futurescape/shape-rings.png');width:360px;left:-285px;top:180px}
+.motion-chapter::before{background-image:url('/img/projects/futurescape/shape-weave.png');width:420px;right:-330px;top:190px}
 .interlude{background:var(--ink);color:#fff;padding:46px 0 50px;position:relative;overflow:hidden}
-.interlude::before{content:"";position:absolute;right:6%;top:48%;width:280px;height:46px;background:url('/img/projects/futurescape/diagonal-bars.png') center/contain no-repeat;opacity:.2;pointer-events:none}
+.interlude::before{content:"";position:absolute;right:6%;top:48%;width:280px;height:46px;background:url('/img/projects/futurescape/diagonal-bars.png') center/contain no-repeat;opacity:.8;pointer-events:none}
 .interlude span{color:#d4c7fa}.interlude p{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.15rem,4vw,3.65rem);line-height:1.13;letter-spacing:-.045em;margin:12px 0 0;max-width:900px}.interlude em{color:var(--acid);font-weight:400}
 .detail-grid,.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:23px;margin-top:42px}
 .detail-slot{aspect-ratio:4/3;background:#e6d9f5}.detail-slot:nth-child(2){background:#dceafa}
@@ -56,7 +56,7 @@
 .outcome{background:var(--ink);color:#fff;padding:clamp(65px,7vw,95px) 0}
 .outcome-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(40px,5vw,80px)}
 .outcome h2{max-width:580px}.outcome p{max-width:600px;margin-bottom:0}
-.resource-links{display:grid;grid-template-columns:1fr;align-content:start;gap:17px}
+.resource-links{display:grid;grid-template-columns:1fr;align-content:start;gap:17px;width:min(100%,340px)}
 .resource-links a{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:84px;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.72);text-decoration:none;font-size:.91rem;font-weight:600;padding:18px 20px;transition:background .2s,color .2s,border-color .2s}
 .resource-links a:hover,.resource-links a:focus-visible{background:var(--acid);color:var(--ink);border-color:var(--acid)}.resource-links a span{font-size:1.3rem;color:var(--acid)}.resource-links a:hover span,.resource-links a:focus-visible span{color:var(--ink)}
 .futurescape .case-footer{color:var(--ink);border:0}
