@@ -40,9 +40,9 @@
 .cover-slot:nth-child(3){background:linear-gradient(145deg,#d7e8fa,#efd3f4 65%,#e3d4fc)}
 .cover-chapter,.process-chapter,.motion-chapter{position:relative;isolation:isolate}
 .cover-chapter::before,.process-chapter::before,.motion-chapter::before{content:"";position:absolute;pointer-events:none;z-index:-1;aspect-ratio:1;background-position:center;background-repeat:no-repeat;background-size:contain}
-.cover-chapter::before{background-image:url('/img/projects/futurescape/shape-eight.png');width:135px;right:12px;top:100px;opacity:.22}
-.process-chapter::before{background-image:url('/img/projects/futurescape/shape-rings.png');width:115px;right:2px;top:115px;opacity:.19}
-.motion-chapter::before{background-image:url('/img/projects/futurescape/shape-weave.png');width:150px;left:24px;top:250px;opacity:.23}
+.cover-chapter::before{background-image:url('/img/projects/futurescape/shape-eight.png');width:135px;right:12px;top:100px;opacity:.48}
+.process-chapter::before{background-image:url('/img/projects/futurescape/shape-rings.png');width:115px;right:2px;top:115px;opacity:.42}
+.motion-chapter::before{background-image:url('/img/projects/futurescape/shape-weave.png');width:150px;left:24px;top:250px;opacity:.48}
 .interlude{background:var(--ink);color:#fff;padding:46px 0 50px;position:relative;overflow:hidden}
 .interlude::before{content:"";position:absolute;right:6%;top:48%;width:280px;height:46px;background:url('/img/projects/futurescape/diagonal-bars.png') center/contain no-repeat;opacity:.2;pointer-events:none}
 .interlude span{color:#d4c7fa}.interlude p{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.15rem,4vw,3.65rem);line-height:1.13;letter-spacing:-.045em;margin:12px 0 0;max-width:900px}.interlude em{color:var(--acid);font-weight:400}
