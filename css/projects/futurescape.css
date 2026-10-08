@@ -4,7 +4,7 @@
 .futurescape .case-nav a[aria-current]{text-decoration:underline;text-decoration-color:var(--acid);text-underline-offset:7px}
 .futurescape .case-footer{color:var(--ink);border-color:var(--ink)}
 .futurescape .hero{position:relative;padding-top:clamp(52px,7vw,100px);padding-bottom:56px}
-.futurescape .hero::before{content:"";position:absolute;z-index:-1;inset:-86px -5vw 13%;background:radial-gradient(ellipse at 76% 15%,#b6f3ff 0,transparent 38%),radial-gradient(ellipse at 16% 62%,#e8c2fa 0,transparent 43%),radial-gradient(ellipse at 85% 82%,#b6a7f3 0,transparent 47%)}
+.futurescape .hero::before{content:"";position:absolute;z-index:-1;inset:-86px 0 13%;background:radial-gradient(ellipse at 76% 15%,#b6f3ff 0,transparent 38%),radial-gradient(ellipse at 16% 62%,#e8c2fa 0,transparent 43%),radial-gradient(ellipse at 85% 82%,#b6a7f3 0,transparent 47%)}
 .eyebrow,.section-label,.project-meta span,.tools-label,.asset-slot span{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.065em;text-transform:uppercase}
 .eyebrow{margin:0 0 22px}
 .hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(3.1rem,5.7vw,6rem);font-weight:400;letter-spacing:-.07em;line-height:1.02;margin:0;max-width:1050px;text-wrap:balance}
