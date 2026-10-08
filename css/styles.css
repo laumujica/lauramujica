@@ -676,14 +676,18 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
   font-size:1.2rem;color:var(--white);margin-bottom:0.5rem;line-height:1.2;
 }
 .proj-desc{font-size:0.82rem;color:var(--white80);line-height:1.65;font-weight:300}
-.proj-arrow{
-  position:absolute;top:1.25rem;right:1.25rem;
-  font-size:1rem;color:var(--white40);
-  transition:color .2s,transform .2s;
+.proj-skills{
+  display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.15rem;
 }
-.proj-card:hover .proj-arrow{color:var(--yellow);transform:translate(3px,-3px)}
+.proj-skill{
+  display:inline-flex;align-items:center;
+  padding:0.4rem 0.68rem;border:1px solid var(--white40);
+  border-radius:999px;background:var(--white15);
+  color:var(--white);font-size:0.68rem;line-height:1.2;
+  font-weight:500;white-space:nowrap;
+}
 .proj-year{
-  margin-top:1.5rem;
+  margin-top:1.25rem;
   font-size:0.7rem;letter-spacing:0.1em;color:var(--white60);
 }
 
