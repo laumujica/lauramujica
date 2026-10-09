@@ -12,17 +12,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08b890">
-  <title>Usados Copados — UX/UI Case Study | Laura Mujica</title>
-  <meta name="description" content="A UX/UI case study for a second-hand marketplace: research, professional feedback, information architecture, usability testing, a Figma UI system, and functional prototype.">
+  <title>Usados Copados — UI/UX Case Study | Laura Mujica</title>
+  <meta name="description" content="A UI/UX case study for a second-hand marketplace: final interfaces, a reusable Figma design system, interface evolution, and a connected prototype.">
   <link rel="canonical" href="https://lauramujica.com/pages/projects/usados-copados/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Usados Copados — UX/UI Case Study | Laura Mujica">
+  <meta property="og:title" content="Usados Copados — UI/UX Case Study | Laura Mujica">
   <meta property="og:description" content="Designing trust, clearer choices, and reusable UI patterns for a second-hand marketplace concept.">
   <meta property="og:url" content="https://lauramujica.com/pages/projects/usados-copados/">
   <meta property="og:image" content="https://lauramujica.com/img/projects/usados-copados/hero-phones.webp">
   <link rel="icon" type="image/png" href="/img/Favicon.png">
   <link rel="stylesheet" href="/css/case-study.css">
-  <link rel="stylesheet" href="/css/projects/usados-copados.css?v=20261009c">
+  <link rel="stylesheet" href="/css/projects/usados-copados.css?v=20261009-ui">
 </head>
 <body class="case-study usados-copados">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,216 +41,29 @@
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="project-title">
-      <div class="hero-grid case-container">
-        <div class="hero-copy">
-          <div class="eyebrow"><span>UX/UI · Figma</span><span>Course project · 3 months · 2022</span></div>
-          <img class="project-wordmark" src="/img/projects/usados-copados/logo.png" alt="Usados Copados" width="604" height="235" fetchpriority="high">
-          <h1 id="project-title">Making second-hand exchanges feel <em>clearer</em> and more trustworthy.</h1>
-          <p class="hero-lede">A marketplace concept focused exclusively on used goods—developed through research, iterative professional feedback, a structured UI system, and a functional Figma prototype.</p>
-          <div class="hero-tags" aria-label="Project disciplines"><span>UX research</span><span>Information architecture</span><span>Interaction design</span><span>UI system</span></div>
-        </div>
-        <a class="hero-visual zoom-link" href="/img/projects/usados-copados/hero-phones.webp" target="_blank" rel="noopener" aria-label="Open the Usados Copados final interface mockup at full size">
-          <img src="/img/projects/usados-copados/hero-phones.webp" alt="Final Usados Copados mobile screens showing home, onboarding, publishing, account and product detail interfaces" width="2200" height="1238" decoding="async">
-        </a>
-      </div>
-      <div class="hero-meta case-container" aria-label="Project overview">
-        <div><small>My role</small><strong>UX/UI designer</strong><span>Concept, research, IA, interface, prototype, testing</span></div>
-        <div><small>Format</small><strong>Android app concept</strong><span>Designed and prototyped in Figma</span></div>
-        <div><small>Scope</small><strong>Reviewed academic project</strong><span>Three months of feedback and final approval by a UX/UI professional</span></div>
-      </div>
-    </section>
-
-    <nav class="section-nav" aria-label="Case study sections">
-      <div class="case-container">
-        <a href="#context">Context</a><a href="#research">Research</a><a href="#architecture">IA</a><a href="#flow">Flow</a><a href="#testing">Testing</a><a href="#ui">UI system</a><a href="#final">Final UI</a><a href="#prototype">Prototype</a>
-      </div>
-    </nav>
-
-    <section class="chapter case-container" id="context" aria-labelledby="context-title">
-      <header class="chapter-head"><span>01 / Context</span><h2 id="context-title">Useful objects get stuck. Trust gets in the way.</h2></header>
-      <div class="chapter-copy two-col">
-        <p>Usados Copados started from a familiar situation: I wanted to let go of things I no longer used, but many still had value. Existing marketplaces made it possible to publish them, yet they mixed new and used products and often gave too little context about the people on either side of an exchange.</p>
-        <p>I framed the opportunity as a marketplace dedicated to used goods in Argentina, with enough information to help people judge both a product and the person offering it. The native app remained a Figma prototype; later experiments explored the business idea through a different, no-code storefront.</p>
-      </div>
-      <div class="project-path" aria-label="Project timeline">
-        <article><small>Academic foundation</small><strong>3 months</strong><p>Iterative UX/UI work reviewed through multiple deliveries by a professional designer, then approved as the final course project.</p></article>
-        <article><small>Business exploration</small><strong>Later course</strong><p>I returned to the idea through a Business Model Canvas, without turning that exercise into a new digital product.</p></article>
-        <article><small>Operational experiment</small><strong>1 year</strong><p>I maintained an Empretienda storefront under <b>usadoscopados.ar</b>. This tested the marketplace idea, not the Figma app itself.</p></article>
-      </div>
-      <div class="problem-grid">
-        <article><b>01</b><h3>Reduce uncertainty</h3><p>Make identity, reputation, transaction history, and seller context visible before a conversation begins.</p></article>
-        <article><b>02</b><h3>Support more than selling</h3><p>Include buying, selling, and “offering”: passing an object on without a price or expected return.</p></article>
-        <article><b>03</b><h3>Keep the path understandable</h3><p>Guide search and publishing while allowing visitors to explore before creating an account.</p></article>
-      </div>
-    </section>
-
-    <section class="chapter research-band" id="research" aria-labelledby="research-title">
-      <div class="case-container">
-        <header class="chapter-head light"><span>02 / Research</span><h2 id="research-title">I used research to turn a broad idea into a product structure.</h2></header>
-        <div class="research-layout">
-          <div class="research-copy">
-            <p>I compared Mercado Libre, OLX, Wallapop, and Facebook Marketplace, looking at navigation, product discovery, profile information, reputation, and the role each platform played in a transaction.</p>
-            <p>The comparison exposed a useful gap: a focused second-hand experience could make trust cues more prominent instead of treating them as secondary information. I translated that direction into scenarios and two provisional personas—a seller and a buyer—to keep the early flows concrete.</p>
-          </div>
-          <div class="research-notes" aria-label="Research outputs">
-            <span>Competitive analysis</span><span>Desktop research</span><span>POV + scenario</span><span>2 provisional personas</span><span>Storyboard</span><span>MVP definition</span>
-          </div>
-        </div>
-        <div class="insight-strip">
-          <p><strong>Design principle</strong> Trust should not be a badge added at the end. It should be part of how products, profiles, and transactions are read.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter case-container" id="architecture" aria-labelledby="architecture-title">
-      <header class="chapter-head"><span>03 / Information architecture</span><h2 id="architecture-title">Ten participants helped reorganize the mental model.</h2></header>
-      <div class="chapter-copy two-col">
-        <p>I ran a hybrid card sort with <strong>10 participants</strong> between 20 and 65 years old. They grouped <strong>20 content cards</strong> into suggested categories and could create new categories when the model did not fit.</p>
-        <p>The similarity matrix and dendrogram showed strong agreement around account-related content and the relationship between product information and promotion. They also exposed unclear labels—notably “Buyer” and “Seller”—and no meaningful agreement about Notifications.</p>
-      </div>
-      <div class="evidence-grid evidence-grid--two">
-        <figure><a class="zoom-link" href="/img/projects/usados-copados/card-sorting.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/card-sorting.webp" alt="Original card sorting plan with 20 cards, five proposed categories and participant profile" loading="lazy"></a><figcaption>Hybrid card sort: 20 cards, five starting categories.</figcaption></figure>
-        <figure><a class="zoom-link" href="/img/projects/usados-copados/similarity-matrix.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/similarity-matrix.webp" alt="Original card sorting similarity matrix with annotated observations" loading="lazy"></a><figcaption>Similarity analysis made points of agreement—and confusion—visible.</figcaption></figure>
-      </div>
-      <div class="iteration-intro">
-        <h3>Three IA iterations, not one polished answer</h3>
-        <p>I first adapted the hypothetical architecture to the card-sort results, then revisited the difficult cards through informal follow-ups, and finally used a Crazy 8 exercise with classmates and a tutor to explore a different publishing model.</p>
-      </div>
-      <div class="iteration-grid">
-        <figure><img src="/img/projects/usados-copados/ia-iteration-1.webp" alt="First iteration of the Usados Copados information architecture" loading="lazy"><figcaption><b>Iteration 1</b><span>Removed Messages from the primary level.</span></figcaption></figure>
-        <figure><img src="/img/projects/usados-copados/ia-iteration-2.webp" alt="Second iteration of the Usados Copados information architecture" loading="lazy"><figcaption><b>Iteration 2</b><span>Reassigned ambiguous content after follow-ups.</span></figcaption></figure>
-        <figure><img src="/img/projects/usados-copados/ia-iteration-3.webp" alt="Third iteration of the Usados Copados information architecture" loading="lazy"><figcaption><b>Iteration 3</b><span>Expanded Publish into distinct user intentions.</span></figcaption></figure>
-      </div>
-      <div class="decision-card">
-        <div><small>Resulting primary navigation</small><strong>Home · History · Publish · My Account</strong></div>
-        <p>Messaging remained available in context rather than occupying a primary destination. Publish became the point where different exchange intentions were made explicit.</p>
-      </div>
-    </section>
-
-    <section class="chapter flow-band" id="flow" aria-labelledby="flow-title">
-      <div class="case-container">
-        <header class="chapter-head"><span>04 / Core flow</span><h2 id="flow-title">The MVP connected publishing, discovery, and trust.</h2></header>
-        <div class="flow-layout">
-          <div class="flow-copy">
-            <p>The main Figma flow followed one scenario: publish a camera, find another model within a budget, and inspect the seller before deciding whether to make contact. This linked the marketplace action to the trust information that supported it.</p>
-            <ol>
-              <li><b>Publish</b><span>Choose Sell, add details and photographs, review, publish.</span></li>
-              <li><b>Search</b><span>Enter a query, scan results, use filters and sorting.</span></li>
-              <li><b>Evaluate</b><span>Read the listing, open the seller profile, compare history and ratings.</span></li>
-            </ol>
-          </div>
-          <a class="flow-map zoom-link" href="/img/projects/usados-copados/user-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/user-flow.webp" alt="Original Figma user flow for opening the app, publishing a camera, searching and reviewing a seller profile" loading="lazy"></a>
-        </div>
-        <div class="prototype-proof">
-          <a class="zoom-link" href="/img/projects/usados-copados/low-fi-prototype.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/low-fi-prototype.webp" alt="Overview of the low-fidelity functional prototype screens in Figma" loading="lazy"></a>
-          <div><small>Low-fidelity wireflow</small><h3>Connected before it was polished</h3><p>The early prototype covered the entire task path rather than isolated screens. That made it possible to test labels, sequence, scrolling, search behavior, photo upload, and profile navigation together.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter case-container" id="testing" aria-labelledby="testing-title">
-      <header class="chapter-head"><span>05 / Usability testing</span><h2 id="testing-title">Five moderated sessions exposed what visual polish had hidden.</h2></header>
-      <div class="testing-overview">
-        <div class="test-stat"><strong>5</strong><span>participants</span></div>
-        <div class="test-stat"><strong>5</strong><span>task groups</span></div>
-        <div class="test-stat"><strong>21</strong><span>minutes average</span></div>
-        <div class="testing-copy"><p>I moderated remote sessions using Figma and Meet with adults who had bought or sold used products online. I reviewed the recordings again as an observer to capture behavior I could not record while moderating.</p><p>The sample did not include the older adult and participant with a disability I had intended to recruit, so I did not treat these sessions as accessibility validation.</p></div>
-      </div>
-      <div class="findings-table" role="table" aria-label="Usability testing findings and responses">
-        <div class="findings-head" role="row"><span role="columnheader">Observed friction</span><span role="columnheader">Design response</span></div>
-        <div role="row"><span role="cell"><b>Sell vs. Offer</b> created hesitation because the distinction was not self-evident.</span><span role="cell">Clarify the two models during onboarding and at the publishing decision.</span></div>
-        <div role="row"><span role="cell"><b>Small, low-contrast text</b> made confirmation and product information difficult to read.</span><span role="cell">Increase type sizes, strengthen text colors, and reduce content density.</span></div>
-        <div role="row"><span role="cell"><b>Photo upload</b> used imagery and an icon that some participants misread.</span><span role="cell">Use a more familiar upload pattern with explicit guidance and feedback.</span></div>
-        <div role="row"><span role="cell"><b>Navigation state</b> was weak: history was absent and selected tabs were unclear.</span><span role="cell">Add persistent navigation and visible active/selected states.</span></div>
-        <div role="row"><span role="cell"><b>Seller status and ratings</b> needed more context to support judgment.</span><span role="cell">Clarify online status, reduce unrealistic counts, and expand profile evidence.</span></div>
-      </div>
-      <div class="evidence-grid evidence-grid--two testing-evidence">
-        <figure><a class="zoom-link" href="/img/projects/usados-copados/testing-summary.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/testing-summary.webp" alt="Original executive summary of usability findings and 17 recommended interface changes" loading="lazy"></a><figcaption>Original executive summary: what worked, what did not, and 17 changes to make.</figcaption></figure>
-        <figure><a class="zoom-link" href="/img/projects/usados-copados/testing-conclusions.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/testing-conclusions.webp" alt="Original conclusions from the five moderated usability sessions" loading="lazy"></a><figcaption>The test report also records limitations and questions still open.</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="chapter evolution-band" aria-labelledby="evolution-title">
-      <div class="case-container">
-        <header class="chapter-head light"><span>06 / Interface evolution</span><h2 id="evolution-title">The interface moved from task completion to clearer decision-making.</h2></header>
-        <div class="evolution-grid">
-          <article><span>Before</span><h3>Low-fidelity test</h3><p>The flow was complete enough to reveal structural issues, but its temporary color choices and text hierarchy reduced legibility.</p><ul><li>Ambiguous action labels</li><li>Weak active states</li><li>Dense screens</li><li>Missing history navigation</li></ul></article>
-          <div class="evolution-arrow" aria-hidden="true">→</div>
-          <article><span>After</span><h3>Higher-fidelity direction</h3><p>The later UI made the core actions visually distinct, repeated navigation patterns, and gave profiles more space to establish credibility.</p><ul><li>Action-specific colors</li><li>Clearer selected states</li><li>Guided forms</li><li>Visible identity cues</li></ul></article>
-        </div>
-        <div class="review-loop">
-          <small>Professional feedback loop</small>
-          <h3>Three months of staged reviews</h3>
-          <p>Each delivery received observations from a UX/UI design professional. I used that feedback to revisit the structure, task flow, testing documentation, and interface before the project received final approval.</p>
-        </div>
-        <a class="wide-proof zoom-link" href="/img/projects/usados-copados/sell-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/sell-flow.webp" alt="Higher-fidelity publishing flow from choosing Sell to activating and viewing the listing" loading="lazy"></a>
-      </div>
-    </section>
-
-    <section class="chapter case-container" id="ui" aria-labelledby="ui-title">
-      <header class="chapter-head"><span>07 / UI system</span><h2 id="ui-title">The visual identity became a reusable interface language.</h2></header>
-      <div class="chapter-copy two-col">
-        <p>I translated the moodboard into documented foundations in Figma: a Roboto Flex type scale, named color roles, icon and avatar families, an 8 px grid, a four-column mobile structure, and spacing based on multiples of eight.</p>
-        <p>The file predates Figma Variables, so its token layer lives in named local paint and text styles. Components, variants, and atomic naming then carry those decisions into navigation, cards, buttons, search, forms, feedback, and profile patterns.</p>
-      </div>
-      <div class="system-summary" aria-label="Figma system foundations">
-        <article><small>Typography</small><strong>16 text styles</strong><p>Title, label, body, headline, subheadline, and button roles built with Roboto Flex.</p></article>
-        <article><small>Color</small><strong>23 paint styles</strong><p>Primary, secondary, neutral, success, warning, error, and information families.</p></article>
-        <article><small>Layout</small><strong>8 px foundation</strong><p>Four mobile columns with 16 px margins and gutters, plus a spacing scale based on eight.</p></article>
-        <article><small>Architecture</small><strong>Atomic structure</strong><p>Atoms, molecules, and organisms named to expose composition and reuse.</p></article>
-      </div>
-      <div class="ui-evidence-grid">
+<section class="hero" id="hero_and_overview" aria-labelledby="project-title">
+  <div class="case-container hero-banner"><figure class="hero-visual"><a class="zoom-link" href="/img/projects/usados-copados/hero-phones.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/hero-phones.webp" alt="Key final Usados Copados mobile interfaces" fetchpriority="high" decoding="async"></a></figure></div>
+  <div class="case-container hero-copy hero-overview">
+    <div class="eyebrow"><span>UI/UX · Figma</span><span>Concept Project · 3 Months</span></div>
+    <img class="project-wordmark" src="/img/projects/usados-copados/logo.png" alt="Usados Copados" width="604" height="235">
+    <h1 id="project-title">Usados Copados: A Peer-to-Peer Used Goods Marketplace</h1>
+    <p class="hero-lede">Crafting a scalable UI system and intuitive mobile experience for buying and selling second-hand items.</p>
+    <p class="overview-description">Designed end-to-end user interfaces, established a comprehensive Figma Design System, and validated flows with user testing under professional design mentorship.</p>
+  </div>
+  <div class="hero-meta case-container" aria-label="Project overview">
+    <div><small>My role</small><strong>Lead UI Designer &amp; Systems Lead</strong><span>End-to-end interface design, UI system, prototype, testing</span></div>
+    <div><small>Timeline</small><strong>3 Months</strong><span>Android app concept</span></div>
+    <div><small>Focus</small><strong>UI design + systems</strong><span>Reusable patterns and a connected mobile experience</span></div>
+  </div>
+</section><nav class="section-nav" aria-label="Case study sections"><div class="case-container"><a href="#final_showcase">Final UI</a><a href="#figma_design_system">Design system</a><a href="#interface_evolution">Evolution</a><a href="#interactive_prototyping">Prototype</a><a href="#ux_foundation">UX foundation</a><a href="#reflections">Takeaways</a></div></nav><section class="chapter final-band" id="final_showcase" aria-labelledby="final_showcase-title"><div class="case-container"><header class="chapter-head"><span>01 / Final Interface Showcase</span><h2 id="final_showcase-title">Final Interface Showcase</h2></header><p class="section-lede">A quick look at the polished interface designed for clarity, trust, and speed.</p><div class="final-grid"><figure class="final-card"><a class="zoom-link" href="/img/projects/usados-copados/search-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/search-flow.webp" alt="Final discovery, search and conversation screens" loading="lazy" decoding="async"></a><figcaption><b>Discovery &amp; Home</b><span>Clean grid layouts with prominent visual hierarchy for quick browsing.</span></figcaption></figure><figure class="final-card"><a class="zoom-link" href="/img/projects/usados-copados/verified-profile.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/verified-profile.webp" alt="Product listing and verified seller profile" loading="lazy" decoding="async"></a><figcaption><b>Product Detail &amp; Buyer Trust</b><span>Clear CTA placement, condition badges, and direct seller communication entry points.</span></figcaption></figure><figure class="final-card final-card--wide"><a class="zoom-link" href="/img/projects/usados-copados/sell-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/sell-flow.webp" alt="Final publishing and photo upload flow" loading="lazy" decoding="async"></a><figcaption><b>Publishing Flow</b><span>Streamlined step-by-step form with dynamic image upload components.</span></figcaption></figure></div></div></section><section class="chapter case-container" id="figma_design_system" aria-labelledby="figma_design_system-title"><header class="chapter-head"><span>02 / Design System &amp; Figma Architecture</span><h2 id="figma_design_system-title">Design System &amp; Figma Architecture</h2></header><p class="section-lede system-lede">Rather than designing isolated screens, I built a centralized UI library in Figma using Atomic Design principles. The goal was to ensure visual consistency, speed up prototype iterations, and simulate a real-world production environment ready for developer handoff.</p><div class="system-summary"><article><small>01 / Foundations</small><h3>Grid &amp; Spacing Foundations</h3><p>Established an 8-point grid system and a four-column mobile layout. The foundations use 16 px margins and gutters, with a spacing scale based on eight to maintain rhythm and visual balance.</p></article><article><small>02 / Foundations</small><h3>Styles &amp; Token Hierarchy</h3><p>Defined 16 modular typography styles using Roboto Flex and 23 paint styles covering primary, secondary, neutral, and semantic feedback roles. Named local text and paint styles form the token layer; migration to Figma Variables would be a next step.</p></article><article><small>03 / Foundations</small><h3>Reusable Components &amp; Layout</h3><p>Built reusable navigation bars, product cards, buttons, search, forms, and feedback patterns. Atomic naming connects atoms, molecules, and organisms so repeated interface decisions remain consistent across screens.</p></article><article><small>04 / Foundations</small><h3>Variants &amp; Interface States</h3><p>Organized components and variants for navigation, segmented controls, image sliders, dialogs, ratings, and status feedback. Selected and active states help make the available actions and current position visible.</p></article></div><div class="ui-evidence-grid">
         <figure><a class="zoom-link" href="/img/projects/usados-copados/identity-moodboard-temp.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/identity-moodboard-temp.webp" alt="Usados Copados moodboard connecting an ecological, honest and positive visual culture" loading="lazy"></a><figcaption><b>Visual identity + moodboard</b><span>Ecological, honest, and positive—not generic eco minimalism.</span></figcaption></figure>
         <figure><a class="zoom-link" href="/img/projects/usados-copados/ui-style-guide-temp.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/ui-style-guide-temp.webp" alt="Figma style guide with typography, color, icons, grid, columns and spacing" loading="lazy"></a><figcaption><b>Foundations</b><span>Type, color, elements, grid, columns, and spacing documented together.</span></figcaption></figure>
         <figure class="ui-evidence-wide"><a class="zoom-link" href="/img/projects/usados-copados/ui-components-temp.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/ui-components-temp.webp" alt="Original Figma UI kit with real Usados Copados components and interface states" loading="lazy"></a><figcaption><b>Components + states</b><span>Real project assets: tab bars, product cards, buttons, search, segmented controls, image sliders, dialogs, ratings, illustrations, and feedback states.</span></figcaption></figure>
       </div>
-      <div class="component-inventory">
-        <div><small>Component coverage</small><p>Top and bottom navigation · product cards · buttons · search bars · chips · segmented controls · forms · photo galleries · dialogs · toasts · ratings · status and notification states.</p></div>
-        <div><small>System boundary</small><p>This is a project-level Figma system, not a production library with code parity, governance, or releases. Its value is the repeatable logic used to build and revise a large connected prototype.</p></div>
-      </div>
-      <a class="figma-source-link" href="https://www.figma.com/design/vN3JBEAWVuOlprHGdol2je/Usados-Copados-%7C-Sustainable-Marketplace-App?node-id=901-6125&m=dev" target="_blank" rel="noopener">Inspect the UI system in Figma <span aria-hidden="true">↗</span></a>
-    </section>
-
-    <section class="chapter final-band" id="final" aria-labelledby="final-title">
-      <div class="case-container">
-        <header class="chapter-head"><span>08 / Final interface</span><h2 id="final-title">The final screens keep three journeys connected.</h2></header>
-        <div class="final-grid">
-          <figure class="final-card final-card--wide"><a class="zoom-link" href="/img/projects/usados-copados/search-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/search-flow.webp" alt="Search and direct messaging flow in the final Usados Copados interface" loading="lazy"></a><figcaption><b>Search + conversation</b><span>Move from query to results to a direct chat without losing context.</span></figcaption></figure>
-          <figure class="final-card"><a class="zoom-link" href="/img/projects/usados-copados/guest-to-account.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/guest-to-account.webp" alt="Guest profile and conversion to a registered account in the final interface" loading="lazy"></a><figcaption><b>Guest → account</b><span>Let people browse first, then explain the value of registering.</span></figcaption></figure>
-          <figure class="final-card"><a class="zoom-link" href="/img/projects/usados-copados/verified-profile.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/verified-profile.webp" alt="Verified seller profile mockup with listing and reputation information" loading="lazy"></a><figcaption><b>Verified profile</b><span>Bring identity, listings, ratings, and history into the buying decision.</span></figcaption></figure>
-          <figure class="final-card final-card--wide"><a class="zoom-link" href="/img/projects/usados-copados/brand-overview.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/brand-overview.webp" alt="Three branded Usados Copados app screens with the green, pink, blue and yellow visual language" loading="lazy"></a><figcaption><b>One visual language</b><span>Bright blocks, rounded geometry, and the lightning symbol make a functional flow feel approachable.</span></figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="prototype-section" id="prototype" aria-labelledby="prototype-title">
-      <div class="case-container">
-        <header class="chapter-head light"><span>09 / Functional prototype</span><h2 id="prototype-title">Explore the connected experience in Figma.</h2></header>
-        <div class="prototype-launch">
-          <div class="prototype-launch-copy">
-            <p>The high-fidelity prototype is organized into eight connected areas, from the splash screen and visitor experience through registration, identity validation, search, user profiles, and publishing.</p>
-            <div class="prototype-routes" aria-label="Prototype sections"><span>Splash</span><span>Visitor</span><span>Register</span><span>Log in</span><span>Validate identity</span><span>User profile</span><span>Search</span><span>Publish</span></div>
-            <a class="prototype-cta" href="https://www.figma.com/proto/vN3JBEAWVuOlprHGdol2je?kind=proto&amp;node-id=732-7996&amp;page-id=102:1378&amp;scaling=scale-down&amp;starting-point-node-id=906:7001" target="_blank" rel="noopener">Open the functional prototype <span aria-hidden="true">↗</span></a>
-          </div>
-          <a class="prototype-preview zoom-link" href="/img/projects/usados-copados/hero-phones.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/hero-phones.webp" alt="Selection of final Usados Copados screens included in the functional Figma prototype" loading="lazy"></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="reflection" aria-labelledby="reflection-title">
-      <div class="case-container reflection-grid">
-        <div><span>Reflection</span><h2 id="reflection-title">What the project proved—and what it did not.</h2></div>
-        <div class="reflection-copy">
-          <p>Usados Copados gave me a complete design loop: start from a personal observation, investigate the market, model the information, build a testable flow, receive professional feedback, watch people use it, and let those observations change the interface.</p>
-          <p>The Figma prototype showed that its core tasks could be understood by the five people I tested with, while revealing issues around language, legibility, and state. The later Business Model Canvas and year-long Empretienda experiment explored the idea from different angles; they did not validate the native app, environmental impact, or accessibility at scale.</p>
-          <p>If I continued today, I would retest the revised Sell/Offer explanation, include older and disabled participants, define rating criteria more carefully, and migrate the style-based token layer into Figma Variables with clearer component documentation.</p>
-          <a class="contact-cta" href="/pages/contact/">Discuss this project <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
+      <a class="figma-source-link" href="https://www.figma.com/design/vN3JBEAWVuOlprHGdol2je/Usados-Copados-%7C-Sustainable-Marketplace-App?node-id=901-6125&m=dev" target="_blank" rel="noopener">Inspect the UI system in Figma <span aria-hidden="true">↗</span></a></section><section class="chapter evolution-band" id="interface_evolution" aria-labelledby="interface_evolution-title"><div class="case-container"><header class="chapter-head light"><span>03 / Interface Evolution: Wireframes to High-Fi</span><h2 id="interface_evolution-title">Interface Evolution: Wireframes to High-Fi</h2></header><p class="section-lede">Translating functional wireframes into high-fidelity screens required refining visual hierarchy, contrast, and interactive feedback.</p><div class="evolution-comparison"><figure class=""><a class="zoom-link" href="/img/projects/usados-copados/low-fi-prototype.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/low-fi-prototype.webp" alt="Original low-fidelity connected screens" loading="lazy" decoding="async"></a><figcaption><b>Low-fi wireframes</b></figcaption></figure><figure class=""><a class="zoom-link" href="/img/projects/usados-copados/sell-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/sell-flow.webp" alt="High-fidelity publishing screens" loading="lazy" decoding="async"></a><figcaption><b>High-fi interface</b></figcaption></figure></div><div class="evolution-decisions"><article><h3>Navigation &amp; Header</h3><p>Refined bottom tab bar active states and simplified top bar actions to reduce cognitive load during search.</p></article><article><h3>Card Design &amp; Scannability</h3><p>Strengthened text hierarchy and reduced content density so product information is easier to scan.</p></article><article><h3>Form Controls &amp; Media Upload</h3><p>Revisited the upload icon, guidance, and feedback after participants misread the original photo-upload pattern.</p></article></div></div></section><section class="chapter prototype-section" id="interactive_prototyping" aria-labelledby="interactive_prototyping-title"><div class="case-container"><header class="chapter-head light"><span>04 / Prototyping &amp; Motion</span><h2 id="interactive_prototyping-title">Prototyping &amp; Motion</h2></header><div class="prototype-launch"><div class="prototype-launch-copy"><p>The connected Figma prototype brings publishing, discovery, and seller evaluation together into a testable mobile experience.</p><ul class="prototype-features"><li>Navigation and selected interface states</li><li>Connected paths from search to product and seller information</li><li>Publishing steps, photo upload, guidance, and feedback</li></ul><a class="prototype-cta" href="https://www.figma.com/proto/vN3JBEAWVuOlprHGdol2je?kind=proto&amp;node-id=732-7996&amp;page-id=102:1378&amp;scaling=scale-down&amp;starting-point-node-id=906:7001" target="_blank" rel="noopener">Open the functional prototype <span aria-hidden="true">↗</span></a></div><figure class="prototype-preview"><a class="zoom-link" href="/img/projects/usados-copados/hero-phones.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/hero-phones.webp" alt="Final screens in the functional Figma prototype" loading="lazy" decoding="async"></a></figure></div></div></section><section class="chapter case-container" id="ux_foundation" aria-labelledby="ux_foundation-title"><header class="chapter-head"><span>05 / UX Foundation &amp; Navigation Strategy</span><h2 id="ux_foundation-title">UX Foundation &amp; Navigation Strategy</h2></header><p class="section-lede">While the primary focus was on UI execution, all interface decisions were grounded in lightweight user research and information architecture validation.</p><div class="ux-summary"><article><h3>Card Sorting · 10 participants</h3><p>A hybrid sort of 20 content cards informed the navigation structure and exposed ambiguous labels.</p></article><article><h3>User Testing · 5 participants</h3><p>Moderated sessions identified friction around Sell vs. Offer, photo upload, legibility, and navigation states. These observations guided interface revisions.</p></article><article><h3>Architecture · 3 core actions</h3><p>Publish, search, and evaluate the seller form a connected task flow. The primary navigation is Home, History, Publish, and My Account.</p></article></div></section><section class="reflection" id="reflections" aria-labelledby="reflections-title"><div class="case-container reflection-grid"><div><span>06 / Takeaways</span><h2 id="reflections-title">Key Takeaways & UI Next Steps</h2></div><div class="reflection-copy"><p>Designing with systemization in mind dramatically accelerates layout iteration.</p><p>Prototyping realistic component states reveals visual edge cases earlier in the design process.</p><p>If continuing development, the immediate next step would be migrating local styles to Figma Variables for multi-theme support (Dark Mode) and building a comprehensive design token handoff document for front-end engineers.</p><a class="contact-cta" href="/pages/contact/">Discuss this project <span aria-hidden="true">↗</span></a></div></div></section>
+</main>
 
   <footer class="case-footer case-container"><a href="/pages/projects/">← All projects</a><span>Laura Mujica · 2026 <span aria-hidden="true">⚡</span></span><a href="/pages/contact/">Let's talk ↗</a></footer>
 </body>
 </html>
+
