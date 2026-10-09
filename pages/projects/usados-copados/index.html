@@ -22,7 +22,8 @@
   <meta property="og:image" content="https://lauramujica.com/img/projects/usados-copados/hero-phones.webp">
   <link rel="icon" type="image/png" href="/img/Favicon.png">
   <link rel="stylesheet" href="/css/case-study.css">
-  <link rel="stylesheet" href="/css/projects/usados-copados.css?v=20261009-system">
+  <link rel="stylesheet" href="/css/projects/usados-copados.css?v=20261009-review2">
+  <script src="/js/projects/usados-copados.js?v=20261009-review2" defer></script>
 </head>
 <body class="case-study usados-copados">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,16 +43,16 @@
 
   <main id="main">
     <section class="hero" id="overview" aria-labelledby="project-title">
-      <div class="case-container hero-banner">
-        <a class="hero-visual zoom-link" href="/img/projects/usados-copados/hero-phones.webp" target="_blank" rel="noopener">
+      <div class="case-container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>UI/UX · Figma</span><span>Concept project · Professional mentorship</span></div>
+          <img class="project-wordmark" src="/img/projects/usados-copados/logo.png" alt="Usados Copados" width="604" height="235">
+          <h1 id="project-title">A brand-led mobile interface built as a reusable system.</h1>
+          <p class="hero-lede">Usados Copados is a conceptual peer-to-peer marketplace for second-hand goods. I designed the interface and organized its visual foundations, reusable components, states, and functional prototype in Figma.</p>
+        </div>
+        <figure class="hero-visual">
           <img src="/img/projects/usados-copados/hero-phones.webp" alt="Usados Copados interface presented across several mobile devices" width="2200" height="1238" fetchpriority="high">
-        </a>
-      </div>
-      <div class="case-container hero-copy">
-        <div class="eyebrow"><span>UI/UX · Figma</span><span>Concept project · Professional mentorship</span></div>
-        <img class="project-wordmark" src="/img/projects/usados-copados/logo.png" alt="Usados Copados" width="604" height="235">
-        <h1 id="project-title">A brand-led mobile interface built as a reusable system.</h1>
-        <p class="hero-lede">Usados Copados is a conceptual peer-to-peer marketplace for second-hand goods. I designed the interface and organized its visual foundations, reusable components, states, and functional prototype in Figma.</p>
+        </figure>
       </div>
       <div class="hero-meta case-container" aria-label="Project overview">
         <div><small>Role</small><strong>UI/UX Designer</strong><span>Interface, UI kit, prototype</span></div>
@@ -68,6 +69,7 @@
         <a href="#components">Components</a>
         <a href="#interface">Interface</a>
         <a href="#prototype">Prototype</a>
+        <a href="#conclusion">Conclusion</a>
       </div>
     </nav>
 
@@ -82,10 +84,18 @@
       <div class="identity-board" aria-label="Usados Copados visual identity summary">
         <div class="identity-logo"><img src="/img/projects/usados-copados/logo.png" alt="Usados Copados logo" width="604" height="235"></div>
         <div class="identity-principles"><span>Ecological</span><span>Honest</span><span>Positive</span></div>
-        <div class="identity-type"><small>Interface typeface</small><strong>Roboto Flex</strong><span>Title · Label · Body · Button</span></div>
-        <div class="identity-colors" aria-label="Brand color palette"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="identity-type"><small>Typography</small><strong>Roboto Flex</strong><span>Title · Label · Body · Button</span></div>
+        <div class="identity-colors" aria-label="Brand color palette"><i><span>Green</span></i><i><span>Yellow</span></i><i><span>Pink</span></i><i><span>Blue</span></i><i><span>Orange</span></i></div>
         <div class="identity-shapes" aria-hidden="true"><i></i><i></i><i></i><i></i><b>ϟ</b></div>
       </div>
+      <div class="identity-details">
+        <article><small>Logo system</small><h3>A bold wordmark with a reusable symbol.</h3><p>The lightning symbol works as a compact brand cue across navigation, loading states, and interface details.</p></article>
+        <article><small>Graphic language</small><h3>Organic shapes keep the system recognizable.</h3><p>Circles, arcs, rounded blocks, and small triangular patterns carry the identity beyond the logo without competing with the interface.</p></article>
+      </div>
+      <figure class="identity-moodboard wide-evidence">
+        <a class="zoom-link" href="/img/projects/usados-copados/identity-moodboard.png" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/identity-moodboard.png" alt="Usados Copados moodboard organized around ecological, honest, and positive visual directions" width="3194" height="1997" loading="lazy"></a>
+        <figcaption><b>Moodboard</b><span>The visual direction connects responsible consumption with an inclusive, optimistic, and expressive tone.</span></figcaption>
+      </figure>
     </section>
 
     <section class="chapter foundations-band" id="foundations" aria-labelledby="foundations-title">
@@ -104,7 +114,7 @@
           <article><small>Spacing</small><h3>8 px foundation</h3><p>A spacing rhythm based on multiples of eight across layouts and components.</p></article>
         </div>
         <figure class="wide-evidence">
-          <a class="zoom-link" href="/img/projects/usados-copados/figma-style-guide.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/figma-style-guide.webp" alt="Figma style guide covering typography, color roles, iconography, grid, columns, and spacing" width="2200" height="1905" loading="lazy"></a>
+          <a class="zoom-link" href="/img/projects/usados-copados/figma-style-guide.png" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/figma-style-guide.png" alt="Figma style guide covering typography, color roles, iconography, grid, columns, and spacing" width="1591" height="1378" loading="lazy"></a>
           <figcaption><b>Style guide</b><span>Typography, color roles, visual elements, grid, columns, and spacing documented together.</span></figcaption>
         </figure>
       </div>
@@ -120,7 +130,7 @@
           <p>The UI kit gathers recurring patterns in one place: navigation, product cards, buttons, search, segmented controls, feedback messages, galleries, ratings, illustrations, and dialog states.</p>
         </div>
         <figure class="wide-evidence wide-evidence--dark">
-          <a class="zoom-link" href="/img/projects/usados-copados/figma-ui-kit.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/figma-ui-kit.webp" alt="Usados Copados Figma UI kit with reusable interface components and states" width="2600" height="1458" loading="lazy"></a>
+          <a class="zoom-link" href="/img/projects/usados-copados/figma-ui-kit.png" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/figma-ui-kit.png" alt="Usados Copados Figma UI kit with reusable interface components and states" width="3133" height="1757" loading="lazy"></a>
           <figcaption><b>UI kit</b><span>Component families and interface states collected alongside examples of their use.</span></figcaption>
         </figure>
         <div class="atomic-proof">
@@ -141,11 +151,11 @@
       </div>
       <div class="screen-sequences">
         <figure>
-          <a class="zoom-link" href="/img/projects/usados-copados/splash-sequence.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/splash-sequence.webp" alt="Usados Copados splash and loading screen sequence" width="2200" height="727" loading="lazy"></a>
+          <a class="zoom-link" href="/img/projects/usados-copados/splash-sequence.png" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/splash-sequence.png" alt="Usados Copados splash and loading screen sequence" width="3124" height="1032" loading="lazy"></a>
           <figcaption><b>Splash + loading states</b><span>The logo, symbol, color, and organic shapes establish the brand before the main experience begins.</span></figcaption>
         </figure>
         <figure>
-          <a class="zoom-link" href="/img/projects/usados-copados/profile-sequence.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/profile-sequence.webp" alt="Usados Copados home, history, chat, account, visitor, and feedback screens" width="2800" height="620" loading="lazy"></a>
+          <a class="zoom-link" href="/img/projects/usados-copados/profile-sequence.png" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/profile-sequence.png" alt="Usados Copados home, history, chat, account, visitor, and feedback screens" width="5334" height="1182" loading="lazy"></a>
           <figcaption><b>Account + activity states</b><span>Navigation, cards, segmented controls, conversation, profile information, and feedback remain visually connected.</span></figcaption>
         </figure>
       </div>
@@ -161,12 +171,35 @@
           <h2 id="prototype-title">Functional prototype</h2>
         </header>
         <div class="prototype-only">
-          <a class="prototype-flow" href="/img/projects/usados-copados/prototype-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/prototype-flow.webp" alt="Overview of the complete Usados Copados Figma prototype flow" width="446" height="637" loading="lazy"></a>
+          <a class="prototype-flow zoom-link" href="/img/projects/usados-copados/prototype-flow.webp" target="_blank" rel="noopener"><img src="/img/projects/usados-copados/prototype-flow.webp" alt="Overview of the complete Usados Copados Figma prototype flow" width="446" height="637" loading="lazy"></a>
           <a class="prototype-cta" href="https://www.figma.com/proto/vN3JBEAWVuOlprHGdol2je?kind=proto&amp;node-id=732-7996&amp;page-id=102:1378&amp;scaling=scale-down&amp;starting-point-node-id=906:7001" target="_blank" rel="noopener">Open the functional prototype <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
+
+    <section class="reflection" id="conclusion" aria-labelledby="conclusion-title">
+      <div class="case-container reflection-grid">
+        <div><span>06 / Conclusion</span><h2 id="conclusion-title">What the project proved—and what it did not.</h2></div>
+        <div class="reflection-copy">
+          <p>Usados Copados gave me a complete design loop: start from a personal observation, investigate the market, model the information, build a testable flow, receive professional feedback, watch people use it, and let those observations change the interface.</p>
+          <p>The Figma prototype showed that its core tasks could be understood by the five people I tested with, while revealing issues around language, legibility, and state. The later Business Model Canvas and year-long Empretienda experiment explored the idea from different angles; they did not validate the native app, environmental impact, or accessibility at scale.</p>
+          <a class="contact-cta" href="/pages/contact/">Discuss this project <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <div class="image-viewer" id="image-viewer" role="dialog" aria-modal="true" aria-labelledby="image-viewer-title" hidden>
+    <div class="image-viewer__toolbar">
+      <span id="image-viewer-title">Image detail</span>
+      <div class="image-viewer__actions">
+        <button type="button" data-view="fit">Fit</button>
+        <button type="button" data-view="actual">100%</button>
+        <button type="button" data-view="close" aria-label="Close image viewer">Close</button>
+      </div>
+    </div>
+    <div class="image-viewer__stage" tabindex="0"><img alt="" draggable="false"></div>
+  </div>
 
   <footer class="case-footer case-container"><a href="/pages/projects/">← All projects</a><span>Laura Mujica · 2026 <span aria-hidden="true">⚡</span></span><a href="/pages/contact/">Let's talk ↗</a></footer>
 </body>
