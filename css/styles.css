@@ -257,10 +257,10 @@ nav{
 .pill{
   padding:7px 16px;border-radius:100px;
   border:1px solid var(--yellow);
-  font-size:0.72rem;letter-spacing:0.06em;color:var(--white);
+  font-size:0.72rem;letter-spacing:0.06em;color:var(--pink-dark);
   background:var(--yellow);font-weight:500;text-transform:uppercase;
 }
-.pill.hl{background:var(--yellow);border-color:var(--yellow);color:var(--white)}
+.pill.hl{background:var(--yellow);border-color:var(--yellow);color:var(--pink-dark)}
 
 /* ── THEME SWITCHING ── */
 body[data-theme="light"]{
@@ -517,11 +517,11 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 .tool-pill{
   display:inline-flex;align-items:center;gap:5px;
   padding:5px 11px;border-radius:100px;
-  background:var(--yellow);border:1px solid var(--yellow);
-  font-size:0.7rem;color:var(--white);font-weight:500;text-transform:uppercase;
+  background:var(--white);border:1px solid var(--white);
+  font-size:0.7rem;color:#171717;font-weight:500;
   transition:filter .2s;
 }
-.tool-pill:hover{filter:brightness(1.08)}
+.tool-pill:hover{filter:brightness(0.94)}
 .tool-emoji{font-size:0.85rem}
 
 /* ── TESTIMONIALS ── */
@@ -666,8 +666,6 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 .proj-card:hover{background:rgba(255,255,255,0.22);transform:translateY(-3px)}
 .proj-card--in-progress{cursor:default;display:flex;flex-direction:column;min-height:220px}
 .proj-card--in-progress:hover{background:var(--white15);transform:none}
-.proj-card--in-progress .proj-status{align-self:flex-start;margin-top:auto}
-.proj-status{display:inline-block;margin-top:1rem;padding:0.35rem 0.65rem;border:1px solid var(--yellow);border-radius:999px;background:var(--yellow);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--white)}
 .proj-tag{
   font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
   color:var(--yellow);margin-bottom:0.9rem;
@@ -684,7 +682,7 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
   display:inline-flex;align-items:center;
   padding:0.4rem 0.68rem;border:1px solid var(--yellow);
   border-radius:999px;background:var(--yellow);
-  color:var(--white);font-size:0.68rem;line-height:1.2;
+  color:var(--pink-dark);font-size:0.68rem;line-height:1.2;
   font-weight:500;text-transform:uppercase;white-space:nowrap;
 }
 .proj-year{
@@ -857,7 +855,7 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 .svc-tag{
   font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
   border:1px solid var(--yellow);border-radius:100px;
-  padding:3px 10px;background:var(--yellow);color:var(--white);
+  padding:3px 10px;background:var(--yellow);color:var(--pink-dark);
   font-weight:500;
 }
 .services-cta-block{
