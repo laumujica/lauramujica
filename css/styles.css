@@ -655,7 +655,7 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 /* ── PROJECTS LIST ── */
 .proj-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:14px;margin-top:1rem;
 }
 .proj-card{
@@ -669,7 +669,7 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 .proj-card--in-progress{cursor:default;display:flex;flex-direction:column;min-height:220px}
 .proj-card--in-progress:hover{background:var(--white15);transform:none}
 .proj-card--in-progress .proj-status{align-self:flex-start;margin-top:auto}
-.proj-status{display:inline-block;margin-top:1rem;padding:0.35rem 0.65rem;border:1px solid var(--white40);border-radius:999px;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow)}
+.proj-status{display:inline-block;margin-top:1rem;padding:0.35rem 0.65rem;border:1px solid var(--white40);border-radius:999px;background:var(--yellow);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--pink-dark)}
 .proj-tag{
   font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
   color:var(--yellow);margin-bottom:0.9rem;
@@ -1345,6 +1345,10 @@ footer{
   .section-divider { margin: 2rem 0; }
 }
 
+@media (max-width: 640px) {
+  .proj-grid { grid-template-columns: 1fr; }
+}
+
 /* ── SMALL MOBILE: 480px ── */
 @media (max-width: 480px) {
   nav { padding: 1rem 1.25rem; }
@@ -1365,7 +1369,7 @@ footer{
 
   /* Services */
   .service-row { padding: 1.25rem 0; }
-  .svc-tags { display: none; }
+  .svc-tags { gap: 5px; }
 
   /* Contact form */
   .form-row { grid-template-columns: 1fr; }
