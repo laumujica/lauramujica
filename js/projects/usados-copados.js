@@ -1,4 +1,45 @@
 (() => {
+  const sectionNav = document.querySelector('.section-nav');
+  const sectionLinks = [...document.querySelectorAll('.section-nav a[href^="#"]')];
+  const trackedSections = sectionLinks
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  if (sectionNav && trackedSections.length) {
+    let scheduled = false;
+
+    const updateActiveSection = () => {
+      const marker = window.scrollY + window.innerHeight * .28;
+      let activeSection = null;
+
+      trackedSections.forEach((section) => {
+        if (section.offsetTop <= marker) activeSection = section;
+      });
+
+      sectionLinks.forEach((link) => {
+        const isActive = activeSection && link.getAttribute('href') === `#${activeSection.id}`;
+        link.classList.toggle('is-active', Boolean(isActive));
+        if (isActive) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+
+      scheduled = false;
+    };
+
+    const requestActiveSectionUpdate = () => {
+      if (scheduled) return;
+      scheduled = true;
+      window.requestAnimationFrame(updateActiveSection);
+    };
+
+    sectionLinks.forEach((link) => link.addEventListener('click', () => {
+      sectionLinks.forEach((item) => item.classList.toggle('is-active', item === link));
+    }));
+    window.addEventListener('scroll', requestActiveSectionUpdate, { passive: true });
+    window.addEventListener('resize', requestActiveSectionUpdate);
+    updateActiveSection();
+  }
+
   const viewer = document.querySelector('#image-viewer');
   if (!viewer) return;
 
