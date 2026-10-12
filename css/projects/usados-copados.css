@@ -139,8 +139,12 @@
 .media-placeholder--prototype { width: 100%; height: 100%; min-height: 0; border-radius: 26px 18px 26px 18px; }
 .prototype-interactive { display: flex; justify-content: center; min-width: 0; }
 .prototype-embed { position: relative; width: auto; height: 100%; aspect-ratio: 9 / 16; overflow: hidden; border: 6px solid var(--ink); border-radius: 26px; background: var(--ink); box-shadow: 0 14px 34px rgba(32,32,32,.18); }
-.prototype-embed iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
-.prototype-cta { display: flex; justify-content: space-between; align-items: center; gap: 22px; width: 100%; padding: 19px 24px 16px; border-radius: 999px; background: var(--yellow); color: var(--ink); text-decoration: none; font-weight: 700; box-shadow: 0 10px 28px rgba(32,32,32,.13); }
+/* Magnify the embedded player, trimming its black margins rather than enlarging the outer card. */
+.prototype-embed iframe { display: block; width: 100%; height: 100%; border: 0; background: #000; transform: scale(1.2); transform-origin: center; }
+.prototype-details { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 4px; }
+.prototype-details p { margin: 0; font-size: .88rem; line-height: 1.55; }
+.prototype-action { display: flex; justify-content: flex-end; }
+.prototype-cta { display: inline-flex; justify-content: space-between; align-items: center; gap: 18px; width: auto; padding: 14px 20px; border-radius: 999px; background: var(--yellow); color: var(--ink); text-decoration: none; font-size: .88rem; font-weight: 700; white-space: nowrap; box-shadow: 0 10px 28px rgba(32,32,32,.13); }
 .prototype-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(32,32,32,.17); }
 
 .reflection { position: relative; overflow: hidden; padding-block: clamp(80px, 9vw, 132px); background: var(--pink); border-bottom: 2px solid var(--ink); }
@@ -190,6 +194,8 @@
   .atomic-copy { grid-column: 1 / -1; }
   .layers-proof { max-width: 260px; }
   .prototype-layout { grid-template-columns: minmax(0, 1fr) minmax(280px, 320px); gap: 24px; }
+  .prototype-details { grid-template-columns: 1fr; gap: 16px; }
+  .prototype-action { justify-content: flex-start; }
   .reflection-grid { grid-template-columns: 1fr; gap: 42px; }
   .reflection-grid > div > span { max-width: 240px; }
 }
@@ -222,6 +228,8 @@
   .layers-proof { max-width: none; }
   .screen-sequences a { padding: 0; }
   .prototype-layout { grid-template-columns: 1fr; }
+  .prototype-details { grid-template-columns: 1fr; gap: 16px; }
+  .prototype-action { justify-content: flex-start; }
   .prototype-overview { width: 100%; height: auto; }
   .media-placeholder--prototype { height: auto; aspect-ratio: 7 / 9; }
   .prototype-interactive { width: min(390px, 100%); height: min(620px, 82vh); min-height: 500px; justify-self: center; }
