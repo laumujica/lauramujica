@@ -1404,11 +1404,16 @@ footer{
 .site-nav .desktop-nav a:hover,.site-nav .desktop-nav a[aria-current="page"]{opacity:1}
 .site-nav .desktop-nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:7px}
 .site-nav .burger{display:none}
+.site-nav.home-nav{background:transparent;color:var(--white)}
+.site-nav.home-nav .nav-logo{color:var(--white)}
+.site-nav.home-nav .desktop-nav a{color:var(--white)}
+.site-nav.home-nav .burger span{background:var(--white)}
 @media(max-width:1024px){
   .site-nav{min-height:74px;padding:0 24px}
   .site-nav .desktop-nav{display:none}
   .site-nav .burger{display:flex}
   .site-nav .burger span,body[data-theme="light"] .site-nav .burger span{background:#111}
+  .site-nav.home-nav .burger span{background:var(--white)}
 }
 @media(max-width:480px){.site-nav{padding:0 18px}}
 @media(min-width:1025px){.contact-links{margin-top:.5rem}}

@@ -32,8 +32,7 @@ h1{font-size:clamp(42px,5.4vw,78px);letter-spacing:-.045em;white-space:nowrap}.r
 @media(max-width:650px){header.wrap{padding:20px 18px;flex-wrap:wrap;gap:20px}.nav{width:100%;justify-content:space-between;gap:8px;font-size:11px}h1{font-size:clamp(37px,10vw,65px)}.orange-band .workflow li{grid-template-columns:28px 1fr;padding:18px 14px;gap:12px}.dark-band .placeholder{box-shadow:6px 6px 0 #FF4600}}
 
 
-header.wrap{background:#fff;color:#000;border-bottom:3px solid #000}
-.nav a[aria-current=page]{text-decoration-color:#000}
+header.wrap{background:#fff;color:#000;border:0}
 .statement-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px}
 .statement-grid>p{font-size:clamp(27px,3.5vw,48px)}
 .short-logo{min-height:240px;aspect-ratio:2/1;background:#000;border:3px solid #FF4600;box-shadow:none;color:#fff}
