@@ -89,3 +89,7 @@ h2,.lede{text-wrap:balance}.keep{white-space:nowrap}.accent{color:#FF4600}
 .statement-grid .slogan>em{color:inherit}
 .statement-grid .slogan>em>.accent{display:inline;color:var(--orange)}
 @media(max-width:650px){.statement-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Match the project header mark used on Usados Copados. */
+.logo{display:inline-flex;align-items:center;justify-content:center}
+.logo img{display:block;width:48px;height:48px;object-fit:contain}
