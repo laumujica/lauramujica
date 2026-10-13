@@ -24,7 +24,8 @@
 .usados-copados .case-container { width: min(1280px, calc(100% - 80px)); margin-inline: auto; }
 .project-header { background: #fff; }
 .usados-copados .project-header .case-header { width: min(1280px, calc(100% - 96px)); min-height: 88px; color: #000; }
-.usados-copados .case-logo { font: 800 16px/1 Syne, Arial, sans-serif; letter-spacing: .12em; }
+.usados-copados .case-logo { display: inline-flex; align-items: center; justify-content: center; }
+.usados-copados .case-logo img { display: block; width: 48px; height: 48px; object-fit: contain; }
 .usados-copados .case-nav { gap: 28px; }
 .usados-copados .case-nav a { font: 700 14px/1.3 Syne, Arial, sans-serif; }
 .usados-copados .case-nav a[aria-current] { text-decoration: underline; text-decoration-color: #F5D052; text-decoration-thickness: 3px; text-underline-offset: 7px; }
@@ -41,6 +42,7 @@
 .identity-details small,
 .reflection-grid > div > span { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .eyebrow span { padding: 8px 12px 6px; border-radius: 999px; background: var(--white); }
+.eyebrow span:last-child { background: var(--green-soft); }
 .project-wordmark { width: min(290px, 70%); height: auto; margin-bottom: 28px; }
 .hero h1 { max-width: 15ch; margin: 0; font-size: clamp(2.7rem, 4.25vw, 4.9rem); line-height: .94; letter-spacing: -.055em; text-wrap: balance; }
 .hero-lede { max-width: 650px; margin: 28px 0 0; font-size: clamp(1.03rem, 1.3vw, 1.25rem); line-height: 1.55; }
@@ -79,7 +81,7 @@
 
 .media-placeholder { display: grid; place-items: center; min-height: 280px; border: 2px dashed rgba(32,32,32,.34); border-radius: 42px 24px 42px 24px; background: rgba(255,255,255,.52); color: rgba(32,32,32,.62); }
 .media-placeholder span { padding: 10px 14px 8px; border-radius: 999px; background: rgba(255,255,255,.78); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.identity-image { display: block; width: 100%; padding-bottom: 24px; overflow: hidden; border-radius: 28px; background: #fff; box-shadow: 0 16px 38px rgba(32,32,32,.11); }
+.identity-image { display: block; width: 100%; padding-block: 24px; overflow: hidden; border-radius: 28px; background: #fff; box-shadow: 0 16px 38px rgba(32,32,32,.11); }
 .identity-image img { display: block; width: 100%; height: auto; max-height: min(540px, 70svh); object-fit: contain; }
 .media-placeholder--moodboard { aspect-ratio: 16 / 10; min-height: 0; }
 .media-placeholder--foundations { aspect-ratio: 1.2 / 1; min-height: 0; }
@@ -94,7 +96,7 @@
 .identity-details p { margin: 14px 0 0; font-size: .9rem; line-height: 1.55; }
 .wide-evidence.identity-moodboard { margin-top: 28px; }
 .wide-evidence.identity-moodboard > a { background: #faf9f4; }
-.wide-evidence.style-guide > a { background: #ededed; }
+.wide-evidence.style-guide > a { background: #E5E4E5; }
 
 .foundations-band { background: var(--pink-soft); }
 .foundation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: hidden; margin-bottom: 52px; border-radius: 44px 28px 44px 28px; background: #fff; box-shadow: 0 14px 34px rgba(32,32,32,.1); }
@@ -187,7 +189,7 @@
 .image-viewer__stage.is-dragging { cursor: grabbing; }
 .image-viewer__stage img { position: absolute; left: 50%; top: 50%; max-width: none; max-height: none; transform-origin: center center; user-select: none; will-change: transform; }
 .viewer-open { overflow: hidden; }
-.usados-copados .case-footer { border: 0; padding-top: 52px; color: var(--ink); }
+.usados-copados .case-footer { width: min(1280px, calc(100% - 96px)); margin: auto; border: 0; padding-top: 52px; color: var(--ink); }
 
 @media (max-width: 1080px) {
   .hero-grid { grid-template-columns: 1fr; }
@@ -254,7 +256,7 @@
   .image-viewer__toolbar > span { display: none; }
   .image-viewer__actions { width: 100%; justify-content: flex-end; }
   .image-viewer button { padding: 8px 10px 7px; font-size: .62rem; }
-  .usados-copados .case-footer { padding-top: 38px; }
+  .usados-copados .case-footer { width: calc(100% - 32px); padding-top: 38px; }
 }
 
 @media (max-width: 420px) {
