@@ -23,18 +23,22 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles.css?v=site-nav-pills-20261013">
 </head>
 <body>
 
 <canvas class="noise" id="noiseCanvas"></canvas>
 
-<nav>
-  <a href="/" class="nav-logo">LM</a>
-   <a href="/" class="nav-logo">
-  <!-- <img src="/img/iso.png" alt="Laura Mujica isologo"> -->
-</a>
-  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Laura Mujica, home"><img src="/img/Favicon.png" alt="" width="48" height="48"></a>
+  <div class="desktop-nav">
+    <a href="/">Home</a>
+    <a href="/pages/about/">About Me</a>
+    <a href="/pages/services/">Services</a>
+    <a href="/pages/projects/">Projects</a>
+    <a href="/pages/contact/" aria-current="page">Contact</a>
+  </div>
+  <button class="burger" id="burgerBtn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuOverlay">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -57,7 +61,7 @@
   <div class="page-inner">
     <div class="page-eyebrow">Contact</div>
     <div class="contact-big">Let's make<br>something <span>great.</span></div>
-    <p class="contact-sub">Got a project in mind? Fill out the form and I'll get back to you within 48 hours.</p>
+    <p class="contact-sub">Got a project in mind? Fill out the form and I'll get back to you shortly.</p>
 
     <div class="contact-layout">
 
@@ -84,6 +88,7 @@
               <!-- <option>UI / UX Design</option> -->
               <option>Web Design & Development</option>
               <option>Brand Audit & Refresh</option>
+              <option>AI &amp; Creative Process Optimization</option>
               <option>Something else</option>
             </select>
           </div>
@@ -97,7 +102,7 @@
         <div class="form-success" id="formSuccess">
           <div class="form-success-icon">⚡</div>
           <h4>Message sent!</h4>
-          <p>Thanks for reaching out. I'll get back to you within 48 hours.</p>
+          <p>Thanks for reaching out. I'll get back to you shortly.</p>
         </div>
       </div>
 
@@ -151,7 +156,7 @@
 </footer> -->
 
 
-<script src="/js/main.js?v=3"></script>
+<script src="/js/main.js?v=site-nav-20261013"></script>
 <!-- VIDEO INTRO MODAL -->
 <div class="video-modal" id="videoModal">
   <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
