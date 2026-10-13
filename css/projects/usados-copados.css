@@ -189,7 +189,7 @@
 .image-viewer__stage.is-dragging { cursor: grabbing; }
 .image-viewer__stage img { position: absolute; left: 50%; top: 50%; max-width: none; max-height: none; transform-origin: center center; user-select: none; will-change: transform; }
 .viewer-open { overflow: hidden; }
-.usados-copados .case-footer { width: min(1280px, calc(100% - 96px)); margin: auto; border: 0; padding-top: 52px; color: var(--ink); }
+.usados-copados .case-footer { width: min(1280px, calc(100% - 96px)); margin: auto; border: 0; padding-block: 30px; color: var(--ink); }
 
 @media (max-width: 1080px) {
   .hero-grid { grid-template-columns: 1fr; }
@@ -256,7 +256,7 @@
   .image-viewer__toolbar > span { display: none; }
   .image-viewer__actions { width: 100%; justify-content: flex-end; }
   .image-viewer button { padding: 8px 10px 7px; font-size: .62rem; }
-  .usados-copados .case-footer { width: calc(100% - 32px); padding-top: 38px; }
+  .usados-copados .case-footer { width: calc(100% - 36px); padding-block: 30px; }
 }
 
 @media (max-width: 420px) {
