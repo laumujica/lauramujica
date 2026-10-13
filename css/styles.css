@@ -255,12 +255,12 @@ nav{
 .about-body+.about-body{margin-top:1rem}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem}
 .pill{
-  padding:7px 16px;border-radius:100px;
-  border:1px solid rgba(255,255,255,0.55);
-  font-size:0.72rem;letter-spacing:0.06em;color:#111;
-  background:rgba(255,255,255,0.7);font-weight:500;text-transform:uppercase;
+  padding:6px 13px;border-radius:100px;
+  border:1px solid rgba(255,255,255,0.32);
+  font-size:0.72rem;letter-spacing:0.03em;color:var(--white);
+  background:rgba(255,255,255,0.10);font-weight:400;text-transform:none;
 }
-.pill.hl{background:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.55);color:#111}
+.pill.hl{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.32);color:var(--white)}
 
 /* ── THEME SWITCHING ── */
 body[data-theme="light"]{
