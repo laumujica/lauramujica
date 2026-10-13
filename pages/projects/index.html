@@ -22,18 +22,22 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css?v=pill-roles-20261008">
+<link rel="stylesheet" href="/css/styles.css?v=site-nav-pills-20261013">
 </head>
 <body>
 
 <canvas class="noise" id="noiseCanvas"></canvas>
 
-<nav>
-  <a href="/" class="nav-logo">LM</a>
-   <a href="/" class="nav-logo">
-  <!-- <img src="/img/iso.png" alt="Laura Mujica isologo"> -->
-</a>
-  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Laura Mujica, home"><img src="/img/Favicon.png" alt="" width="48" height="48"></a>
+  <div class="desktop-nav">
+    <a href="/">Home</a>
+    <a href="/pages/about/">About Me</a>
+    <a href="/pages/services/">Services</a>
+    <a href="/pages/projects/" aria-current="page">Projects</a>
+    <a href="/pages/contact/">Contact</a>
+  </div>
+  <button class="burger" id="burgerBtn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuOverlay">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -123,7 +127,7 @@
 </footer> -->
 
 
-<script src="/js/main.js?v=3"></script>
+<script src="/js/main.js?v=site-nav-20261013"></script>
 <!-- VIDEO INTRO MODAL -->
 <div class="video-modal" id="videoModal">
   <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>

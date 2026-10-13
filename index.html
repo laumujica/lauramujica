@@ -24,18 +24,22 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles.css?v=site-nav-pills-20261013">
 </head>
 <body>
 
 <canvas class="noise" id="noiseCanvas"></canvas>
 
-<nav>
-  <a href="/" class="nav-logo">LM</a>
-   <a href="/" class="nav-logo">
-  <!-- <img src="/img/iso.png" alt="Laura Mujica isologo"> -->
-</a>
-  <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Laura Mujica, home"><img src="/img/Favicon.png" alt="" width="48" height="48"></a>
+  <div class="desktop-nav">
+    <a href="/" aria-current="page">Home</a>
+    <a href="/pages/about/">About Me</a>
+    <a href="/pages/services/">Services</a>
+    <a href="/pages/projects/">Projects</a>
+    <a href="/pages/contact/">Contact</a>
+  </div>
+  <button class="burger" id="burgerBtn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuOverlay">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -64,7 +68,7 @@
     <h1 class="home-name">LAURA MUJICA</h1>
     <p class="home-sub">Sr. Designer</p>
     <p class="home-tagline">Designing better systems for how creative work gets done.</p>
-    <button class="btn-primary" onclick="showPage('contact')">Let's talk! →</button>
+    <button class="btn-primary" onclick="showPage('services')">How I Can Help →</button>
     <div class="home-socials">
       <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">
         <!-- <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> -->
@@ -97,7 +101,7 @@
 </footer> -->
 
 
-<script src="/js/main.js?v=3"></script>
+<script src="/js/main.js?v=site-nav-20261013"></script>
 <!-- VIDEO INTRO MODAL -->
 <div class="video-modal" id="videoModal">
   <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>

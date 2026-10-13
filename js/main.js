@@ -5,6 +5,7 @@ let menuOpen = false;
 burger.addEventListener('click', () => {
   menuOpen = !menuOpen;
   burger.classList.toggle('open', menuOpen);
+  burger.setAttribute('aria-expanded', String(menuOpen));
   overlay.classList.toggle('open', menuOpen);
 });
 
@@ -29,6 +30,7 @@ function showPage(id) {
   if (location.pathname === destination || (destination === '/' && location.pathname === '/index.html')) {
     menuOpen = false;
     burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
     overlay.classList.remove('open');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return;
