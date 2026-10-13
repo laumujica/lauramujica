@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Variant Reconciliation System — Workflow Design & Review Tool | Laura Mujica</title>
+<meta name="description" content="A structured review tool for deciding which content goes into production when every page exists in several AI-generated versions. Workflow design, interface behavior and AI-assisted development by Laura Mujica.">
+<meta name="theme-color" content="#0b1430">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://lauramujica.com/pages/projects/vrs/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Variant Reconciliation System — Workflow Design & Review Tool | Laura Mujica">
+<meta property="og:description" content="A real creative workflow turned into a structured review tool: source variants, component decisions, approval states and a checked content handoff.">
+<meta property="og:url" content="https://lauramujica.com/pages/projects/vrs/">
+<meta property="og:image" content="https://raw.githubusercontent.com/laumujica/variant-reconciliation-system/main/docs/assets/vrs-cover.jpg">
+<meta property="og:image:alt" content="VRS, Variant Reconciliation System: three source variants converging into one approved component. Make the meaningful decisions visible.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#060b1a;
+  --navy:#0b1430;
+  --panel:#101b3d;
+  --panel-2:#16244d;
+  --line:#243263;
+  --line-soft:#1a2750;
+  --text:#e8edff;
+  --muted:#9aa7d1;
+  --faint:#8592bf;
+  --sky:#9db4ff;
+  --on-sky:#060b1a;
+  --on-sky-2:#14204f;
+  --accent:#9db4ff;
+  --accent-strong:#6f8dff;
+  --ok:#5eead4;
+  --warn:#f5c26b;
+  --display:"Funnel Display","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --maxw:1160px;
+  --gutter:clamp(20px,5vw,56px);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--text);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(1100px 520px at 85% -10%,rgba(111,141,255,.16),transparent 60%),
+    radial-gradient(800px 480px at -10% 8%,rgba(94,234,212,.05),transparent 60%);
+  background-repeat:no-repeat;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration-color:rgba(157,180,255,.4);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--ink);padding:8px 14px;border-radius:6px;z-index:100;font-weight:600}
+.skip:focus{left:12px}
+
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0 0 1em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(6,11,26,.78);
+  backdrop-filter:saturate(1.4) blur(14px);
+  -webkit-backdrop-filter:saturate(1.4) blur(14px);
+  border-bottom:1px solid var(--line-soft);
+  padding-top:env(safe-area-inset-top,0px);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.logo{font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--text);text-decoration:none;letter-spacing:-.02em;
+  display:inline-grid;place-items:center;width:38px;height:38px;border:1px solid var(--line);border-radius:10px;background:var(--navy)}
+.site-nav{display:flex;gap:4px;flex-wrap:wrap}
+.site-nav a{color:var(--muted);text-decoration:none;font-size:.95rem;padding:8px 12px;border-radius:8px;font-weight:500}
+.site-nav a:hover{color:var(--text);background:var(--navy)}
+.site-nav a[aria-current="page"]{color:var(--text);background:var(--panel)}
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(48px,8vw,96px) 0 clamp(40px,6vw,72px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:center}
+.crumb{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;color:var(--muted);font-size:.95rem;margin-bottom:28px}
+.crumb strong{color:var(--text);font-weight:600}
+.crumb .sep{color:var(--faint)}
+.hero h1{font-size:clamp(2.3rem,4.7vw,3.9rem);overflow-wrap:break-word;font-weight:700;letter-spacing:-.035em;line-height:.98;margin-bottom:24px}
+.hero .lede{font-family:var(--display);font-size:clamp(1.2rem,2.1vw,1.55rem);font-weight:500;line-height:1.3;color:var(--accent);letter-spacing:-.01em;max-width:30ch;margin-bottom:22px}
+.hero .intro{color:var(--muted);max-width:56ch}
+.hero .intro strong{color:var(--text);font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:.98rem;text-decoration:none;border:1px solid var(--line);color:var(--text);background:var(--navy);transition:background .15s,border-color .15s,transform .15s}
+.btn:hover{background:var(--panel);border-color:var(--accent-strong)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.btn.primary:hover{background:#b6c7ff;border-color:#b6c7ff}
+
+/* Reconcile widget (hero) */
+.recon{
+  background:linear-gradient(180deg,var(--panel),var(--navy));
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(157,180,255,.04) inset;
+  overflow:hidden;
+}
+.recon-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line-soft);background:rgba(6,11,26,.45)}
+.dots{display:flex;gap:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.recon-title{font-size:.85rem;color:var(--muted);font-weight:500}
+.recon-body{padding:18px 18px 8px}
+.group{padding:14px 0;border-bottom:1px dashed var(--line-soft)}
+.group:last-of-type{border-bottom:0}
+.group-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+.group-name{font-family:var(--display);font-weight:600;font-size:1.02rem}
+.group-mode{font-size:.8rem;color:var(--faint)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{
+  font:inherit;font-size:.88rem;color:var(--muted);background:var(--ink);border:1px solid var(--line);border-radius:9px;padding:8px 12px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;transition:border-color .15s,color .15s,background .15s;
+}
+.opt:hover{border-color:var(--accent-strong);color:var(--text)}
+.opt .mark{width:14px;height:14px;border:1.5px solid var(--faint);display:inline-block;flex:none;transition:all .15s}
+.opt[data-kind="single"] .mark{border-radius:50%}
+.opt[data-kind="multi"] .mark{border-radius:4px}
+.opt[aria-pressed="true"]{color:var(--text);border-color:var(--accent);background:rgba(111,141,255,.14)}
+.opt[aria-pressed="true"] .mark{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 2.5px var(--ink)}
+.opt.exclude[aria-pressed="true"]{border-color:var(--warn);background:rgba(245,194,107,.1)}
+.opt.exclude[aria-pressed="true"] .mark{border-color:var(--warn);background:var(--warn)}
+
+.summary{border-top:1px solid var(--line-soft);background:rgba(6,11,26,.5);padding:16px 18px 18px}
+.summary-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px}
+.summary-head h2{font-size:.95rem;letter-spacing:-.005em}
+.progress{font-size:.82rem;color:var(--muted)}
+.bar{height:5px;background:var(--line-soft);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .35s ease,background .25s}
+.bar.done span{background:var(--ok)}
+.sum-list{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:6px;font-size:.9rem}
+.sum-list li{display:flex;justify-content:space-between;gap:12px;color:var(--faint)}
+.sum-list li b{font-weight:500;color:var(--faint)}
+.sum-list li.set,.sum-list li.set b{color:var(--text)}
+.sum-list li.set span:last-child{color:var(--accent)}
+.sum-list li.ex span:last-child{color:var(--warn)}
+.gate{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.qa{display:flex;align-items:center;gap:9px;font-size:.88rem;color:var(--muted);cursor:pointer}
+.qa input{accent-color:var(--accent);width:16px;height:16px;margin:0}
+.qa input:disabled+span{opacity:.5}
+.export{font:inherit;font-weight:600;font-size:.88rem;padding:9px 14px;border-radius:9px;border:1px solid var(--line);background:var(--ink);color:var(--faint);cursor:not-allowed}
+.export.ready{background:var(--ok);border-color:var(--ok);color:var(--ink);cursor:pointer}
+.recon-note{font-size:.8rem;color:var(--faint);margin:12px 4px 0;text-align:center}
+.reset{font:inherit;font-size:.8rem;color:var(--muted);background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:2px}
+.reset:hover{color:var(--text)}
+
+/* ---------- Facts ---------- */
+.facts{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:rgba(11,20,48,.55)}
+.facts dl{margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.facts .f{padding:26px clamp(16px,2.4vw,32px);border-left:1px solid var(--line-soft)}
+.facts .f:first-child{border-left:0;padding-left:0}
+.facts dt{font-size:.88rem;color:var(--faint);margin-bottom:6px;font-weight:500}
+.facts dd{margin:0;font-weight:500;line-height:1.4}
+.facts dd small{display:block;color:var(--muted);font-weight:400;font-size:.88rem;margin-top:4px}
+
+/* ---------- Sections ---------- */
+.sec{padding:clamp(56px,8vw,104px) 0;border-bottom:1px solid var(--line-soft)}
+.sec-grid{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(24px,5vw,72px)}
+.sec-label{align-self:start;position:sticky;top:96px;display:flex;flex-direction:column;gap:6px}
+.sec-label .n{font-family:var(--display);font-size:2.4rem;font-weight:700;color:var(--line);line-height:1;letter-spacing:-.04em;transition:color .2s}
+.sec-label .t{font-size:.92rem;color:var(--muted);font-weight:500}
+.sec.in-view .sec-label .n{color:var(--accent-strong)}
+.sec h2{font-size:clamp(1.9rem,3.8vw,3rem);margin-bottom:28px;max-width:20ch}
+.prose{max-width:62ch;color:var(--muted)}
+.prose strong{color:var(--text);font-weight:600}
+.prose em{color:var(--text)}
+h3{font-size:1.2rem;letter-spacing:-.01em}
+
+/* source material panel */
+.sources{margin:36px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:14px;background:var(--navy);overflow:hidden}
+.sources div{padding:22px 24px;border-left:1px solid var(--line-soft)}
+.sources div:first-child{border-left:0}
+.sources b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:600;letter-spacing:-.02em;color:var(--text);margin-bottom:4px}
+.sources span{font-size:.92rem;color:var(--muted);line-height:1.45;display:block}
+.callout{margin-top:32px;border-left:3px solid var(--accent-strong);padding:4px 0 4px 20px;max-width:62ch;color:var(--text)}
+.callout p{margin:0}
+
+/* decision types */
+.types{list-style:none;padding:0;margin:36px 0 0;border-top:1px solid var(--line)}
+.types li{display:grid;grid-template-columns:56px minmax(0,1.1fr) minmax(0,1.4fr);gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line-soft)}
+.glyph{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--navy);display:grid;place-items:center}
+.glyph svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.types h3{font-size:1.08rem}
+.types .how{color:var(--muted);font-size:.95rem;margin:0;line-height:1.5}
+.types .how code{font-family:inherit;color:var(--ok);font-weight:500}
+
+/* process timeline */
+.steps{list-style:none;margin:32px 0 0;padding:0;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;left:17px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.steps li{counter-increment:s;position:relative;padding:0 0 28px 56px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:35px;height:35px;border-radius:50%;background:var(--ink);border:1px solid var(--accent-strong);color:var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:.95rem}
+.steps h3{margin-bottom:4px}
+.steps p{margin:0;color:var(--muted);max-width:58ch;font-size:.98rem}
+
+.pilot{margin-top:44px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--navy)}
+.pilot-row{display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr));align-items:center}
+.pilot-row+.pilot-row{border-top:1px solid var(--line-soft)}
+.pilot-row>*{padding:16px 22px}
+.pilot-row .rl{color:var(--muted);font-size:.9rem;font-weight:500}
+.pilot-row .rl em{display:block;font-style:normal;color:var(--faint);font-size:.8rem;font-weight:400}
+.pilot-row b{font-family:var(--display);font-size:1.7rem;font-weight:600;letter-spacing:-.02em}
+.pilot-row b small{font-family:var(--body);font-size:.85rem;font-weight:400;color:var(--muted);margin-left:6px;letter-spacing:0}
+.pilot-row.head>*{padding-top:12px;padding-bottom:12px;font-size:.82rem;color:var(--faint);background:rgba(6,11,26,.5);font-weight:500}
+.pilot-note{font-size:.88rem;color:var(--faint);margin-top:12px;max-width:62ch}
+
+/* tool section */
+.shot{margin:8px 0 36px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--navy);box-shadow:0 30px 80px -40px rgba(0,0,0,.8)}
+.shot-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line-soft);background:rgba(6,11,26,.6)}
+.shot-url{flex:1;min-width:0;font-size:.8rem;color:var(--faint);background:var(--ink);border:1px solid var(--line-soft);border-radius:7px;padding:4px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot img{width:100%;height:auto}
+figcaption{padding:12px 16px;font-size:.88rem;color:var(--muted);border-top:1px solid var(--line-soft)}
+figure{margin:0}
+
+.views{border:1px solid var(--line);border-radius:14px;background:var(--navy);overflow:hidden}
+.tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid var(--line);background:rgba(6,11,26,.5)}
+.tab{font:inherit;font-size:.92rem;font-weight:500;color:var(--muted);background:none;border:0;border-right:1px solid var(--line-soft);padding:14px 10px;cursor:pointer;text-align:left;display:flex;gap:8px;align-items:baseline;position:relative}
+.tab:last-child{border-right:0}
+.tab .k{color:var(--faint);font-size:.82rem}
+.tab:hover{color:var(--text)}
+.tab[aria-selected="true"]{color:var(--text);background:var(--navy)}
+.tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent)}
+.tab[aria-selected="true"] .k{color:var(--accent)}
+.panel{padding:26px clamp(20px,3vw,32px) 28px}
+.panel[hidden]{display:none}
+.panel h3{margin-bottom:8px}
+.panel p{color:var(--muted);margin:0 0 .8em;max-width:62ch}
+.panel p:last-child{margin-bottom:0}
+.panel p strong{color:var(--text);font-weight:600}
+
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.rules div{padding:22px 24px 0 0}
+.rules div+div{padding-left:24px;border-left:1px solid var(--line-soft)}
+.rules h3{font-size:1.02rem;margin-bottom:6px}
+.rules p{font-size:.94rem;color:var(--muted);margin:0}
+
+/* AI & dev */
+.dev{margin-top:12px;display:grid;gap:0;border-top:1px solid var(--line)}
+.dev-row{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:28px;padding:26px 0;border-bottom:1px solid var(--line-soft)}
+.dev-row h3{font-size:1.15rem}
+.dev-row p{margin:0 0 .7em;color:var(--muted);max-width:60ch}
+.dev-row p:last-child{margin:0}
+.evo{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px}
+.chip{font-size:.85rem;padding:6px 12px;border:1px solid var(--line);border-radius:99px;background:var(--navy);color:var(--text)}
+.chip.dim{color:var(--muted)}
+.evo .arr{color:var(--faint)}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+
+/* findings */
+.find{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:32px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--navy)}
+.find section{padding:26px 28px}
+.find section+section{border-left:1px solid var(--line)}
+.find h3{margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.find h3 i{width:9px;height:9px;border-radius:50%;background:var(--ok);display:inline-block}
+.find section:last-child h3 i{background:var(--warn)}
+.find ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.96rem}
+.find li{margin-bottom:.55em}
+.find li::marker{color:var(--faint)}
+.handoff{margin-top:36px}
+
+/* table */
+.tbl-wrap{margin-top:12px;overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--navy)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.96rem}
+th,td{text-align:left;padding:16px 22px;vertical-align:top}
+thead th{font-size:.85rem;color:var(--faint);font-weight:500;background:rgba(6,11,26,.5);border-bottom:1px solid var(--line)}
+tbody th{font-weight:500;color:var(--text);width:30%}
+tbody tr+tr>*{border-top:1px solid var(--line-soft)}
+td{color:var(--muted)}
+.limits{margin-top:40px}
+.limits h3{margin-bottom:12px}
+.limits ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px;max-width:760px}
+.limits li{color:var(--muted);padding-left:26px;position:relative;font-size:.96rem;line-height:1.5}
+.limits li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:2px;background:var(--faint);border-radius:2px}
+
+/* closing */
+.closing{padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,80px)}
+.closing h2{font-size:clamp(2rem,4.4vw,3.4rem);max-width:18ch;margin-bottom:24px}
+.outcomes{list-style:none;padding:0;margin:32px 0 0;max-width:820px;border-top:1px solid var(--line)}
+.outcomes li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line-soft);font-size:.96rem}
+.outcomes b{font-weight:600}
+.outcomes span{color:var(--muted)}
+.banner{margin:48px 0 0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.banner img{width:100%;height:auto}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* footer */
+.site-footer{border-top:1px solid var(--line-soft);padding:26px 0 40px;font-size:.95rem;color:var(--muted)}
+.site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px}
+.site-footer a{color:var(--muted)}
+.site-footer a:hover{color:var(--text)}
+
+
+/* ---------- Light-blue bands (hero + conclusion) ---------- */
+.on-sky{background:var(--sky);color:var(--on-sky-2);border-bottom:0}
+.on-sky :focus-visible{outline-color:var(--on-sky)}
+.on-sky .recon :focus-visible{outline-color:var(--accent)}
+.on-sky h1,.on-sky h2{color:var(--on-sky)}
+.on-sky .lede{color:var(--on-sky)}
+.on-sky .crumb,.on-sky .intro,.on-sky .prose{color:var(--on-sky-2)}
+.on-sky .crumb strong,.on-sky .intro strong,.on-sky .prose strong,.on-sky .prose em{color:var(--on-sky)}
+.on-sky .crumb .sep{color:#34457f}
+.on-sky a{color:var(--on-sky)}
+.on-sky .btn{background:transparent;border-color:var(--on-sky);color:var(--on-sky)}
+.on-sky .btn:hover{background:rgba(6,11,26,.1);border-color:var(--on-sky)}
+.on-sky .btn.primary{background:var(--on-sky);border-color:var(--on-sky);color:#fff}
+.on-sky .btn.primary:hover{background:#16224f;border-color:#16224f}
+.on-sky .recon h2{color:var(--text)}
+.on-sky .recon{color:var(--text);box-shadow:0 30px 70px -28px rgba(6,11,26,.65)}
+.on-sky .outcomes{border-top-color:rgba(6,11,26,.45)}
+.on-sky .outcomes li{border-bottom-color:rgba(6,11,26,.25)}
+.on-sky .outcomes b{color:var(--on-sky)}
+.on-sky .outcomes span{color:var(--on-sky-2)}
+.on-sky .banner{border-color:rgba(6,11,26,.5)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .facts dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts .f:nth-child(3){border-left:0;padding-left:0}
+  .facts .f:nth-child(n+3){border-top:1px solid var(--line-soft)}
+  .sec-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .sec-label{position:static;flex-direction:row;align-items:baseline;gap:12px}
+  .sec-label .n{font-size:1.6rem;color:var(--accent-strong)}
+  .tabs{grid-template-columns:1fr}
+  .tab{border-right:0;border-bottom:1px solid var(--line-soft)}
+  .tab[aria-selected="true"]::after{left:0;right:auto;top:0;bottom:0;width:2px;height:auto}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .site-nav a{padding:8px 9px;font-size:.88rem}
+  .sources{grid-template-columns:1fr}
+  .sources div{border-left:0;border-top:1px solid var(--line-soft)}
+  .sources div:first-child{border-top:0}
+  .types li{grid-template-columns:44px 1fr;gap:6px 16px}
+  .types li .how{grid-column:2}
+  .pilot-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pilot-row .rl{grid-column:1/-1;padding-bottom:0}
+  .pilot-row.head{display:none}
+  .pilot-row>*{padding:12px 18px}
+  .pilot-row b small{display:block;margin:2px 0 0}
+  .rules{grid-template-columns:1fr}
+  .rules div,.rules div+div{padding:20px 0 0;border-left:0}
+  .dev-row{grid-template-columns:1fr;gap:8px}
+  .find{grid-template-columns:1fr}
+  .find section+section{border-left:0;border-top:1px solid var(--line)}
+  .limits ul{grid-template-columns:1fr}
+  .outcomes li{grid-template-columns:1fr;gap:2px}
+}
+@media (max-width:520px){
+  .site-header .wrap{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+  .facts dl{grid-template-columns:1fr}
+  .facts .f,.facts .f:first-child{border-left:0;padding-left:0;border-top:1px solid var(--line-soft)}
+  .facts .f:first-child{border-top:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="https://lauramujica.com/" aria-label="Laura Mujica, home">LM</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="https://lauramujica.com/">Home</a>
+      <a href="https://lauramujica.com/pages/about/">About Me</a>
+      <a href="https://lauramujica.com/pages/services/">Services</a>
+      <a href="https://lauramujica.com/pages/projects/" aria-current="page">Projects</a>
+      <a href="https://lauramujica.com/pages/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero on-sky">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="crumb"><strong>Selected work</strong><span class="sep">/</span><span>Workflow design &amp; internal tool</span><span class="sep">/</span><span>2026</span></p>
+          <h1>Variant Reconciliation System</h1>
+          <p class="lede">A review tool that turns many versions of a page into one approved decision.</p>
+          <p class="intro">I built it during a client project to produce an editable printed book from AI-generated page images. Before layout could start, the team needed to know <strong>which differences mattered and what to keep</strong>. I designed the review process, defined how the interface behaves and directed its AI-assisted development. The client's identity and material are omitted; the public demo uses sample content.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://laumujica.github.io/variant-reconciliation-system/demo/" target="_blank" rel="noopener">Open the demo ↗</a>
+          </div>
+        </div>
+
+        <!-- Interactive schematic -->
+        <div>
+          <div class="recon" id="recon" aria-label="Interactive schematic of component-level review">
+            <div class="recon-bar">
+              <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span class="recon-title">Try the idea: decide by component</span>
+              <button class="reset" type="button" id="reconReset">Reset</button>
+            </div>
+            <div class="recon-body">
+              <div class="group" data-group="opening" data-mode="single">
+                <div class="group-head"><span class="group-name">Opening</span><span class="group-mode">Competing versions: pick one</span></div>
+                <div class="opts">
+                  <button class="opt" type="button" data-kind="single" data-val="V1" aria-pressed="false"><span class="mark"></span>V1</button>
+                  <button class="opt" type="button" data-kind="single" data-val="V2" aria-pressed="false"><span class="mark"></span>V2</button>
+                  <button class="opt" type="button" data-kind="single" data-val="V3" aria-pressed="false"><span class="mark"></span>V3</button>
+                </div>
+              </div>
+              <div class="group" data-group="callouts" data-mode="multi">
+                <div class="group-head"><span class="group-name">Callouts</span><span class="group-mode">Compatible versions: pick several</span></div>
+                <div class="opts">
+                  <button class="opt" type="button" data-kind="multi" data-val="V1" aria-pressed="false"><span class="mark"></span>V1</button>
+                  <button class="opt" type="button" data-kind="multi" data-val="V2" aria-pressed="false"><span class="mark"></span>V2</button>
+                  <button class="opt" type="button" data-kind="multi" data-val="V3" aria-pressed="false"><span class="mark"></span>V3</button>
+                </div>
+              </div>
+              <div class="group" data-group="method" data-mode="single">
+                <div class="group-head"><span class="group-name">Method</span><span class="group-mode">Supporting content: can be left out</span></div>
+                <div class="opts">
+                  <button class="opt" type="button" data-kind="single" data-val="V2" aria-pressed="false"><span class="mark"></span>V2</button>
+                  <button class="opt" type="button" data-kind="single" data-val="V3" aria-pressed="false"><span class="mark"></span>V3</button>
+                  <button class="opt exclude" type="button" data-kind="single" data-val="Excluded" aria-pressed="false"><span class="mark"></span>Exclude</button>
+                </div>
+              </div>
+            </div>
+            <div class="summary">
+              <div class="summary-head">
+                <h2>Approved summary</h2>
+                <span class="progress" id="reconProgress" aria-live="polite">0 of 3 resolved</span>
+              </div>
+              <div class="bar" id="reconBar"><span></span></div>
+              <ul class="sum-list" id="reconList">
+                <li data-for="opening"><b>Opening</b><span>Pending</span></li>
+                <li data-for="callouts"><b>Callouts</b><span>Pending</span></li>
+                <li data-for="method"><b>Method</b><span>Pending</span></li>
+              </ul>
+              <div class="gate">
+                <label class="qa"><input type="checkbox" id="reconQA" disabled><span>Extracted text checked</span></label>
+                <button class="export" type="button" id="reconExport" disabled aria-describedby="reconGate">Export handoff</button>
+              </div>
+              <p class="recon-note" id="reconGate" aria-live="polite">Export unlocks once every component is resolved and the text check is confirmed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FACTS ================= -->
+  <div class="facts">
+    <div class="wrap">
+      <dl>
+        <div class="f"><dt>Role</dt><dd>Senior Graphic Designer<small>Extended into workflow design, UX and QA</small></dd></div>
+        <div class="f"><dt>Scope</dt><dd>Content audit, review process, interface behavior, handoff</dd></div>
+        <div class="f"><dt>Development</dt><dd>AI-assisted HTML, CSS &amp; JavaScript<small>Directed with ChatGPT and Claude</small></dd></div>
+        <div class="f"><dt>Status</dt><dd>Public demo, runs in the browser<small>Original: Firebase Firestore + Vercel</small></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ================= 01 PROBLEM ================= -->
+  <section class="sec" id="problem" data-sec>
+    <div class="wrap sec-grid">
+      <div class="sec-label"><span class="n">01</span><span class="t">The problem</span></div>
+      <div>
+        <h2>No single version to build from.</h2>
+        <div class="prose">
+          <p>The client had generated page images with AI and wanted to turn them into a physical book. The files had to be <strong>editable</strong>, so someone could later change a sentence or swap an image without rebuilding a page.</p>
+          <p>The pages were not consistent with each other. Versions of the same page differed in wording, layout, logo treatment and typography, and similar-looking typefaces were not always the same one. Across more than a hundred content pages, there was nothing settled to reproduce.</p>
+          <p>The images also looked convincing on screen without proving anything about print: whether text stayed legible at physical size, whether assets had enough resolution, whether the files would meet a printer's requirements.</p>
+        </div>
+
+        <div class="sources" role="group" aria-label="Source material">
+          <div><b>6 volumes</b><span>Numbered 0–5. Volume 0 held the editorial guidance and design-system material.</span></div>
+          <div><b>100+ pages</b><span>Five volumes with more than twenty content pages each.</span></div>
+          <div><b>2–9 versions</b><span>Per page, each one a different answer to the same content question.</span></div>
+        </div>
+
+        <div class="callout"><p>Rebuilding every page first would have meant committing hours of production to content nobody had approved. The question to answer first was <em>what should the book say?</em></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 INSIGHT ================= -->
+  <section class="sec" id="insight" data-sec>
+    <div class="wrap sec-grid">
+      <div class="sec-label"><span class="n">02</span><span class="t">The insight</span></div>
+      <div>
+        <h2>Not every difference is a decision.</h2>
+        <div class="prose">
+          <p>Choosing one complete page was too coarse: one version could have the strongest opening while another had the better sequence. Comparing every visible difference was too heavy: repeated wording didn't need repeated approval, and complementary content didn't have to compete.</p>
+          <p>So I split each page into components and sorted the differences into five kinds. Each kind gets the interaction that fits it.</p>
+        </div>
+
+        <ul class="types">
+          <li>
+            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" fill="currentColor" style="fill:var(--accent)"/></svg></span>
+            <h3>Competing definitions</h3>
+            <p class="how">Two versions can't both be right. The reviewer makes a <code>single selection</code>.</p>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/><path d="M7 15.5l1.5 1.5L11 14"/></svg></span>
+            <h3>Compatible material</h3>
+            <p class="how">Passages that belong together. The reviewer makes a <code>multiple selection</code>.</p>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="6" rx="1.5"/><rect x="3" y="14" width="8" height="6" rx="1.5"/><path d="M11 7h3a3 3 0 013 3v2M11 17h3a3 3 0 003-3v-2"/><rect x="15" y="10" width="6" height="4" rx="1.2"/></svg></span>
+            <h3>Repeated content</h3>
+            <p class="how">The same wording in several variants appears <code>once</code>, with each source referenced.</p>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 8l8 8M16 8l-8 8"/></svg></span>
+            <h3>Supporting content</h3>
+            <p class="how">Useful in one version, not needed in the book. The reviewer can <code>exclude</code> it deliberately.</p>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H10l-5 4z"/><path d="M9 9h6M9 12h4"/></svg></span>
+            <h3>Feedback that needs words</h3>
+            <p class="how">A specific wording instruction travels as a <code>note</code>, attached to the decision it explains.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 PROCESS ================= -->
+  <section class="sec" id="process" data-sec>
+    <div class="wrap sec-grid">
+      <div class="sec-label"><span class="n">03</span><span class="t">The process</span></div>
+      <div>
+        <h2>Design the process before the interface.</h2>
+        <div class="prose">
+          <p>The board only works if the material reaching it is already organized. So the workflow starts upstream, before anyone opens the tool.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Identify sections</h3>
+            <p>Read each page as components, such as an introduction, a sequence or a callout, and locate the matching section in every variant.</p>
+          </li>
+          <li>
+            <h3>Recognize and extract text</h3>
+            <p>Recover the wording from flattened images, keep its source references and check it against the originals. AI-assisted recognition and Python scripts helped prepare these inputs.</p>
+          </li>
+          <li>
+            <h3>Reconcile the alternatives</h3>
+            <p>Find duplicates, competing wording and compatible passages. Organize the meaningful choices with text and image crops for review. The shared folder with the source files was connected to Google Drive, so the board took its links from there and generated the crops that become the components in the Decisions view.</p>
+          </li>
+          <li>
+            <h3>Review and verify</h3>
+            <p>Record selections and notes in the board, check the approved text and export a production reference.</p>
+          </li>
+        </ol>
+
+        <div class="pilot" role="table" aria-label="Review set sizes">
+          <div class="pilot-row head" role="row"><span role="columnheader"></span><span role="columnheader">Source variants</span><span role="columnheader">Component groups</span><span role="columnheader">Options</span></div>
+          <div class="pilot-row" role="row"><span class="rl" role="rowheader">Pilot review<em>Real project</em></span><b role="cell">7<small>source variants</small></b><b role="cell">13<small>component groups</small></b><b role="cell">55<small>options</small></b></div>
+          <div class="pilot-row" role="row"><span class="rl" role="rowheader">Public demo<em>Condensed</em></span><b role="cell">3<small>source variants</small></b><b role="cell">4<small>component groups</small></b><b role="cell">9<small>options</small></b></div>
+        </div>
+        <p class="pilot-note">The pilot figures describe a single review set within the larger project, not its total volume of material. The board works from a prepared dataset; it doesn't recognize newly uploaded files on its own.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 TOOL ================= -->
+  <section class="sec" id="tool" data-sec>
+    <div class="wrap sec-grid">
+      <div class="sec-label"><span class="n">04</span><span class="t">The review tool</span></div>
+      <div>
+        <h2>Five views, one record.</h2>
+        <div class="prose">
+          <p>The Variant Decision Board is the interface of the system. It keeps the complete sources available while showing a focused view of their components, and it moves a reviewer from looking at drafts to approving a checked handoff.</p>
+        </div>
+
+        <figure class="shot" style="margin-top:32px">
+          <div class="shot-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><span class="shot-url">laumujica.github.io/variant-reconciliation-system/demo</span></div>
+          <img src="img/vrs-demo-home.png" width="1176" height="1022" loading="lazy" alt="VRS public demo, Sources view: three source variants of a sample document, each with an Open source link and a notes field, under a 'Creative Collaboration' header showing 0 of 4 components resolved.">
+          <figcaption>The Sources view of the public demo. Sample content stands in for the client's material.</figcaption>
+        </figure>
+
+        <div class="views" id="views">
+          <div class="tabs" role="tablist" aria-label="Views of the review tool">
+            <button class="tab" role="tab" id="t1" aria-selected="true" aria-controls="p1" type="button"><span class="k">01</span>Sources</button>
+            <button class="tab" role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1" type="button"><span class="k">02</span>Decisions</button>
+            <button class="tab" role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1" type="button"><span class="k">03</span>Approved summary</button>
+            <button class="tab" role="tab" id="t4" aria-selected="false" aria-controls="p4" tabindex="-1" type="button"><span class="k">04</span>Activity</button>
+            <button class="tab" role="tab" id="t5" aria-selected="false" aria-controls="p5" tabindex="-1" type="button"><span class="k">05</span>Text QA &amp; Export</button>
+          </div>
+          <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+            <h3>Inspect the full references.</h3>
+            <p>Reviewers see each complete variant and can leave observations on it. Source notes and decision notes are separate on purpose: a comment on a draft is not a formal approval.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+            <h3>Decide by component.</h3>
+            <p>Choose one option or several compatible ones, and approve with notes and reference files or links. Select <strong>None of these</strong>, which can be approved with a supplied alternative file or link, or exclude the component altogether.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+            <h3>See what has been kept.</h3>
+            <p>The approved summary gathers the retained material in one place. Reviewers can inspect the wording and copy approved text or reference images.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+            <h3>Follow what happened.</h3>
+            <p>Activity lists recorded decisions and actions, so the reasoning behind the approved content stays traceable.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
+            <h3>Check the wording, then hand it off.</h3>
+            <p>A producer verifies the extracted text against what was approved and exports a Markdown handoff. In the public edition, editing approved text invalidates its QA confirmation, so a checked state can't go stale.</p>
+          </div>
+        </div>
+
+        <div class="rules">
+          <div><h3>Approval and QA are separate</h3><p>An approved crop identifies the intended material. Its extracted text still needs its own check.</p></div>
+          <div><h3>Export is gated</h3><p>The review must be resolved and the applicable text checks confirmed before a handoff can be exported.</p></div>
+          <div><h3>Merging stays human</h3><p>Multi-selection preserves compatible passages and notes describe how to combine them. The tool never writes merged text itself.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 AI & DEV ================= -->
+  <section class="sec" id="dev" data-sec>
+    <div class="wrap sec-grid">
+      <div class="sec-label"><span class="n">05</span><span class="t">AI &amp; development</span></div>
+      <div>
+        <h2>I directed the build; AI wrote the code.</h2>
+        <div class="prose">
+          <p>I defined what the tool should do and evaluated whether it did. My background in UX/UI and web development shaped navigation, component selection, feedback and approval states. My QA experience shaped what got tested.</p>
+        </div>
+
+        <div class="dev">
+          <div class="dev-row">
+            <h3>Specify behavior</h3>
+            <div>
+              <p>Selection modes, approval states, note types and the export rules came from the workflow, then went into written specifications for ChatGPT and Claude to implement.</p>
+              <div class="stack"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Vanilla JavaScript</span><span class="chip">Markdown export</span></div>
+            </div>
+          </div>
+          <div class="dev-row">
+            <h3>Iterate toward shared use</h3>
+            <div>
+              <p>The prototype grew through repeated iterations, from a local tool to one the client could open from anywhere, with decisions, notes, review state and activity retained between sessions.</p>
+              <div class="evo" aria-label="Evolution of persistence"><span class="chip dim">Browser-local storage</span><span class="arr" aria-hidden="true">→</span><span class="chip">Shared data in Firebase Firestore</span><span class="arr" aria-hidden="true">→</span><span class="chip">Online access via Vercel</span></div>
+            </div>
+          </div>
+          <div class="dev-row">
+            <h3>Test and judge</h3>
+            <div>
+              <p>I checked persistence, export and regressions after each round, and I decided what stayed in. The deployment and persistence work were tested during the project.</p>
+              <p>The public edition uses browser-local storage, with no backend connection and no runtime dependencies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 06 BOUNDARY ================= -->
+  <section class="sec" id="boundary" data-sec>
+    <div class="wrap sec-grid">
+      <div class="sec-label"><span class="n">06</span><span class="t">Feasibility</span></div>
+      <div>
+        <h2>Testing how far automation could go.</h2>
+        <div class="prose">
+          <p>Approved content was the input to the next phase: rebuilding the book in InDesign with live text, vector elements and replaceable images. A flattened AI page has none of those, so I tested whether one could become an independently editable page without losing its look.</p>
+          <p>I ran <strong>four approaches across three source images</strong>, including vector conversion, scripted reconstruction and hybrid text-and-asset assembly.</p>
+        </div>
+
+        <div class="find">
+          <section>
+            <h3><i aria-hidden="true"></i>What the tests established</h3>
+            <ul>
+              <li>Regional analysis, structured component data and scripts produced useful editable text and first page assemblies.</li>
+              <li>Some builds reported no overflowing text and no missing links.</li>
+              <li>Reading a page by component and structuring its text before assembly was a method worth keeping.</li>
+            </ul>
+          </section>
+          <section>
+            <h3><i aria-hidden="true"></i>What scaling would require</h3>
+            <ul>
+              <li>Visual review defined what a full rebuild needs: exact placement, a complete icon family, decorative details and typographic matching.</li>
+              <li>Those assets and rules weren't yet specified, so closing the gap meant more correction work than the agreed time and budget allowed.</li>
+              <li>Outlined text would be vector but not editable, so live text stayed a hard requirement.</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="prose handoff">
+          <p>With the findings consolidated, the assessment was clear: partial editability had been demonstrated, and completing all six volumes would take more time and budget than the project had. I shared that with the client and <strong>recommended continuing with an InDesign automation specialist</strong>. The handoff included a client-facing report and a technical document covering the approaches tested, available files, open requirements and next steps, so my phase closed with documented evidence and a clear route forward.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 07 DEMO ================= -->
+  <section class="sec" id="demo" data-sec>
+    <div class="wrap sec-grid">
+      <div class="sec-label"><span class="n">07</span><span class="t">The public demo</span></div>
+      <div>
+        <h2>The real workflow, with sample content.</h2>
+        <div class="prose">
+          <p>The public edition condenses the working prototype and replaces everything that belonged to the client. It keeps the source and component relationships and the selection modes, so the interaction is the real one. The sample material, <em>Creative Collaboration</em>, illustrates the workflow and isn't presented as another client project.</p>
+        </div>
+
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th scope="col"></th><th scope="col">Original project</th><th scope="col">Public demonstration</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Content</th><td>Client-specific source material and identity</td><td>Replacement sample text, document previews and an independent visual style</td></tr>
+              <tr><th scope="row">Persistence</th><td>Shared review data through Firebase Firestore</td><td>Browser-local decisions and notes</td></tr>
+              <tr><th scope="row">Source files</th><td>A shared folder connected to Google Drive; the board read the links and generated the component crops</td><td>Sample documents and component previews bundled with the demo</td></tr>
+              <tr><th scope="row">Roles</th><td>A separate producer/admin workflow</td><td>Text QA and export open for exploration</td></tr>
+              <tr><th scope="row">Decisions</th><td>Real client decisions</td><td>A fresh, resettable review for each browser</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="limits">
+          <h3>What the system does not do</h3>
+          <ul>
+            <li>Audit files it hasn't been given</li>
+            <li>Choose content for the reviewer</li>
+            <li>Merge wording into a final text</li>
+            <li>Produce an InDesign document</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLOSING ================= -->
+  <section class="closing on-sky" id="outcome">
+    <div class="wrap">
+      <h2>A system for deciding before producing.</h2>
+      <div class="prose">
+        <p>The project took me across identity, content, interfaces, testing and physical production. I could direct AI-assisted implementation and judge its results because I understood the workflow and its dependencies, and that same judgment led to the decision to recommend specialist support.</p>
+      </div>
+
+      <ul class="outcomes">
+        <li><b>Identity manual</b><span>The first manual was AI-generated. I vectorized it and refined it to reflect the final decisions, so it could serve as the base and the limits for the initial Markdown file of rules.</span></li>
+        <li><b>Review system</b><span>A working tool for reviewing variants, recording decisions and preparing checked content for a pilot.</span></li>
+        <li><b>Book production</b><span>Pilot layouts, print specifications and reconstruction tests that defined the requirements and limits of a scalable approach. The full six-volume book and print run went beyond the time and budget of my phase.</span></li>
+      </ul>
+
+      <div class="banner">
+        <img src="img/vrs-cover.jpg" width="1568" height="523" loading="lazy" alt="VRS, Variant Reconciliation System. Three source variants converge into one approved component. Make the meaningful decisions visible.">
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="https://laumujica.github.io/variant-reconciliation-system/demo/" target="_blank" rel="noopener">Open the demo ↗</a>
+        <a class="btn" href="https://github.com/laumujica/variant-reconciliation-system/blob/main/docs/CASE_STUDY.md" target="_blank" rel="noopener">Case study on GitHub ↗</a>
+        <a class="btn" href="https://github.com/laumujica/variant-reconciliation-system" target="_blank" rel="noopener">Repo on GitHub ↗</a>
+        <a class="btn" href="https://lauramujica.com/docs/Resume_Laura-Mujica_Sr-Graphic-Designer.pdf" target="_blank" rel="noopener">Download my resume ↓</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="https://lauramujica.com/pages/projects/">← All projects</a>
+    <span>Laura Mujica · 2026 ⚡</span>
+    <a href="https://lauramujica.com/pages/contact/">Let's talk ↗</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- Hero schematic ---------- */
+  var root = document.getElementById('recon');
+  if (root) {
+    var groups = {};
+    var total = 3;
+    root.querySelectorAll('.group').forEach(function(g){ groups[g.dataset.group] = { el:g, mode:g.dataset.mode, sel:[] }; });
+    var list = document.getElementById('reconList');
+    var progress = document.getElementById('reconProgress');
+    var bar = document.getElementById('reconBar');
+    var qa = document.getElementById('reconQA');
+    var exp = document.getElementById('reconExport');
+    var gate = document.getElementById('reconGate');
+    var defaultGate = gate.textContent;
+
+    function render(){
+      var resolved = 0;
+      Object.keys(groups).forEach(function(k){
+        var g = groups[k], li = list.querySelector('[data-for="'+k+'"]'), out = li.lastElementChild;
+        li.className = '';
+        if (g.sel.length) {
+          resolved++;
+          if (g.sel[0] === 'Excluded') { li.className = 'set ex'; out.textContent = 'Excluded'; }
+          else { li.className = 'set'; out.textContent = g.sel.join(' + '); }
+        } else { out.textContent = 'Pending'; }
+        g.el.querySelectorAll('.opt').forEach(function(b){ b.setAttribute('aria-pressed', g.sel.indexOf(b.dataset.val) > -1 ? 'true' : 'false'); });
+      });
+      progress.textContent = resolved + ' of ' + total + ' resolved';
+      bar.firstElementChild.style.width = (resolved/total*100) + '%';
+      var all = resolved === total;
+      bar.classList.toggle('done', all);
+      qa.disabled = !all;
+      if (!all) { qa.checked = false; }
+      var ready = all && qa.checked;
+      exp.disabled = !ready;
+      exp.classList.toggle('ready', ready);
+      gate.textContent = ready ? 'Ready: the handoff can be exported.'
+        : all ? 'Every component is resolved. Confirm the text check to unlock export.'
+        : defaultGate;
+    }
+
+    root.addEventListener('click', function(e){
+      var b = e.target.closest('.opt');
+      if (!b) return;
+      var g = groups[b.closest('.group').dataset.group], v = b.dataset.val, i = g.sel.indexOf(v);
+      if (g.mode === 'multi') { if (i > -1) g.sel.splice(i,1); else g.sel.push(v); g.sel.sort(); }
+      else { g.sel = (i > -1) ? [] : [v]; }
+      qa.checked = false; /* changing a decision invalidates the text check */
+      render();
+    });
+    qa.addEventListener('change', render);
+    exp.addEventListener('click', function(){
+      if (exp.disabled) return;
+      gate.textContent = 'In the real tool, this downloads a Markdown handoff.';
+    });
+    document.getElementById('reconReset').addEventListener('click', function(){
+      Object.keys(groups).forEach(function(k){ groups[k].sel = []; });
+      qa.checked = false; render();
+    });
+    render();
+  }
+
+  /* ---------- Tabs ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('#views .tab'));
+  function select(t, focus){
+    tabs.forEach(function(x){
+      var on = x === t;
+      x.setAttribute('aria-selected', on ? 'true' : 'false');
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      var n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = tabs[(i+1) % tabs.length];
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = tabs[(i-1+tabs.length) % tabs.length];
+      else if (e.key === 'Home') n = tabs[0];
+      else if (e.key === 'End') n = tabs[tabs.length-1];
+      if (n) { e.preventDefault(); select(n, true); }
+    });
+  });
+
+  /* ---------- Section label highlight ---------- */
+  var secs = document.querySelectorAll('[data-sec]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ en.target.classList.toggle('in-view', en.isIntersecting); });
+    }, { rootMargin:'-35% 0px -55% 0px' });
+    secs.forEach(function(s){ io.observe(s); });
+  } else { secs.forEach(function(s){ s.classList.add('in-view'); }); }
+})();
+</script>
+</body>
+</html>
