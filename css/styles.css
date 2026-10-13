@@ -255,12 +255,12 @@ nav{
 .about-body+.about-body{margin-top:1rem}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem}
 .pill{
-  padding:7px 16px;border-radius:100px;
-  border:1px solid rgba(255,255,255,0.55);
-  font-size:0.72rem;letter-spacing:0.06em;color:#111;
-  background:rgba(255,255,255,0.7);font-weight:500;text-transform:uppercase;
+  padding:6px 13px;border-radius:100px;
+  border:1px solid rgba(255,255,255,0.32);
+  font-size:0.72rem;letter-spacing:0.03em;color:var(--white);
+  background:rgba(255,255,255,0.10);font-weight:400;text-transform:none;
 }
-.pill.hl{background:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.55);color:#111}
+.pill.hl{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.32);color:var(--white)}
 
 /* ── THEME SWITCHING ── */
 body[data-theme="light"]{
@@ -680,10 +680,10 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 }
 .proj-skill{
   display:inline-flex;align-items:center;
-  padding:0.4rem 0.68rem;border:1px solid rgba(255,255,255,0.55);
-  border-radius:999px;background:rgba(255,255,255,0.7);
-  color:#111;font-size:0.68rem;line-height:1.2;
-  font-weight:500;text-transform:uppercase;white-space:nowrap;
+  padding:0.4rem 0.68rem;border:1px solid rgba(255,255,255,0.32);
+  border-radius:999px;background:rgba(255,255,255,0.10);
+  color:var(--white);font-size:0.68rem;line-height:1.2;
+  font-weight:400;text-transform:uppercase;white-space:nowrap;
 }
 .proj-year{
   margin-top:1.25rem;
@@ -854,9 +854,9 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem}
 .svc-tag{
   font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  border:1px solid rgba(255,255,255,0.55);border-radius:100px;
-  padding:3px 10px;background:rgba(255,255,255,0.7);color:#111;
-  font-weight:500;
+  border:1px solid rgba(255,255,255,0.32);border-radius:100px;
+  padding:3px 10px;background:rgba(255,255,255,0.10);color:var(--white);
+  font-weight:400;
 }
 .services-cta-block{
   margin-top:3.5rem;
@@ -984,8 +984,8 @@ footer{
 .illus-concept{font-size:0.8rem;color:var(--white80);font-weight:300;line-height:1.65}
 .illus-featured .illus-concept{font-size:0.88rem;max-width:520px}
 .illus-software{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.4rem}
-.illus-sw-tag{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.55);border-radius:100px;padding:3px 9px;background:rgba(255,255,255,0.7);color:#111}
-.illus-sw-tag.featured-tag{background:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.55);color:#111;font-weight:500}
+.illus-sw-tag{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.32);border-radius:100px;padding:3px 9px;background:rgba(255,255,255,0.10);color:var(--white)}
+.illus-sw-tag.featured-tag{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.32);color:var(--white);font-weight:400}
 .illus-year{font-size:0.68rem;letter-spacing:0.1em;color:var(--white40);margin-top:auto;padding-top:0.75rem}
 .illus-bg-a{background:linear-gradient(135deg,#3d1a5e 0%,#7b2d8b 50%,#c45c8a 100%)}
 .illus-bg-b{background:linear-gradient(160deg,#1a2a4a 0%,#2d5a8b 60%,#5ba3c9 100%)}
@@ -1404,11 +1404,16 @@ footer{
 .site-nav .desktop-nav a:hover,.site-nav .desktop-nav a[aria-current="page"]{opacity:1}
 .site-nav .desktop-nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:7px}
 .site-nav .burger{display:none}
+.site-nav.home-nav{background:transparent;color:var(--white)}
+.site-nav.home-nav .nav-logo{color:var(--white)}
+.site-nav.home-nav .desktop-nav a{color:var(--white)}
+.site-nav.home-nav .burger span{background:var(--white)}
 @media(max-width:1024px){
   .site-nav{min-height:74px;padding:0 24px}
   .site-nav .desktop-nav{display:none}
   .site-nav .burger{display:flex}
   .site-nav .burger span,body[data-theme="light"] .site-nav .burger span{background:#111}
+  .site-nav.home-nav .burger span{background:var(--white)}
 }
 @media(max-width:480px){.site-nav{padding:0 18px}}
 @media(min-width:1025px){.contact-links{margin-top:.5rem}}
