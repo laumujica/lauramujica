@@ -47,28 +47,19 @@
   <body>
     <canvas class="noise" id="noiseCanvas"></canvas>
 
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="/" class="nav-logo" aria-label="Laura Mujica, home"
-        ><img src="/img/Favicon.png" alt="" width="48" height="48"
-      /></a>
-      <div class="desktop-nav">
-        <a href="/">Home</a>
-        <a href="/pages/about/">About Me</a>
-        <a href="/pages/services/" aria-current="page">Services</a>
-        <a href="/pages/projects/">Projects</a>
-        <a href="/pages/contact/">Contact</a>
-      </div>
-      <button
-        class="burger"
-        id="burgerBtn"
-        type="button"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        aria-controls="menuOverlay"
-      >
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+    <nav class="site-nav home-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Laura Mujica, home">LM</a>
+  <div class="desktop-nav">
+    <a href="/">Home</a>
+    <a href="/pages/about/">About Me</a>
+    <a href="/pages/services/" aria-current="page">Services</a>
+    <a href="/pages/projects/">Projects</a>
+    <a href="/pages/contact/">Contact</a>
+  </div>
+  <button class="burger" id="burgerBtn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuOverlay">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
     <div class="menu-overlay" id="menuOverlay">
       <a href="/" data-page="home">Home</a>
@@ -256,7 +247,7 @@
         <section class="services-testimonials" aria-labelledby="testimonials-title">
           <div class="page-eyebrow">Testimonials</div>
           <h3 class="testimonials-title" id="testimonials-title">Kind words.</h3>
-          <p class="testimonials-intro">A few words from people I’ve worked with.</p>
+          <p class="testimonials-intro">The work tells one part of the story. Clients and colleagues tell the rest.</p>
 
           <div class="testimonials-grid">
               <article class="personal-card testimonial-card">
