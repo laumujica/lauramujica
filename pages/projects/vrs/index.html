@@ -381,8 +381,8 @@ td{color:var(--muted)}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
 </style>
-<link rel="stylesheet" href="/css/project-mobile-nav.css?v=20261014">
-<script src="/js/project-mobile-nav.js?v=20261014" defer></script>
+<link rel="stylesheet" href="/css/project-mobile-nav.css?v=20261014-responsive2">
+<script src="/js/project-mobile-nav.js?v=20261014-responsive2" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -397,21 +397,30 @@ td{color:var(--muted)}
       <a href="https://lauramujica.com/pages/projects/" aria-current="page">Projects</a>
       <a href="https://lauramujica.com/pages/contact/">Contact</a>
     </nav>
-  </div>
     <button class="project-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="projectMobileMenu">
       <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
     </button>
-  </header>
-<div class="project-menu-overlay" id="projectMobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  </div>
+</header>
+<div class="project-menu-overlay" id="projectMobileMenu" role="dialog" aria-modal="true" aria-label="Main navigation" hidden>
+  <div class="project-menu-top">
+    <a class="project-menu-mark" href="/" aria-label="Laura Mujica, home">LM</a>
+    <button class="project-menu-close" type="button" aria-label="Close menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
   <nav class="project-menu-links" aria-label="Mobile main navigation">
-
-      <a href="https://lauramujica.com/">Home</a>
-      <a href="https://lauramujica.com/pages/about/">About Me</a>
-      <a href="https://lauramujica.com/pages/services/">Services</a>
-      <a href="https://lauramujica.com/pages/projects/" aria-current="page">Projects</a>
-      <a href="https://lauramujica.com/pages/contact/">Contact</a>
-    
+    <a href="https://lauramujica.com/">Home</a>
+    <a href="https://lauramujica.com/pages/about/">About Me</a>
+    <a href="https://lauramujica.com/pages/services/">Services</a>
+    <a href="https://lauramujica.com/pages/projects/" aria-current="page">Projects</a>
+    <a href="https://lauramujica.com/pages/contact/">Contact</a>
   </nav>
+  <div class="project-menu-socials" aria-label="Social profiles">
+    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://www.behance.net/laura_mujica" target="_blank" rel="noopener noreferrer">Behance</a>
+    <a href="https://github.com/laumujica" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
 </div>
 
 <main id="main">
