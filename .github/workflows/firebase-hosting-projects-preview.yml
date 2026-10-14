@@ -1,9 +1,8 @@
 name: Preview Projects on Firebase Hosting
 
+# Preview can still be started manually if needed; no longer deploys on each push.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
