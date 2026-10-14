@@ -1,96 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-58RM2K4672"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-58RM2K4672');
-</script>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-58RM2K4672"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-58RM2K4672");
+    </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Laura Mujica</title>
-<meta name="description" content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Laura Mujica</title>
+    <meta
+      name="description"
+      content="Senior Designer focused on visual systems, creative workflows, process optimization, print production, and AI-assisted design systems."
+    />
 
-<meta property="og:title" content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows">
-<meta property="og:description" content="Designing better systems for how creative work gets done.">
-<meta property="og:image" content="https://lauramujica.com/img/og-cover.jpg">
-<meta property="og:url" content="https://lauramujica.com">
-<meta property="og:type" content="website">
-<link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css?v=services-tools-20261013">
-</head>
-<body>
+    <meta
+      property="og:title"
+      content="Laura Mujica — Senior Designer | Creative Systems & AI-Assisted Workflows"
+    />
+    <meta
+      property="og:description"
+      content="Designing better systems for how creative work gets done."
+    />
+    <meta
+      property="og:image"
+      content="https://lauramujica.com/img/og-cover.jpg"
+    />
+    <meta property="og:url" content="https://lauramujica.com" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/jpg" href="/img/Favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css?v=services-tools-20261013" />
+  </head>
+  <body>
+    <canvas class="noise" id="noiseCanvas"></canvas>
 
-<canvas class="noise" id="noiseCanvas"></canvas>
-
-<nav class="site-nav" aria-label="Main navigation">
-  <a href="/" class="nav-logo" aria-label="Laura Mujica, home"><img src="/img/Favicon.png" alt="" width="48" height="48"></a>
-  <div class="desktop-nav">
-    <a href="/">Home</a>
-    <a href="/pages/about/">About Me</a>
-    <a href="/pages/services/" aria-current="page">Services</a>
-    <a href="/pages/projects/">Projects</a>
-    <a href="/pages/contact/">Contact</a>
-  </div>
-  <button class="burger" id="burgerBtn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuOverlay">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="menu-overlay" id="menuOverlay">
-  <a href="/" data-page="home">Home</a>
-  <a href="/pages/about/" data-page="about">About me</a>
-  <a href="/pages/services/" data-page="services" class="active">Services</a>
-  <a href="/pages/projects/" data-page="projects">Projects</a>
-  <a href="/pages/contact/" data-page="contact">Contact</a>
-  <div class="menu-footer-links">
-    <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/laura_mujica" target="_blank">Behance</a>
-    <a href="https://github.com/laumujica" target="_blank">GitHub</a>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<div id="services" class="page active">
-  <div class="page-inner">
-    <div class="page-eyebrow">Services</div>
-    <h2 class="page-title">How I Can Help</h2>
-    <p class="services-intro">Brand identity is more than a logo. I help businesses create visual systems that work consistently across print, digital, and everyday brand applications.
-</p>
-
-    <div class="services-list">
-      <div class="service-row">
-        <span class="svc-num">01</span>
-        <div class="svc-content">
-          <div class="svc-name">Brand Identity</div>
-          <div class="svc-desc">A complete brand system built from strategy up. Includes discovery, naming rationale, logo and mark, color, typography, and a brand guidelines document you can actually use.</div>
-          <div class="svc-tags">
-            <span class="svc-tag">Logo & Mark</span>
-            <span class="svc-tag">Color System</span>
-            <span class="svc-tag">Typography</span>
-            <span class="svc-tag">Brand Guidelines</span>
-          </div>
-        </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/" class="nav-logo" aria-label="Laura Mujica, home"
+        ><img src="/img/Favicon.png" alt="" width="48" height="48"
+      /></a>
+      <div class="desktop-nav">
+        <a href="/">Home</a>
+        <a href="/pages/about/">About Me</a>
+        <a href="/pages/services/" aria-current="page">Services</a>
+        <a href="/pages/projects/">Projects</a>
+        <a href="/pages/contact/">Contact</a>
       </div>
-      <div class="service-row">
-        <span class="svc-num">02</span>
-        <div class="svc-content">
-          <div class="svc-name">Visual Design</div>
-          <div class="svc-desc">Campaigns, art direction, editorial layouts, and print collateral. I help brands communicate clearly and consistently across every surface — digital and physical.</div>
-          <div class="svc-tags">
-            <span class="svc-tag">Art Direction</span>
-            <span class="svc-tag">Campaign Design</span>
-            <span class="svc-tag">Print & Editorial</span>
-            <span class="svc-tag">Packaging</span>
-          </div>
-        </div>
+      <button
+        class="burger"
+        id="burgerBtn"
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="menuOverlay"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+      <a href="/" data-page="home">Home</a>
+      <a href="/pages/about/" data-page="about">About me</a>
+      <a href="/pages/services/" data-page="services" class="active"
+        >Services</a
+      >
+      <a href="/pages/projects/" data-page="projects">Projects</a>
+      <a href="/pages/contact/" data-page="contact">Contact</a>
+      <div class="menu-footer-links">
+        <a href="https://www.linkedin.com/in/lauraamujica/" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://www.behance.net/laura_mujica" target="_blank"
+          >Behance</a
+        >
+        <a href="https://github.com/laumujica" target="_blank">GitHub</a>
       </div>
-      <!-- <div class="service-row">
+    </div>
+
+    <!-- SERVICES -->
+    <div id="services" class="page active">
+      <div class="page-inner">
+        <div class="page-eyebrow">Services</div>
+        <h2 class="page-title">How I Can Help</h2>
+        <p class="services-intro">
+          Brand identity is more than a logo. I help businesses create visual
+          systems that work consistently across print, digital, and everyday
+          brand applications.
+        </p>
+
+        <div class="services-list">
+          <div class="service-row">
+            <span class="svc-num">01</span>
+            <div class="svc-content">
+              <div class="svc-name">Brand Identity</div>
+              <div class="svc-desc">
+                A complete brand system built from strategy up. Includes
+                discovery, naming rationale, logo and mark, color, typography,
+                and a brand guidelines document you can actually use.
+              </div>
+              <div class="svc-tags">
+                <span class="svc-tag">Logo & Mark</span>
+                <span class="svc-tag">Color System</span>
+                <span class="svc-tag">Typography</span>
+                <span class="svc-tag">Brand Guidelines</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-row">
+            <span class="svc-num">02</span>
+            <div class="svc-content">
+              <div class="svc-name">Visual Design</div>
+              <div class="svc-desc">
+                Campaigns, art direction, editorial layouts, and print
+                collateral. I help brands communicate clearly and consistently
+                across every surface — digital and physical.
+              </div>
+              <div class="svc-tags">
+                <span class="svc-tag">Art Direction</span>
+                <span class="svc-tag">Campaign Design</span>
+                <span class="svc-tag">Print & Editorial</span>
+                <span class="svc-tag">Packaging</span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="service-row">
         <span class="svc-num">03</span>
         <div class="svc-content">
           <div class="svc-name">UI / UX Design</div>
@@ -103,76 +148,335 @@
           </div>
         </div>
       </div> -->
-      <div class="service-row">
-        <span class="svc-num">03</span>
-        <div class="svc-content">
-          <div class="svc-name">Web Design & Development</div>
-          <div class="svc-desc">Digital experiences that make ideas, content, and decisions easier to explore, review, or use. Designed and built with structure in mind.</div>
-          <div class="svc-tags">
-            <span class="svc-tag">Landing Pages</span>
-            <span class="svc-tag">Interactive Experiences</span>
-            <span class="svc-tag">Dashboards</span>
+          <div class="service-row">
+            <span class="svc-num">03</span>
+            <div class="svc-content">
+              <div class="svc-name">Web Design & Development</div>
+              <div class="svc-desc">
+                Digital experiences that make ideas, content, and decisions
+                easier to explore, review, or use. Designed and built with
+                structure in mind.
+              </div>
+              <div class="svc-tags">
+                <span class="svc-tag">Landing Pages</span>
+                <span class="svc-tag">Interactive Experiences</span>
+                <span class="svc-tag">Dashboards</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-row">
+            <span class="svc-num">04</span>
+            <div class="svc-content">
+              <div class="svc-name">Brand Audit & Refresh</div>
+              <div class="svc-desc">
+                Already have a brand but it's not quite working? I'll review
+                what you have, identify what's off, and propose targeted
+                improvements — without throwing everything out.
+              </div>
+              <div class="svc-tags">
+                <span class="svc-tag">Audit</span>
+                <span class="svc-tag">Refresh</span>
+                <span class="svc-tag">Consistency Review</span>
+                <span class="svc-tag">QA Testing</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-row">
+            <span class="svc-num">05</span>
+            <div class="svc-content">
+              <div class="svc-name">AI &amp; Creative Process Optimization</div>
+              <div class="svc-desc">
+                I review creative workflows, identify repetitive steps, and
+                design practical improvements with clearer documentation,
+                digital tools, and AI where useful. The goal is less manual work
+                and a more consistent process.
+              </div>
+              <div class="svc-tags">
+                <span class="svc-tag">Workflow Review</span>
+                <span class="svc-tag">AI-Assisted Workflows</span>
+                <span class="svc-tag">Documentation &amp; QA</span>
+                <span class="svc-tag">Automation</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="service-row">
-        <span class="svc-num">04</span>
-        <div class="svc-content">
-          <div class="svc-name">Brand Audit & Refresh</div>
-          <div class="svc-desc">Already have a brand but it's not quite working? I'll review what you have, identify what's off, and propose targeted improvements — without throwing everything out.</div>
-          <div class="svc-tags">
-            <span class="svc-tag">Audit</span>
-            <span class="svc-tag">Refresh</span>
-            <span class="svc-tag">Consistency Review</span>
-            <span class="svc-tag">QA Testing</span>
-          </div>
+
+        <!-- <div class="section-divider"></div> -->
+        <div class="page-eyebrow">Tools & stack</div>
+        <h3
+          style="
+            font-family: &quot;Syne&quot;, sans-serif;
+            font-weight: 800;
+            font-size: clamp(1.3rem, 3vw, 1.75rem);
+            line-height: 1;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+          "
+        >
+          What I work with.
+        </h3>
+        <div class="tools-grid" style="max-width: 600px">
+          <!-- <span class="tool-pill"><span class="tool-emoji">🎨</span> Figma</span> -->
+          <span class="tool-pill"
+            ><span class="tool-emoji">✦</span> Illustrator</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">▣</span> Photoshop</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">📐</span> InDesign</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">🎬</span> After Effects</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">▶️</span> Premiere Pro</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">◐</span> Fresco</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">◉</span> Corel Draw</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">&lt;/&gt;</span> VS Code</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">⚡</span> Claude</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">🗂️</span> ChatGPT</span
+          >
+          <span class="tool-pill"
+            ><span class="tool-emoji">📷</span> Gemini</span
+          >
         </div>
-      </div>
-      <div class="service-row">
-        <span class="svc-num">05</span>
-        <div class="svc-content">
-          <div class="svc-name">AI &amp; Creative Process Optimization</div>
-          <div class="svc-desc">I review creative workflows, identify repetitive steps, and design practical improvements with clearer documentation, digital tools, and AI where useful. The goal is less manual work and a more consistent process.</div>
-          <div class="svc-tags">
-            <span class="svc-tag">Workflow Review</span>
-            <span class="svc-tag">AI-Assisted Workflows</span>
-            <span class="svc-tag">Documentation &amp; QA</span>
-            <span class="svc-tag">Automation</span>
+
+        <!-- Testimonials -->
+        <section class="services-testimonials">
+          <div class="wrap">
+            <div class="section-heading">
+              <p class="section-kicker">Testimonials</p>
+              <h2>Kind words.</h2>
+              <p class="section-intro">
+                A few words from people I’ve worked with.
+              </p>
+            </div>
+
+            <div class="testimonials-grid">
+              <article class="testimonial-card">
+                <div class="testimonial-top">
+                  <img
+                    class="testimonial-avatar"
+                    src="/pages/services/img/testimonials/iara-pawlik-avatar.png"
+                    alt="Avatar illustration of Iara Pawlik"
+                    loading="lazy"
+                    width="88"
+                    height="88"
+                  />
+                  <div class="testimonial-meta">
+                    <h3>Iara Pawlik</h3>
+                    <p class="testimonial-role">
+                      UX/UI Design | Visual Design | Social Media Design | Brand
+                      Design
+                    </p>
+                    <p class="testimonial-date">April 14, 2026</p>
+                  </div>
+                </div>
+
+                <div class="testimonial-body">
+                  <p>
+                    I had the pleasure of working with Laura and can confidently
+                    say she is a highly reliable and creative professional. She
+                    consistently demonstrates a strong sense of responsibility
+                    and commitment to her work, always delivering with care and
+                    attention to detail.
+                  </p>
+                  <p>
+                    What truly sets her apart is her proactive mindset. She is
+                    constantly bringing new ideas to the table and looking for
+                    ways to improve processes and outcomes, and she is always
+                    eager to learn and grow.
+                  </p>
+                  <p>
+                    Beyond her skills, she is an incredibly sociable and
+                    supportive teammate who actively contributes to team
+                    dynamics and creates a positive work environment.
+                  </p>
+                  <p>She would be a valuable addition to any team. 🧡</p>
+                </div>
+
+                <a
+                  class="testimonial-link"
+                  href="https://www.linkedin.com/in/iara-pawlik/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View LinkedIn profile
+                </a>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-top">
+                  <img
+                    class="testimonial-avatar"
+                    src="/pages/services/img/testimonials/ricardo-schwerz-avatar.png"
+                    alt="Avatar illustration of Ricardo Schwerz"
+                    loading="lazy"
+                    width="88"
+                    height="88"
+                  />
+                  <div class="testimonial-meta">
+                    <h3>Ricardo Schwerz</h3>
+                    <p class="testimonial-role">
+                      Product Designer | UX Designer | Accessibility |
+                      Experimentation | Discovery | AI
+                    </p>
+                    <p class="testimonial-date">April 14, 2026</p>
+                  </div>
+                </div>
+
+                <div class="testimonial-body">
+                  <p>
+                    I had the chance to work with Laura at UENI, and one thing
+                    that always stood out to me was her commitment to doing her
+                    best for the team and the company.
+                  </p>
+                  <p>
+                    She is someone who genuinely puts in the effort to grow,
+                    deepen her knowledge, and understand the bigger picture
+                    behind the work. I also appreciated how willing she was to
+                    suggest improvements and contribute beyond just her
+                    immediate responsibilities.
+                  </p>
+                  <p>
+                    On top of that, she has a positive way of working with
+                    others, communicates well with the team, and helps maintain
+                    a good collaborative environment. It was a pleasure working
+                    together, and I am glad to recommend her.
+                  </p>
+                </div>
+
+                <a
+                  class="testimonial-link"
+                  href="https://www.linkedin.com/in/ricardo-schwerz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View LinkedIn profile
+                </a>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-top">
+                  <img
+                    class="testimonial-avatar"
+                    src="/pages/services/img/testimonials/maria-eugenia-lalla-avatar.png"
+                    alt="Avatar illustration of María Eugenia Lalla"
+                    loading="lazy"
+                    width="88"
+                    height="88"
+                  />
+                  <div class="testimonial-meta">
+                    <h3>María Eugenia Lalla</h3>
+                    <p class="testimonial-role">Client</p>
+                    <p class="testimonial-date">April 17, 2026</p>
+                  </div>
+                </div>
+
+                <div class="testimonial-body">
+                  <p>
+                    Working with Laura was an excellent experience. She has a
+                    strong ability to turn ideas into clear, strategic visual
+                    identities aligned with each brand.
+                  </p>
+                  <p>
+                    Her approach goes beyond design: she understands the
+                    business, proposes effective solutions, and delivers results
+                    that truly enhance communication.
+                  </p>
+                  <p>
+                    Without a doubt, a highly recommended professional for
+                    entrepreneurs and growing brands.
+                  </p>
+                </div>
+
+                <a
+                  class="testimonial-link"
+                  href="https://www.linkedin.com/in/eugenialalla/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View LinkedIn profile
+                </a>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-top">
+                  <img
+                    class="testimonial-avatar"
+                    src="/pages/services/img/testimonials/victoria-gonzalez-girodo-avatar.png"
+                    alt="Avatar illustration of Victoria Gonzalez Girodo"
+                    loading="lazy"
+                    width="88"
+                    height="88"
+                  />
+                  <div class="testimonial-meta">
+                    <h3>Victoria Gonzalez Girodo</h3>
+                    <p class="testimonial-role">
+                      Industrial Designer & UX-UI Designer
+                    </p>
+                    <p class="testimonial-date">April 19, 2026</p>
+                  </div>
+                </div>
+
+                <div class="testimonial-body">
+                  <p>
+                    Laura is an exceptional colleague, highly attentive and
+                    proactive. She is always focused on finding better ways to
+                    approach processes, improve outcomes, and simplify complex
+                    tasks.
+                  </p>
+                  <p>
+                    She is incredibly resourceful and brings a level of
+                    sensitivity to her work that is essential in any team
+                    environment.
+                  </p>
+                  <p>Having her by your side is truly valuable.</p>
+                </div>
+
+                <a
+                  class="testimonial-link"
+                  href="https://www.linkedin.com/in/victoria-gonzalez-girodo-a5a50724b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View LinkedIn profile
+                </a>
+              </article>
+            </div>
           </div>
+        </section>
+
+        <div class="page-cta-block">
+          <div class="page-cta-left">
+            <div class="page-cta-title">
+              Not sure what you need? <span>Let's figure it out.</span>
+            </div>
+            <p class="page-cta-sub">
+              No pressure, no pitch — just a quick call to understand your
+              project and see if we're a good match.
+            </p>
+          </div>
+          <button class="page-cta-btn" onclick="showPage('contact')">
+            Book a free call →
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- <div class="section-divider"></div> -->
-    <div class="page-eyebrow">Tools & stack</div>
-    <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.3rem,3vw,1.75rem);line-height:1;color:var(--white);margin-bottom:1.25rem;">What I work with.</h3>
-    <div class="tools-grid" style="max-width:600px">
-      <!-- <span class="tool-pill"><span class="tool-emoji">🎨</span> Figma</span> -->
-      <span class="tool-pill"><span class="tool-emoji">✦</span> Illustrator</span>
-      <span class="tool-pill"><span class="tool-emoji">▣</span> Photoshop</span>
-      <span class="tool-pill"><span class="tool-emoji">📐</span> InDesign</span>
-      <span class="tool-pill"><span class="tool-emoji">🎬</span> After Effects</span>
-      <span class="tool-pill"><span class="tool-emoji">▶️</span> Premiere Pro</span>
-      <span class="tool-pill"><span class="tool-emoji">◐</span> Fresco</span>
-      <span class="tool-pill"><span class="tool-emoji">◉</span> Corel Draw</span>
-      <span class="tool-pill"><span class="tool-emoji">&lt;/&gt;</span> VS Code</span>
-      <span class="tool-pill"><span class="tool-emoji">⚡</span> Claude</span>
-      <span class="tool-pill"><span class="tool-emoji">🗂️</span> ChatGPT</span>
-      <span class="tool-pill"><span class="tool-emoji">📷</span> Gemini</span>
-    </div>
-
-    <div class="page-cta-block">
-      <div class="page-cta-left">
-        <div class="page-cta-title">Not sure what you need? <span>Let's figure it out.</span></div>
-        <p class="page-cta-sub">No pressure, no pitch — just a quick call to understand your project and see if we're a good match.</p>
-      </div>
-      <button class="page-cta-btn" onclick="showPage('contact')">Book a free call →</button>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<!-- <footer>
+    <!-- FOOTER -->
+    <!-- <footer>
   <a href="#" class="footer-logo" onclick="showPage('home');return false">LM ⚡</a>
    <a href="#" class="footer-logo" onclick="showPage('home');return false">
   <img src="/img/iso.png" alt="Laura Mujica isologo">
@@ -185,30 +489,43 @@
   </div>
 </footer> -->
 
-
-<script src="/js/main.js?v=site-nav-20261013"></script>
-<!-- VIDEO INTRO MODAL -->
-<div class="video-modal" id="videoModal">
-  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
-  <div class="video-modal-inner">
-    <button class="video-modal-close" onclick="closeVideoModal()">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      Close
-    </button>
-    <div class="video-modal-frame">
-      <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
-      <div class="video-modal-placeholder">
-        <span class="big-bolt">⚡</span>
-        <p>Your intro video goes here — replace this placeholder with your MP4 or embed a Loom / YouTube iframe</p>
+    <script src="/js/main.js?v=site-nav-20261013"></script>
+    <!-- VIDEO INTRO MODAL -->
+    <div class="video-modal" id="videoModal">
+      <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+      <div class="video-modal-inner">
+        <button class="video-modal-close" onclick="closeVideoModal()">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+          Close
+        </button>
+        <div class="video-modal-frame">
+          <!-- Replace with your video: <video id="introVideo" controls playsinline><source src="your-intro.mp4" type="video/mp4"></video> -->
+          <div class="video-modal-placeholder">
+            <span class="big-bolt">⚡</span>
+            <p>
+              Your intro video goes here — replace this placeholder with your
+              MP4 or embed a Loom / YouTube iframe
+            </p>
+          </div>
+        </div>
+        <div class="video-modal-meta">
+          <span class="video-modal-title"
+            >Hi, I'm Laura — brand & visual designer</span
+          >
+          <span class="video-modal-hint"
+            >~2 min · No sound needed to get the idea</span
+          >
+        </div>
       </div>
     </div>
-    <div class="video-modal-meta">
-      <span class="video-modal-title">Hi, I'm Laura — brand & visual designer</span>
-      <span class="video-modal-hint">~2 min · No sound needed to get the idea</span>
-    </div>
-  </div>
-</div>
-
-
-</body>
+  </body>
 </html>
