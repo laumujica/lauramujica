@@ -1475,3 +1475,110 @@ footer{
   .testimonial-top { gap: 10px; }
   .testimonial-avatar { width: 60px; height: 60px; flex-basis: 60px; }
 }
+
+
+/* ── ABOUT / WORKING PRINCIPLES ── */
+.about-principles-trigger {
+  margin-top: 2rem;
+}
+.working-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.working-modal.is-open { display: flex; }
+.working-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(80, 5, 39, 0.83);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.working-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 740px);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(28px, 5vw, 48px);
+  border: 1px solid var(--white15);
+  border-radius: 16px;
+  background: var(--pink-dark);
+  color: var(--white);
+  box-shadow: 0 24px 80px rgba(80, 5, 39, .24);
+  scrollbar-width: thin;
+}
+.working-modal-title {
+  margin: 0 40px 2rem 0;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+.working-modal-close {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+.working-modal-close span {
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 2px;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.working-modal-close span + span { transform: rotate(-45deg); }
+.working-modal-close:hover { color: var(--yellow); }
+.working-modal-close:focus-visible,
+.about-principles-trigger:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 5px;
+}
+.working-principles-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.working-principles-list li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--white15);
+}
+.working-principles-list h3 {
+  margin: 0 0 0.5rem;
+  font: 700 1rem/1.4 'Syne', sans-serif;
+  color: var(--white);
+}
+.working-principles-list .principle-number { color: var(--yellow); }
+.working-principles-list p {
+  font: italic 300 0.88rem/1.7 'Inter', sans-serif;
+  color: var(--white80);
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .working-modal { padding: 12px; }
+  .working-modal-panel {
+    max-height: calc(100dvh - 24px);
+    padding: 28px 22px;
+  }
+  .working-modal-close { top: 18px; right: 16px; }
+  .working-modal-title { margin-bottom: 1.5rem; }
+  .working-principles-list h3 { font-size: 0.93rem; }
+  .working-principles-list p { font-size: 0.84rem; }
+}

@@ -22,7 +22,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css?v=unified-page-h1-20261014">
+<link rel="stylesheet" href="/css/styles.css?v=about-principles-20261014">
 </head>
 <body>
 
@@ -63,10 +63,10 @@
 
     <div class="about-intro-grid">
       <div>
-        <p class="about-body">Hi! I'm Laura — a Senior Designer based in Argentina.</p>
-        <p class="about-body" style="margin-top:1rem">I design visual systems, creative workflows, and digital experiences that help ideas move from concept to execution with more clarity, consistency, and less friction.</p>
-        <p class="about-body" style="margin-top:1rem">With a background in brand identity, print production, web, and digital design, I’m especially interested in improving how creative work gets done — combining human judgment, thoughtful systems, and AI-assisted processes when they genuinely make the work better.</p>
-        <p class="about-body" style="margin-top:1rem">I care about creating solutions that are not only visually strong, but also practical, scalable, and built to work in the real world.</p>
+        <p class="about-body">Hi! I’m Laura — a Senior Designer based in Argentina.</p>
+        <p class="about-body" style="margin-top:1rem">I design visual systems, creative workflows, and digital experiences that help ideas move from concept to execution with clarity, consistency, and less friction.</p>
+        <p class="about-body" style="margin-top:1rem">With a background in brand identity, print, and digital design, I’m focused on improving how creative work gets done — combining human judgment, thoughtful systems, and AI-assisted processes when they genuinely make the work better.</p>
+        <p class="about-body" style="margin-top:1rem">I care about creating solutions that are visually strong, scalable, and built for the real world.</p>
       </div>
       <div class="about-photo-slot">
         <div class="about-photo-frame">
@@ -85,6 +85,7 @@
       <span class="pill">AI-Assisted Workflows</span>
       <span class="pill">Art Direction</span>
       <span class="pill">Editorial Design</span>
+      <span class="pill">Systems Design</span>
 
     </div>
 
@@ -98,6 +99,11 @@
       </div>
       <div class="vit-arrow">↗</div>
     </button> -->
+
+    <button type="button" class="btn-primary btn-yellow about-principles-trigger" id="openWorkingPrinciples"
+      aria-haspopup="dialog" aria-controls="workingPrinciplesModal">
+      How I work
+    </button>
 
     <div class="section-divider"></div>
 
@@ -159,7 +165,7 @@
       <div class="personal-card">
         <div class="personal-card-header">
           <span class="personal-card-icon">▶️</span>
-          <span class="personal-card-title">YouTube I watch on repeat</span>
+          <span class="personal-card-title">Videos I watch on repeat</span>
         </div>
         <ul class="personal-list">
           <li><a href="https://youtu.be/GLpdY-57Dro" target="_blank">
@@ -222,6 +228,89 @@ WILDFLOWER</a><span>Billie Eilish</span></li>
   </div>
 </div>
 
+
+
+<!-- WORKING PRINCIPLES MODAL -->
+<div class="working-modal" id="workingPrinciplesModal" role="dialog"
+     aria-modal="true" aria-labelledby="workingPrinciplesTitle" aria-hidden="true">
+  <div class="working-modal-backdrop" data-close-working-modal></div>
+  <div class="working-modal-panel" tabindex="-1">
+    <button type="button" class="working-modal-close" id="closeWorkingPrinciples"
+            aria-label="Close Working Principles">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <h2 class="working-modal-title" id="workingPrinciplesTitle">Working Principles</h2>
+    <ol class="working-principles-list">
+      <li>
+        <h3><span class="principle-number">01 · </span>Context before execution.</h3>
+        <p>I do my best work when given the time and trust to understand the core problem before jumping into production.</p>
+      </li>
+      <li>
+        <h3><span class="principle-number">02 · </span>Foundations over rushing.</h3>
+        <p>Instead of using AI or systems just to move faster, I build thoughtful foundations first to work sustainably from there.</p>
+      </li>
+      <li>
+        <h3><span class="principle-number">03 · </span>Focus over perpetual firefighting.</h3>
+        <p>Normal project pressure is part of the work, but constant, reactive chaos prevents any deep or meaningful process.</p>
+      </li>
+      <li>
+        <h3><span class="principle-number">04 · </span>Mutual alignment.</h3>
+        <p>Great outcomes require active collaboration, honoring the design process while valuing the time, energy, and well-being of the team.</p>
+      </li>
+      <li>
+        <h3><span class="principle-number">05 · </span>Structure with flexibility.</h3>
+        <p>Scope, milestones, and expectations must be clear from day one, while remaining flexible enough to adapt intelligently as the project evolves.</p>
+      </li>
+    </ol>
+  </div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById('workingPrinciplesModal');
+  const opener = document.getElementById('openWorkingPrinciples');
+  const closer = document.getElementById('closeWorkingPrinciples');
+  const panel = modal.querySelector('.working-modal-panel');
+  const backdrop = modal.querySelector('[data-close-working-modal]');
+  let previousFocus = null;
+  let previousOverflow = '';
+
+  const open = () => {
+    previousFocus = document.activeElement;
+    previousOverflow = document.body.style.overflow;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closer.focus();
+  };
+  const close = () => {
+    if (!modal.classList.contains('is-open')) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = previousOverflow;
+    if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+  };
+
+  opener.addEventListener('click', open);
+  closer.addEventListener('click', close);
+  backdrop.addEventListener('click', close);
+  modal.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      event.stopPropagation();
+      close();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    // The close button is the only focusable element within the dialog.
+    const focusable = [...panel.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')];
+    if (!focusable.length) { event.preventDefault(); panel.focus(); return; }
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+})();
+</script>
 
 </body>
 </html>
