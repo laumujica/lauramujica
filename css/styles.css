@@ -1605,3 +1605,30 @@ footer{
   .working-principles-list h3 { font-size: 0.93rem; }
   .working-principles-list p { font-size: 0.84rem; }
 }
+
+/* Targeted page refinements — October 2026 */
+.tools-stack{display:grid;gap:1.5rem;max-width:760px}
+.tools-category-title{font-size:.72rem;letter-spacing:.09em;font-weight:600;color:var(--white80);margin-bottom:.65rem}
+.page-cta-title span{display:block;margin-top:.3rem}
+.about-intro-grid{display:block;flow-root}
+.about-intro-grid .about-photo-slot{float:right;width:180px;margin:0 0 1rem 2rem}
+.about-intro-grid .about-photo-frame{width:180px;height:180px}
+.contact-layout{gap:3.5rem;align-items:start}
+.contact-form{margin-top:0}
+.contact-form .form-row .form-group{margin-top:0}
+.contact-form .form-group{margin-top:1.25rem}
+.contact-form .form-submit{margin-top:1.5rem}
+.contact-right-col{gap:2rem}
+.contact-direct-group{display:flex;flex-direction:column;gap:1.25rem}
+.contact-direct-intro{font-size:.85rem;line-height:1.6;color:var(--white80);font-weight:300;margin:0}
+.contact-schedule-btn{width:100%;justify-content:center;margin:0}
+.contact-right-col .contact-links{margin-top:0}
+@media(max-width:768px){
+  .about-intro-grid .about-photo-slot{width:140px;margin:0 0 1rem 1.5rem}
+  .about-intro-grid .about-photo-frame{width:140px;height:140px}
+  .contact-layout{gap:2.5rem}
+}
+@media(max-width:480px){
+  .about-intro-grid .about-photo-slot{width:100px;margin:0 0 .75rem 1rem}
+  .about-intro-grid .about-photo-frame{width:100px;height:100px}
+}
