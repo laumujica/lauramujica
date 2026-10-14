@@ -114,8 +114,9 @@
       event.preventDefault();
       const thumbnail = link.querySelector('img');
       returnFocus = link;
-      title.textContent = thumbnail?.alt || 'Image detail';
-      image.alt = thumbnail?.alt || '';
+      const description = thumbnail?.alt || link.getAttribute('aria-label') || 'Image detail';
+      title.textContent = description;
+      image.alt = description;
       viewer.hidden = false;
       document.body.classList.add('viewer-open');
       image.onload = fitImage;

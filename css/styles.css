@@ -1610,7 +1610,7 @@ footer{
 .tools-stack{display:grid;gap:1.5rem;max-width:760px}
 .tools-category-title{font-size:.75rem;letter-spacing:.05em;font-weight:500;color:var(--white80);margin-bottom:.75rem}
 .page-cta-title span{display:block;margin-top:.3rem}
-.about-intro-grid{display:flow-root;max-width:520px}
+.about-intro-grid{display:flow-root;width:100%}
 .about-intro-grid .about-photo-slot{float:right;width:180px;margin:0 0 1rem 2rem}
 .about-intro-grid .about-photo-frame{width:180px;height:180px}
 .contact-layout{gap:3.5rem;align-items:start}
@@ -1652,3 +1652,6 @@ body.selection-branded ::selection{background:var(--yellow);color:#61203B}
     gap:7px;
   }
 }
+
+/* Allow the two five-item tool groups to wrap only on narrow screens. */
+@media(max-width:640px){.tools-category-hosting .tools-row,.tools-category-ai .tools-row{flex-wrap:wrap}}
