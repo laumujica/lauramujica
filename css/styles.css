@@ -831,11 +831,6 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 .play-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--white80)}
 
 /* ── CONTACT ── */
-.contact-big{
-  font-family:'Syne',sans-serif;font-weight:800;
-  font-size:clamp(2.8rem,8vw,3rem);line-height:0.92;
-  color:var(--white);margin-bottom:1.5rem;
-}
 .contact-big span{color:var(--yellow)}
 .contact-sub{
   font-size:0.95rem;color:var(--white80);font-weight:300;
@@ -1254,7 +1249,6 @@ footer{
   .tool-pill { font-size: 0.68rem; padding: 5px 10px; }
 
   /* Contact */
-  .contact-big { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .contact-links { gap: 8px; }
   .contact-link { padding: 0.9rem 1.1rem; }
 
