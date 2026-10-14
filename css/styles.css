@@ -1498,8 +1498,7 @@ footer{
 .working-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: var(--pink-darker);
-  opacity: 0.88;
+  background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -1592,11 +1591,9 @@ footer{
   margin: 0;
 }
 .working-modal-footer {
-  flex-shrink: 0;
   display: flex;
   justify-content: center;
-  padding: 18px 24px 28px;
-  border-top: 1px solid var(--white15);
+  padding: 24px 0 30px;
 }
 @media (max-width: 640px) {
   .working-modal { padding: 12px; }
@@ -1604,7 +1601,7 @@ footer{
   .working-modal-header { padding: 30px 44px 16px; }
   .working-modal-close { top: 18px; right: 16px; }
   .working-modal-content { padding: 0 22px; }
-  .working-modal-footer { padding: 16px 20px 22px; }
+  .working-modal-footer { padding: 22px 0 26px; }
   .working-principles-list h3 { font-size: 0.93rem; }
   .working-principles-list p { font-size: 0.84rem; }
 }
