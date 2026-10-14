@@ -165,7 +165,8 @@
 .reflection-grid > div > span::before { background: var(--yellow); }
 .reflection h2 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5.3rem); line-height: .96; letter-spacing: -.055em; text-wrap: balance; }
 .reflection-copy p { margin: 0 0 19px; font-size: 1rem; line-height: 1.65; }
-.reflection-resources { display: grid; grid-template-columns: 1fr; max-width: 480px; gap: 14px; margin-top: 30px; }
+.reflection-resources { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 30px; }
+.reflection-resources > .resource-link { grid-column: 1; }
 .resource-link { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 50px; padding: 13px 19px; border: 0; border-radius: 999px; background: var(--yellow); color: #000; text-decoration: none; font-family: inherit; font-size: .88rem; font-weight: 700; line-height: inherit; text-align: left; }
 .resource-link:hover, .resource-link:focus-visible { background: #ffe994; }
 .resource-link--pending { opacity: .45; cursor: default; }
