@@ -1,13 +1,16 @@
-# Laura Mujica — website
+# Laura Mujica — Portfolio
 
-Static HTML site hosted on Firebase Hosting (`lauramujica-fbc70`). The shared styling is in `css/styles.css` and navigation/interactive behavior is in `js/main.js`.
+Portfolio of Laura Mujica, a senior designer based in Argentina. My work spans visual systems, digital experiences, and creative process optimization.
 
-## Editing pages
+**Live site:** [lauramujica.com](https://lauramujica.com/)
 
-The visible homepage and menu are in `index.html`. Each other view is a complete HTML file in its section folder under `pages/`. Edit `pages/projects/index.html` for the project list and `pages/projects/futurescape/index.html` or `pages/projects/boredrawr/index.html` for the case studies. Project pages can share `css/case-study.css` and use a project-specific stylesheet under `css/projects/`. Playground experiments live in `pages/playground/`.
+## Selected work
 
-The menu uses direct links to About, Services, Projects, and Contact. Existing buttons that call `showPage('projects')` open `/pages/projects/`. Keep the shared menu and video modal consistent when changing their markup across pages.
+- **Boredrawr** — A visual identity developed into a bilingual creative prompt web app.
+- **Futurescape** — An editorial concept exploring human-directed AI imagery.
+- **Usados Copados** — A second-hand marketplace concept with a mobile UI and functional Figma prototype.
+- **Variant Reconciliation System (VRS)** — A client tool for reviewing AI-generated variants and documenting approved decisions.
 
-For a local preview, run `python3 -m http.server 8000` in this folder and open `http://localhost:8000`. Firebase Hosting serves the files directly from this folder as configured in `firebase.json`. Publishing a GitHub commit alone does not deploy to Firebase.
+## About this site
 
-Case-study working sources live in `content/` and are excluded from Firebase Hosting. The website renders the approved standalone HTML pages in `pages/projects/`.
+The portfolio was built with HTML, CSS, and JavaScript, with assistance from ChatGPT, Claude, and Gemini.
