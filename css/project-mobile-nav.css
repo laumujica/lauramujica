@@ -1,0 +1,86 @@
+/* Shared responsive navigation for the four project case studies. */
+.project-menu-toggle,
+.project-menu-overlay{display:none}
+.project-menu-overlay[hidden]{display:none!important}
+.project-menu-toggle{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:#111;
+  width:44px;
+  height:44px;
+  padding:8px;
+  flex:0 0 44px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  font:inherit;
+}
+.project-menu-toggle span{
+  display:block;
+  width:24px;
+  height:2px;
+  border-radius:2px;
+  background:currentColor;
+  transition:transform .22s ease,opacity .2s ease;
+}
+.project-menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(7px) rotate(45deg)}
+.project-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.project-menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+.project-menu-toggle:focus-visible{outline:2px solid #111;outline-offset:3px;border-radius:4px}
+
+@media(max-width:1024px){
+  body.project-menu-ready .project-nav-header{position:relative;z-index:1050}
+  body.project-menu-ready .project-nav-header .project-desktop-nav{display:none!important}
+  body.project-menu-ready .project-nav-header .project-menu-toggle{display:inline-flex}
+  body.project-menu-open{overflow:hidden}
+  .project-menu-overlay:not([hidden]){
+    position:fixed;
+    inset:0;
+    z-index:1049;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-y:auto;
+    padding:110px 24px 35px;
+    background:#C4245A;
+  }
+  .project-menu-links{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    width:100%;
+  }
+  .project-menu-links a{
+    display:block;
+    padding:8px 0;
+    color:#fff!important;
+    text-decoration:none;
+    font:800 clamp(2rem,6vw,3.2rem)/1.1 Syne,Arial,sans-serif;
+    letter-spacing:.02em;
+    opacity:.66;
+    text-align:center;
+    transition:opacity .2s ease;
+  }
+  .project-menu-links a:hover,
+  .project-menu-links a:focus-visible,
+  .project-menu-links a[aria-current="page"]{opacity:1}
+  .project-menu-links a[aria-current="page"]{
+    text-decoration:underline;
+    text-decoration-color:#F5D052;
+    text-decoration-thickness:3px;
+    text-underline-offset:8px;
+  }
+  .project-menu-links a:focus-visible{outline:2px solid #fff;outline-offset:5px}
+}
+@media(max-width:480px){
+  .project-menu-overlay:not([hidden]){padding-inline:18px}
+  .project-menu-links a{font-size:clamp(1.85rem,8vw,2.6rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  .project-menu-toggle span,.project-menu-links a{transition:none}
+}

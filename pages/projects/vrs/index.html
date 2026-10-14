@@ -381,14 +381,16 @@ td{color:var(--muted)}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
 </style>
+<link rel="stylesheet" href="/css/project-mobile-nav.css?v=20261014">
+<script src="/js/project-mobile-nav.js?v=20261014" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-header">
+<header class="site-header project-nav-header">
   <div class="wrap">
     <a class="logo" href="https://lauramujica.com/" aria-label="Laura Mujica, home"><img src="../../../img/Favicon.png" alt="" width="48" height="48"></a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <nav class="site-nav project-desktop-nav" aria-label="Main navigation">
       <a href="https://lauramujica.com/">Home</a>
       <a href="https://lauramujica.com/pages/about/">About Me</a>
       <a href="https://lauramujica.com/pages/services/">Services</a>
@@ -396,7 +398,21 @@ td{color:var(--muted)}
       <a href="https://lauramujica.com/pages/contact/">Contact</a>
     </nav>
   </div>
-</header>
+    <button class="project-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="projectMobileMenu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </header>
+<div class="project-menu-overlay" id="projectMobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <nav class="project-menu-links" aria-label="Mobile main navigation">
+
+      <a href="https://lauramujica.com/">Home</a>
+      <a href="https://lauramujica.com/pages/about/">About Me</a>
+      <a href="https://lauramujica.com/pages/services/">Services</a>
+      <a href="https://lauramujica.com/pages/projects/" aria-current="page">Projects</a>
+      <a href="https://lauramujica.com/pages/contact/">Contact</a>
+    
+  </nav>
+</div>
 
 <main id="main">
 
