@@ -1608,9 +1608,9 @@ footer{
 
 /* Targeted page refinements — October 2026 */
 .tools-stack{display:grid;gap:1.5rem;max-width:760px}
-.tools-category-title{font-size:.72rem;letter-spacing:.09em;font-weight:600;color:var(--white80);margin-bottom:.65rem}
+.tools-category-title{font-size:.75rem;letter-spacing:.05em;font-weight:500;color:var(--white80);margin-bottom:.75rem}
 .page-cta-title span{display:block;margin-top:.3rem}
-.about-intro-grid{display:block;flow-root}
+.about-intro-grid{display:flow-root;max-width:520px}
 .about-intro-grid .about-photo-slot{float:right;width:180px;margin:0 0 1rem 2rem}
 .about-intro-grid .about-photo-frame{width:180px;height:180px}
 .contact-layout{gap:3.5rem;align-items:start}
@@ -1631,4 +1631,24 @@ footer{
 @media(max-width:480px){
   .about-intro-grid .about-photo-slot{width:100px;margin:0 0 .75rem 1rem}
   .about-intro-grid .about-photo-frame{width:100px;height:100px}
+}
+
+/* Scoped finishing touches — five main pages only */
+body.selection-branded ::selection{background:var(--yellow);color:#61203B}
+.tools-stack .tools-rows{display:grid;gap:7px}
+.tools-stack .tools-row{display:flex;flex-wrap:nowrap;gap:7px;min-width:0}
+.contact-links-heading{
+  font-size:.85rem;
+  line-height:1.6;
+  font-weight:300;
+  color:var(--white80);
+  margin:0 0 .25rem;
+}
+@media(max-width:640px){
+  .tools-category-design .tools-row,
+  .tools-category-web .tools-row{
+    display:grid;
+    grid-template-columns:repeat(2,max-content);
+    gap:7px;
+  }
 }
