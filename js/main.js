@@ -121,7 +121,9 @@ function openVideoModal() {
   if (v) v.play();
 }
 function closeVideoModal() {
-  document.getElementById('videoModal').classList.remove('open');
+  const modal = document.getElementById('videoModal');
+  if (!modal) return;
+  modal.classList.remove('open');
   document.body.style.overflow = '';
   const v = document.getElementById('introVideo');
   if (v) { v.pause(); v.currentTime = 0; }
