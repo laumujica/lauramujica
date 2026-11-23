@@ -643,10 +643,22 @@
     <script>
       document.querySelectorAll("#services .testimonial-read-more").forEach((button) => {
         button.addEventListener("click", () => {
+          const cards = Array.from(document.querySelectorAll("#services .testimonial-card"));
           const card = button.closest(".testimonial-card");
-          const expanded = card.classList.toggle("is-expanded");
-          button.setAttribute("aria-expanded", String(expanded));
-          button.textContent = expanded ? "Read less" : "Read more";
+          const rowTop = card.getBoundingClientRect().top;
+          const rowCards = cards.filter((item) =>
+            Math.abs(item.getBoundingClientRect().top - rowTop) < 2
+          );
+          const expanded = !card.classList.contains("is-expanded");
+
+          rowCards.forEach((item) => {
+            item.classList.toggle("is-expanded", expanded);
+            const rowButton = item.querySelector(".testimonial-read-more");
+            if (rowButton) {
+              rowButton.setAttribute("aria-expanded", String(expanded));
+              rowButton.textContent = expanded ? "Read less" : "Read more";
+            }
+          });
         });
       });
     </script>
