@@ -43,6 +43,92 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css?v=project-refinements-20261014" />
+  
+    <style>
+      #services .services-section-heading {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.3rem, 3vw, 1.75rem);
+        line-height: 1.05;
+        color: var(--white);
+        margin: 0 0 1.25rem;
+      }
+      #services .services-practice-list {
+        border-top: 1px solid var(--white15);
+      }
+      #services .services-practice-item {
+        display: grid;
+        grid-template-columns: 2rem minmax(0, 1fr);
+        align-items: start;
+        gap: 1.5rem;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid var(--white15);
+      }
+      #services .services-practice-item h3,
+      #services .services-craft-item h3 {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.3;
+        color: var(--white);
+        margin: 0 0 0.4rem;
+      }
+      #services .services-practice-item p,
+      #services .services-craft-item p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        font-weight: 300;
+        color: var(--white80);
+        margin: 0;
+      }
+      #services .services-project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1.35rem;
+        padding: 0;
+        color: var(--white);
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        opacity: 1;
+        transition: color 0.2s;
+      }
+      #services .services-project-link:hover {
+        color: var(--yellow);
+      }
+      #services .services-craft-intro {
+        max-width: 650px;
+        margin: 0 0 1.5rem;
+        color: var(--white80);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        font-weight: 300;
+      }
+      #services .services-craft-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem 2rem;
+        max-width: 760px;
+      }
+      #services .services-craft-item {
+        border-top: 1px solid var(--white15);
+        padding-top: 1rem;
+      }
+      @media (max-width: 600px) {
+        #services .services-practice-item {
+          gap: 1rem;
+        }
+        #services .services-craft-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+      }
+    </style>
+
   </head>
   <body class="selection-branded">
     <canvas class="noise" id="noiseCanvas"></canvas>
@@ -86,112 +172,80 @@
         <div class="page-eyebrow">Services</div>
         <h1 class="page-title">How I Can Help.</h1>
         <p class="services-intro">
-          I partner with businesses, startups, and entrepreneurs to create clear visual systems that work consistently across digital platforms and print. My approach focuses on listening carefully to identify root problems, building solid foundations rather than applying quick fixes.
+          I work with independent professionals, designers and businesses to review how their creative work gets done and adapt their processes to today's tools and ways of working. I start by understanding the people and the problems behind the process, then build solid foundations rather than applying quick fixes.
         </p>
 
-        <div class="services-list">
-          <div class="service-row">
+        <div class="services-list services-primary">
+          <article class="service-row">
             <span class="svc-num">01</span>
             <div class="svc-content">
-              <div class="svc-name">Brand Identity</div>
-              <div class="svc-desc">
-                A complete brand system built from strategy up. Includes
-                discovery, naming rationale, logo and mark, color, typography,
-                and a brand guidelines document you can actually use.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Logo & Mark</span>
-                <span class="svc-tag">Color System</span>
-                <span class="svc-tag">Typography</span>
-                <span class="svc-tag">Brand Guidelines</span>
-              </div>
+              <h2 class="svc-name">Creative Process Optimization</h2>
+              <p class="svc-desc">
+                I review creative workflows, identify repetitive steps and gaps, and design practical improvements through clearer documentation, better use of digital tools, and AI where useful. The goal isn't simply to move faster: it's to make the process clearer, more consistent and easier for everyone involved to follow.
+              </p>
             </div>
-          </div>
-          <div class="service-row">
-            <span class="svc-num">02</span>
-            <div class="svc-content">
-              <div class="svc-name">Visual Design</div>
-              <div class="svc-desc">
-                Campaigns, art direction, editorial layouts, and print
-                collateral. I help brands communicate clearly and consistently
-                across every surface — digital and physical.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Art Direction</span>
-                <span class="svc-tag">Campaign Design</span>
-                <span class="svc-tag">Print & Editorial</span>
-                <span class="svc-tag">Packaging</span>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="service-row">
-        <span class="svc-num">03</span>
-        <div class="svc-content">
-          <div class="svc-name">UI / UX Design</div>
-          <div class="svc-desc">Interfaces that are clear, intuitive, and visually cohesive. I design products and systems that feel as good to use as they look — from wireframes to polished UI and design systems.</div>
-          <div class="svc-tags">
-            <span class="svc-tag">Product Design</span>
-            <span class="svc-tag">Design Systems</span>
-            <span class="svc-tag">Wireframing</span>
-            <span class="svc-tag">Prototyping</span>
-          </div>
-        </div>
-      </div> -->
-          <div class="service-row">
-            <span class="svc-num">03</span>
-            <div class="svc-content">
-              <div class="svc-name">Web Design & Development</div>
-              <div class="svc-desc">
-                Digital experiences that make ideas, content, and decisions
-                easier to explore, review, or use. Designed and built with
-                structure in mind.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Landing Pages</span>
-                <span class="svc-tag">Interactive Experiences</span>
-                <span class="svc-tag">Dashboards</span>
-              </div>
-            </div>
-          </div>
-          <!-- Temporarily hidden service
-          <div class="service-row">
-            <span class="svc-num">04</span>
-            <div class="svc-content">
-              <div class="svc-name">Brand Audit & Refresh</div>
-              <div class="svc-desc">
-                Already have a brand but it's not quite working? I'll review
-                what you have, identify what's off, and propose targeted
-                improvements — without throwing everything out.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Audit</span>
-                <span class="svc-tag">Refresh</span>
-                <span class="svc-tag">Consistency Review</span>
-                <span class="svc-tag">QA Testing</span>
-              </div>
-            </div>
-          </div>
-          -->
-          <div class="service-row">
-            <span class="svc-num">04</span>
-            <div class="svc-content">
-              <div class="svc-name">AI &amp; Creative Process Optimization</div>
-              <div class="svc-desc">
-                I review creative workflows, identify repetitive steps, and
-                design practical improvements with clearer documentation,
-                digital tools, and AI where useful. The goal is less manual work
-                and a more consistent process.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">AI-Assisted Workflows</span>
-                <span class="svc-tag">Documentation &amp; QA</span>
-                <span class="svc-tag">Automation</span>
-              </div>
-            </div>
-          </div>
+          </article>
         </div>
 
-        <!-- <div class="section-divider"></div> -->
+        <section class="services-practice" aria-labelledby="services-practice-title">
+          <h2 class="services-section-heading" id="services-practice-title">What this looks like in practice</h2>
+          <div class="services-practice-list">
+            <article class="services-practice-item">
+              <span class="svc-num">01</span>
+              <div>
+                <h3>Process Review</h3>
+                <p>Understanding how work gets done today, and where it repeats or breaks.</p>
+              </div>
+            </article>
+            <article class="services-practice-item">
+              <span class="svc-num">02</span>
+              <div>
+                <h3>Tools &amp; Documentation</h3>
+                <p>Clarifying the tools and documents a process needs, so everyone involved can follow it.</p>
+              </div>
+            </article>
+            <article class="services-practice-item">
+              <span class="svc-num">03</span>
+              <div>
+                <h3>Workflow Setup</h3>
+                <p>Setting up clear, shared ways of working for designers and small studios, including where AI tools fit.</p>
+              </div>
+            </article>
+          </div>
+          <a class="services-project-link" href="/pages/projects/">See the projects <span aria-hidden="true">→</span></a>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="services-craft" aria-labelledby="services-craft-title">
+          <h2 class="services-section-heading" id="services-craft-title">The craft behind it</h2>
+          <p class="services-craft-intro">
+            Fifteen years in design have taught me how creative projects are really made, and where they tend to break. My experience across brand identity, visual design and web is what I bring to every process I review.
+          </p>
+          <div class="services-craft-grid">
+            <article class="services-craft-item">
+              <h3>Brand Identity</h3>
+              <p>Naming, logo and mark, color, typography, and brand guidelines.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>Visual Design</h3>
+              <p>Art direction, editorial, print, and packaging.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>Web Design &amp; Development</h3>
+              <p>Landing pages, interactive experiences, and dashboards.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>UX/UI</h3>
+              <p>User flows, interface behavior, prototypes, and usability testing.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>QA Testing</h3>
+              <p>Test plans, regression checks, and file and print verification.</p>
+            </article>
+          </div>
+        </section>
+
         <div class="page-eyebrow">Tools & stack</div>
         <h3
           style="
