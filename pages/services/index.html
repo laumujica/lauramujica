@@ -75,8 +75,8 @@
       }
       #services .service-featured .svc-desc {
         max-width: 690px;
-        font-size: 0.95rem;
-        line-height: 1.8;
+        font-size: 0.85rem;
+        line-height: 1.7;
         margin: 0 0 1.7rem;
       }
       #services .services-practice {
@@ -147,6 +147,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.2rem 2rem;
         max-width: 760px;
+        padding-left: 1.25rem;
       }
       #services .services-craft-item {
         padding-top: 0.8rem;
@@ -163,6 +164,30 @@
         font-size: 0.78rem;
         font-weight: 300;
         line-height: 1.6;
+      }
+      #services .testimonial-card:not(.is-expanded) .testimonial-body p:not(:first-child) {
+        display: none;
+      }
+      #services .testimonial-card:not(.is-expanded) .testimonial-body p:first-child {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      #services .testimonial-card .testimonial-read-more {
+        display: inline-flex;
+        margin-top: 0.55rem;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--white80);
+        font: 500 0.75rem/1.4 "Inter", sans-serif;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        cursor: pointer;
+      }
+      #services .testimonial-card.is-expanded .testimonial-read-more {
+        margin-top: 0.75rem;
       }
       @media (max-width: 700px) {
         #services .services-practice-list {
@@ -283,8 +308,6 @@
             </div>
           </article>
         </div>
-
-        <div class="section-divider"></div>
 
         <section class="services-craft" aria-labelledby="services-craft-title">
           <div class="page-eyebrow">Background</div>
@@ -426,6 +449,7 @@
                   </p>
                   <p>She would be a valuable addition to any team. 🧡</p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -477,6 +501,7 @@
                     together, and I am glad to recommend her.
                   </p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -521,6 +546,7 @@
                     entrepreneurs and growing brands.
                   </p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -565,6 +591,7 @@
                   </p>
                   <p>Having her by your side is truly valuable.</p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -609,6 +636,16 @@
   </div>
 </footer> -->
 
+    <script>
+      document.querySelectorAll("#services .testimonial-read-more").forEach((button) => {
+        button.addEventListener("click", () => {
+          const card = button.closest(".testimonial-card");
+          const expanded = card.classList.toggle("is-expanded");
+          button.setAttribute("aria-expanded", String(expanded));
+          button.textContent = expanded ? "Read less" : "Read more";
+        });
+      });
+    </script>
     <script src="/js/main.js?v=site-nav-20261013"></script>
   </body>
 </html>
