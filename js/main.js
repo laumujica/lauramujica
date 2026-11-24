@@ -112,9 +112,15 @@ if (contactMessageForm) {
         body: JSON.stringify(Object.fromEntries(new FormData(contactMessageForm))),
       });
 
-      const result = await response.json();
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("I couldn't confirm that your message was sent. Please try again in a moment.");
+      }
+
       if (!response.ok || result.success === false || result.success === 'false' || result.error) {
-        throw new Error(result.message || 'The message could not be sent. Please try again.');
+        throw new Error(result.message || "I couldn't send your message. Please try again in a moment.");
       }
 
       document.getElementById('contactForm').style.display = 'none';
