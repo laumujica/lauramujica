@@ -149,7 +149,7 @@ nav{
 }
 .home-name{
   font-family:'Syne',sans-serif;font-weight:800;
-  font-size: clamp(2.7rem, 12vw, 3.2rem);
+  font-size: clamp(2.2rem, 8vw, 2.7rem);
   letter-spacing: 0.04em;line-height:0.92;
   color:var(--white);
   margin-bottom:0.6rem;
@@ -1219,7 +1219,7 @@ footer{
 
   /* Home */
   #home.active { padding: 1.5rem; }
-  .home-name { font-size: clamp(2.4rem, 9vw, 3.4rem); }
+  .home-name { font-size: clamp(2.1rem, 7vw, 2.8rem); }
   .bolt { font-size: 3rem; }
   .avail-badge { font-size: 0.65rem; padding: 5px 14px; }
   .home-socials { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
