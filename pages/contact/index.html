@@ -68,6 +68,33 @@
   #contact .form-error.show {
     display: block;
   }
+  #contact .form-submit:disabled {
+    cursor: wait;
+    opacity: 0.85;
+    transform: none;
+  }
+  #contact .sending-dots {
+    display: inline-flex;
+    gap: 0.18em;
+    margin-left: 0.12em;
+    vertical-align: baseline;
+  }
+  #contact .sending-dots span {
+    animation: sendingDot 1s ease-in-out infinite;
+  }
+  #contact .sending-dots span:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  #contact .sending-dots span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  @keyframes sendingDot {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-2px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #contact .sending-dots span { animation: none; opacity: 1; }
+  }
 </style>
 </head>
 <body class="selection-branded">
