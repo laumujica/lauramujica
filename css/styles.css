@@ -1628,6 +1628,10 @@ footer{
   .working-principles-list p { font-size: 0.84rem; }
 }
 
+/* About typography refinement — November 2026 */
+#about .page-title{font-size:clamp(2rem,6vw,2.7rem)}
+#about .about-body{font-size:0.95rem;line-height:1.8}
+
 /* Targeted page refinements — October 2026 */
 .tools-stack{display:grid;gap:1.5rem;max-width:760px}
 .tools-category-title{font-size:.75rem;letter-spacing:.05em;font-weight:500;color:var(--white80);margin-bottom:.75rem}
