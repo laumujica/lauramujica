@@ -1594,7 +1594,7 @@ footer{
 }
 .working-principles-list .principle-result {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 0.65rem;
   margin-top: 0.8rem;
 }
