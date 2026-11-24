@@ -1500,9 +1500,9 @@ footer{
 .working-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .working-modal-panel {
   position: relative;
@@ -1591,6 +1591,26 @@ footer{
   font: italic 300 0.88rem/1.7 'Inter', sans-serif;
   color: var(--white80);
   margin: 0;
+}
+.working-principles-list .principle-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+.working-principles-list .principle-result-arrow {
+  flex: 0 0 auto;
+  color: var(--yellow);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.working-principles-list .principle-result p {
+  font: 400 0.82rem/1.6 'Inter', sans-serif;
+  color: var(--white);
+}
+.working-principles-list .principle-result strong {
+  color: var(--yellow);
+  font-weight: 500;
 }
 .working-modal-footer {
   display: flex;
