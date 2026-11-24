@@ -1286,9 +1286,20 @@ footer{
   nav { padding: 1rem 1.25rem; }
 
   /* Home */
-  #home.active { padding: 1rem 1.25rem; }
-  .home-name { font-size: clamp(2.6rem, 18vw, 3rem); line-height: 0.88; }
-  .home-tagline { font-size: 0.82rem; }
+  #home.active { padding: 1.25rem 1.25rem; }
+  .home-name {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+    letter-spacing: 0.02em;
+    line-height: 0.98;
+  }
+  .home-tagline {
+    max-width: 22rem;
+    padding: 0 0.25rem;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
   .btn-primary { padding: 0.8rem 1.6rem; font-size: 0.75rem; }
 
   /* About: stack photo under text on tiny screens */
