@@ -45,10 +45,16 @@
     <link rel="stylesheet" href="/css/styles.css?v=project-refinements-20261014" />
   
     <style>
-      /* Services hierarchy */
+      /* Services typography and hierarchy */
+      #services .page-title {
+        font-size: clamp(2rem, 6vw, 2.7rem);
+        line-height: 1.05;
+      }
       #services .services-intro {
         max-width: 680px;
         margin-bottom: 2.5rem;
+        font-size: 0.95rem;
+        line-height: 1.8;
       }
       #services .services-primary {
         margin-bottom: 0;
@@ -66,16 +72,16 @@
         background: rgba(255, 255, 255, 0.12);
       }
       #services .service-featured .svc-name {
-        font-size: clamp(1rem, 3.2vw, 1.7rem);
+        font-size: clamp(1.15rem, 2.8vw, 1.5rem);
         font-weight: 800;
-        line-height: 1.1;
+        line-height: 1.15;
         letter-spacing: -0.035em;
-        white-space: nowrap;
+        white-space: normal;
         margin: 0 0 0.85rem;
       }
       #services .service-featured .svc-desc {
         max-width: 690px;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         line-height: 1.7;
         margin: 0 0 1.7rem;
       }
@@ -86,7 +92,7 @@
       #services .services-practice-title {
         margin: 0 0 1rem;
         color: var(--white80);
-        font: 700 0.82rem/1.35 "Syne", sans-serif;
+        font: 700 0.82rem/1.4 "Syne", sans-serif;
       }
       #services .services-practice-list {
         display: grid;
@@ -114,14 +120,14 @@
       #services .services-practice-item h4 {
         margin: 0 0 0.35rem;
         color: var(--white);
-        font: 700 0.88rem/1.35 "Syne", sans-serif;
+        font: 700 0.88rem/1.4 "Syne", sans-serif;
       }
       #services .services-practice-item p {
         margin: 0;
         color: var(--white80);
-        font-size: 0.78rem;
+        font-size: 0.82rem;
         font-weight: 300;
-        line-height: 1.6;
+        line-height: 1.65;
       }
       #services .services-project-link {
         margin-top: 1.25rem;
@@ -129,7 +135,7 @@
       #services .services-section-heading {
         margin: 0 0 0.85rem;
         color: var(--white);
-        font: 800 clamp(1.05rem, 2.4vw, 1.3rem)/1.1 "Syne", sans-serif;
+        font: 800 clamp(1.25rem, 2.8vw, 1.55rem)/1.15 "Syne", sans-serif;
       }
       #services .services-craft {
         margin-top: 3.5rem;
@@ -157,14 +163,14 @@
       #services .services-craft-item h3 {
         margin: 0 0 0.35rem;
         color: var(--white);
-        font: 700 0.88rem/1.35 "Syne", sans-serif;
+        font: 700 0.88rem/1.4 "Syne", sans-serif;
       }
       #services .services-craft-item p {
         margin: 0;
         color: var(--white80);
-        font-size: 0.78rem;
+        font-size: 0.82rem;
         font-weight: 300;
-        line-height: 1.6;
+        line-height: 1.65;
       }
       #services .testimonial-card:not(.is-expanded) .testimonial-body p:not(:first-child) {
         display: none;
@@ -185,7 +191,7 @@
         border: 0;
         background: none;
         color: var(--white80);
-        font: 500 0.75rem/1.4 "Inter", sans-serif;
+        font: 500 0.78rem/1.45 "Inter", sans-serif;
         text-decoration: underline;
         text-underline-offset: 3px;
         cursor: pointer;
@@ -207,8 +213,8 @@
           padding: 1.5rem 1.25rem;
         }
         #services .service-featured .svc-name {
-          font-size: clamp(0.82rem, 3.4vw, 1.15rem);
-          letter-spacing: -0.045em;
+          font-size: clamp(1rem, 4vw, 1.2rem);
+          letter-spacing: -0.035em;
         }
         #services .service-row.service-featured:hover {
           padding-left: 1.25rem;
@@ -348,16 +354,7 @@
         </section>
 
         <div class="page-eyebrow">Tools & stack</div>
-        <h3
-          style="
-            font-family: &quot;Syne&quot;, sans-serif;
-            font-weight: 800;
-            font-size: clamp(1.3rem, 3vw, 1.75rem);
-            line-height: 1;
-            color: var(--white);
-            margin-bottom: 1.25rem;
-          "
-        >
+        <h3 class="services-section-heading tools-section-heading">
           What I work with.
         </h3>
         <div class="tools-stack">
@@ -408,7 +405,7 @@
         <!-- Testimonials -->
         <section class="services-testimonials" aria-labelledby="testimonials-title">
           <div class="page-eyebrow">Testimonials</div>
-          <h3 class="testimonials-title" id="testimonials-title">Kind words from lovely people</h3>
+          <h3 class="testimonials-title services-section-heading" id="testimonials-title">Kind words from lovely people</h3>
           <p class="testimonials-intro">The work tells one part of the story. Clients and colleagues tell the rest.</p>
 
           <div class="testimonials-grid">
