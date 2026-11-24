@@ -1500,7 +1500,7 @@ footer{
 .working-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.52);
+  background: rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
@@ -1601,8 +1601,8 @@ footer{
 .working-principles-list .principle-result-arrow {
   flex: 0 0 auto;
   color: var(--yellow);
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 .working-principles-list .principle-result p {
   font: 400 0.82rem/1.6 'Inter', sans-serif;
