@@ -1219,7 +1219,7 @@ footer{
 
   /* Home */
   #home.active { padding: 1.5rem; }
-  .home-name { font-size: clamp(3rem, 16vw, 4.5rem); }
+  .home-name { font-size: clamp(2.4rem, 9vw, 3.4rem); }
   .bolt { font-size: 3rem; }
   .avail-badge { font-size: 0.65rem; padding: 5px 14px; }
   .home-socials { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
