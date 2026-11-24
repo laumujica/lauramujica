@@ -100,16 +100,20 @@ if (contactMessageForm) {
     }
 
     submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
+    submitButton.innerHTML = 'Sending<span class="sending-dots" aria-hidden="true"><span>•</span><span>•</span><span>•</span></span>';
 
     try {
+      const formData = Object.fromEntries(new FormData(contactMessageForm));
+      formData._subject = `Portfolio contact — ${fields[0].value.trim()}`;
+      formData._replyto = fields[1].value.trim();
+
       const response = await fetch(contactMessageForm.action, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
-        body: JSON.stringify(Object.fromEntries(new FormData(contactMessageForm))),
+        body: JSON.stringify(formData),
       });
 
       let result;
