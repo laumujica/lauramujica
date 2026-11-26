@@ -149,7 +149,7 @@ nav{
 }
 .home-name{
   font-family:'Syne',sans-serif;font-weight:800;
-  font-size: clamp(2.7rem, 12vw, 3.2rem);
+  font-size: clamp(2.2rem, 8vw, 2.7rem);
   letter-spacing: 0.04em;line-height:0.92;
   color:var(--white);
   margin-bottom:0.6rem;
@@ -594,6 +594,8 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 .proj-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:1fr;
+  align-items:stretch;
   gap:14px;margin-top:1rem;
 }
 .proj-card{
@@ -601,7 +603,7 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
   border-radius:16px;padding:1.75rem;
   cursor:pointer;transition:background .2s,transform .2s;
   position:relative;overflow:hidden;
-  text-decoration:none;display:block;color:inherit;
+  text-decoration:none;display:flex;flex-direction:column;height:100%;color:inherit;
 }
 .proj-card:hover{background:rgba(255,255,255,0.22);transform:translateY(-3px)}
 .proj-card--in-progress{cursor:default;display:flex;flex-direction:column;min-height:220px}
@@ -616,18 +618,18 @@ body[data-theme="light"] .footer-links a:hover{color:var(--pink)}
 }
 .proj-desc{font-size:0.82rem;color:var(--white80);line-height:1.65;font-weight:300}
 .proj-skills{
-  display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.15rem;
+  display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:auto;padding-top:1.15rem;
 }
 .proj-skill{
-  display:inline-flex;align-items:center;
-  padding:0.4rem 0.68rem;border:1px solid rgba(255,255,255,0.32);
-  border-radius:999px;background:rgba(255,255,255,0.10);
-  color:var(--white);font-size:0.68rem;line-height:1.2;
-  font-weight:400;text-transform:uppercase;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 11px;border:1px solid rgba(255,255,255,0.32);
+  border-radius:100px;background:rgba(255,255,255,0.10);
+  color:var(--white);font-size:0.72rem;line-height:1.3;
+  font-weight:400;text-transform:none;white-space:nowrap;
 }
 .proj-year{
-  margin-top:1.25rem;
-  font-size:0.7rem;letter-spacing:0.1em;color:var(--white60);
+  margin-top:0.9rem;
+  font-size:0.75rem;letter-spacing:0.06em;line-height:1.5;color:var(--white60);
 }
 
 /* ── PROJECT DETAIL ── */
@@ -1217,7 +1219,7 @@ footer{
 
   /* Home */
   #home.active { padding: 1.5rem; }
-  .home-name { font-size: clamp(3rem, 16vw, 4.5rem); }
+  .home-name { font-size: clamp(2.1rem, 7vw, 2.8rem); }
   .bolt { font-size: 3rem; }
   .avail-badge { font-size: 0.65rem; padding: 5px 14px; }
   .home-socials { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
@@ -1284,9 +1286,20 @@ footer{
   nav { padding: 1rem 1.25rem; }
 
   /* Home */
-  #home.active { padding: 1rem 1.25rem; }
-  .home-name { font-size: clamp(2.6rem, 18vw, 3rem); line-height: 0.88; }
-  .home-tagline { font-size: 0.82rem; }
+  #home.active { padding: 1.25rem 1.25rem; }
+  .home-name {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+    letter-spacing: 0.02em;
+    line-height: 0.98;
+  }
+  .home-tagline {
+    max-width: 22rem;
+    padding: 0 0.25rem;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
   .btn-primary { padding: 0.8rem 1.6rem; font-size: 0.75rem; }
 
   /* About: stack photo under text on tiny screens */
@@ -1500,9 +1513,9 @@ footer{
 .working-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .working-modal-panel {
   position: relative;
@@ -1592,6 +1605,26 @@ footer{
   color: var(--white80);
   margin: 0;
 }
+.working-principles-list .principle-result {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+.working-principles-list .principle-result-arrow {
+  flex: 0 0 auto;
+  color: var(--yellow);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.working-principles-list .principle-result p {
+  font: 400 0.82rem/1.6 'Inter', sans-serif;
+  color: var(--white);
+}
+.working-principles-list .principle-result strong {
+  color: var(--yellow);
+  font-weight: 500;
+}
 .working-modal-footer {
   display: flex;
   justify-content: center;
@@ -1607,6 +1640,10 @@ footer{
   .working-principles-list h3 { font-size: 0.93rem; }
   .working-principles-list p { font-size: 0.84rem; }
 }
+
+/* About typography refinement — November 2026 */
+#about .page-title{font-size:clamp(2rem,6vw,2.7rem);line-height:1.05}
+#about .about-body{font-size:0.95rem;line-height:1.8}
 
 /* Targeted page refinements — October 2026 */
 .tools-stack{display:grid;gap:1.5rem;max-width:760px}

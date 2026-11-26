@@ -43,6 +43,218 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css?v=project-refinements-20261014" />
+  
+    <style>
+      /* Services typography and hierarchy */
+      #services .page-title {
+        font-size: clamp(2rem, 6vw, 2.7rem);
+        line-height: 1.05;
+      }
+      #services .services-intro {
+        max-width: 680px;
+        margin-bottom: 2.5rem;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+      #services .services-primary {
+        margin-bottom: 0;
+      }
+      #services .service-row.service-featured {
+        display: block;
+        padding: 2rem 2.25rem;
+        border: 1px solid var(--white40);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.09);
+        transition: background 0.2s;
+      }
+      #services .service-row.service-featured:hover {
+        padding-left: 2.25rem;
+        background: rgba(255, 255, 255, 0.12);
+      }
+      #services .service-featured .svc-name {
+        font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.035em;
+        white-space: normal;
+        margin: 0 0 0.85rem;
+      }
+      #services .service-featured .svc-desc {
+        max-width: 690px;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin: 0 0 1.7rem;
+      }
+      #services .services-practice {
+        padding-top: 1.4rem;
+        border-top: 1px solid var(--white15);
+      }
+      #services .services-practice-title {
+        margin: 0 0 1rem;
+        color: var(--white80);
+        font: 700 0.82rem/1.4 "Syne", sans-serif;
+      }
+      #services .services-practice-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      #services .services-practice-item {
+        display: grid;
+        grid-template-columns: 1.5rem minmax(0, 1fr);
+        align-items: start;
+        gap: 0.75rem;
+        min-width: 0;
+      }
+      #services .services-practice-icon {
+        display: block;
+        width: 0.65rem;
+        height: 0.65rem;
+        margin: 0.35rem 0 0 0.15rem;
+        background: var(--yellow);
+        transform: rotate(45deg);
+      }
+      #services .services-practice-item h4 {
+        margin: 0 0 0.35rem;
+        color: var(--white);
+        font: 700 0.88rem/1.4 "Syne", sans-serif;
+      }
+      #services .services-practice-item p {
+        margin: 0;
+        color: var(--white80);
+        font-size: 0.82rem;
+        font-weight: 300;
+        line-height: 1.65;
+      }
+      #services .services-project-link {
+        margin-top: 1.25rem;
+      }
+      #services .services-section-heading {
+        margin: 0 0 0.85rem;
+        color: var(--white);
+        font: 800 clamp(1.25rem, 2.8vw, 1.55rem)/1.15 "Syne", sans-serif;
+      }
+      #services .services-craft {
+        margin-top: 3.5rem;
+        margin-bottom: 3.5rem;
+      }
+      #services .services-craft-intro {
+        max-width: 690px;
+        margin: 0 0 1.25rem;
+        color: var(--white80);
+        font-size: 0.88rem;
+        line-height: 1.75;
+        font-weight: 300;
+      }
+      #services .services-craft-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem 2rem;
+        max-width: 760px;
+        padding-left: 1.25rem;
+      }
+      #services .services-craft-item {
+        padding-top: 0.8rem;
+        border-top: 1px solid var(--white15);
+      }
+      #services .services-craft-item h3 {
+        margin: 0 0 0.35rem;
+        color: var(--white);
+        font: 700 0.88rem/1.4 "Syne", sans-serif;
+      }
+      #services .services-craft-item p {
+        margin: 0;
+        color: var(--white80);
+        font-size: 0.82rem;
+        font-weight: 300;
+        line-height: 1.65;
+      }
+      /* Supporting text: keep secondary information readable and consistent. */
+      #services .tools-category-title {
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+      #services .tool-pill {
+        font-size: 0.72rem;
+      }
+      #services .testimonial-meta h3 {
+        font-size: 0.88rem;
+      }
+      #services .testimonial-role {
+        font-size: 0.75rem;
+        line-height: 1.5;
+      }
+      #services .testimonial-date {
+        font-size: 0.72rem;
+        line-height: 1.5;
+      }
+      #services .testimonial-body p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+      #services .testimonial-link {
+        font-size: 0.78rem;
+      }
+      #services .testimonial-card:not(.is-expanded) .testimonial-body p:not(:first-child) {
+        display: none;
+      }
+      #services .testimonial-card:not(.is-expanded) .testimonial-body p:first-child {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      #services .testimonial-card .testimonial-read-more {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        margin-top: 0.55rem;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--white80);
+        font: 500 0.78rem/1.45 "Inter", sans-serif;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        cursor: pointer;
+      }
+      #services .testimonial-card.is-expanded .testimonial-read-more {
+        margin-top: 0.75rem;
+      }
+      @media (max-width: 700px) {
+        #services .services-practice-list {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        #services .services-practice-item {
+          max-width: 520px;
+        }
+      }
+      @media (max-width: 600px) {
+        #services .service-row.service-featured {
+          padding: 1.5rem 1.25rem;
+        }
+        #services .service-featured .svc-name {
+          font-size: clamp(1rem, 4vw, 1.2rem);
+          letter-spacing: -0.035em;
+        }
+        #services .service-row.service-featured:hover {
+          padding-left: 1.25rem;
+        }
+        #services .services-craft-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        #services .services-craft {
+          margin-bottom: 3rem;
+        }
+      }
+    </style>
+
   </head>
   <body class="selection-branded">
     <canvas class="noise" id="noiseCanvas"></canvas>
@@ -86,123 +298,89 @@
         <div class="page-eyebrow">Services</div>
         <h1 class="page-title">How I Can Help.</h1>
         <p class="services-intro">
-          I partner with businesses, startups, and entrepreneurs to create clear visual systems that work consistently across digital platforms and print. My approach focuses on listening carefully to identify root problems, building solid foundations rather than applying quick fixes.
+          I work with independent professionals, designers and businesses to review how their creative work gets done and adapt their processes to today's tools and ways of working. I start by understanding the people and the problems behind the process, then build solid foundations rather than applying quick fixes.
         </p>
 
-        <div class="services-list">
-          <div class="service-row">
-            <span class="svc-num">01</span>
+        <div class="services-list services-primary">
+          <article class="service-row service-featured">
             <div class="svc-content">
-              <div class="svc-name">Brand Identity</div>
-              <div class="svc-desc">
-                A complete brand system built from strategy up. Includes
-                discovery, naming rationale, logo and mark, color, typography,
-                and a brand guidelines document you can actually use.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Logo & Mark</span>
-                <span class="svc-tag">Color System</span>
-                <span class="svc-tag">Typography</span>
-                <span class="svc-tag">Brand Guidelines</span>
-              </div>
+              <h2 class="svc-name">Creative Process Optimization</h2>
+              <p class="svc-desc">
+                A structured review of creative workflows to identify repetitive tasks, bottlenecks and gaps, followed by practical improvements through clearer documentation, better use of digital tools, and AI where useful. The goal is to make processes clearer, more consistent and easier for everyone involved to follow.
+              </p>
+
+              <section class="services-practice" aria-labelledby="services-practice-title">
+                <h3 class="services-practice-title" id="services-practice-title">What this looks like in practice</h3>
+                <ul class="services-practice-list">
+                  <li class="services-practice-item">
+                    <span class="services-practice-icon" aria-hidden="true">
+                    </span>
+                    <div>
+                      <h4>Process Review</h4>
+                      <p>Mapping how work happens today to identify repeated tasks, bottlenecks, friction points, and opportunities across the creative process.</p>
+                    </div>
+                  </li>
+                  <li class="services-practice-item">
+                    <span class="services-practice-icon" aria-hidden="true">
+                    </span>
+                    <div>
+                      <h4>Tools &amp; Documentation</h4>
+                      <p>Selecting and organizing the tools, guidelines and documentation people need to work with clarity, confidence and focus.</p>
+                    </div>
+                  </li>
+                  <li class="services-practice-item">
+                    <span class="services-practice-icon" aria-hidden="true">
+                    </span>
+                    <div>
+                      <h4>Workflow Design</h4>
+                      <p>Defining clear steps, handoffs and responsibilities so work moves smoothly and consistently from one stage to the next.</p>
+                    </div>
+                  </li>
+                </ul>
+                <a class="testimonial-link services-project-link" href="/pages/projects/">
+                  See the projects <span aria-hidden="true">→</span>
+                </a>
+              </section>
             </div>
-          </div>
-          <div class="service-row">
-            <span class="svc-num">02</span>
-            <div class="svc-content">
-              <div class="svc-name">Visual Design</div>
-              <div class="svc-desc">
-                Campaigns, art direction, editorial layouts, and print
-                collateral. I help brands communicate clearly and consistently
-                across every surface — digital and physical.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Art Direction</span>
-                <span class="svc-tag">Campaign Design</span>
-                <span class="svc-tag">Print & Editorial</span>
-                <span class="svc-tag">Packaging</span>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="service-row">
-        <span class="svc-num">03</span>
-        <div class="svc-content">
-          <div class="svc-name">UI / UX Design</div>
-          <div class="svc-desc">Interfaces that are clear, intuitive, and visually cohesive. I design products and systems that feel as good to use as they look — from wireframes to polished UI and design systems.</div>
-          <div class="svc-tags">
-            <span class="svc-tag">Product Design</span>
-            <span class="svc-tag">Design Systems</span>
-            <span class="svc-tag">Wireframing</span>
-            <span class="svc-tag">Prototyping</span>
-          </div>
-        </div>
-      </div> -->
-          <div class="service-row">
-            <span class="svc-num">03</span>
-            <div class="svc-content">
-              <div class="svc-name">Web Design & Development</div>
-              <div class="svc-desc">
-                Digital experiences that make ideas, content, and decisions
-                easier to explore, review, or use. Designed and built with
-                structure in mind.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Landing Pages</span>
-                <span class="svc-tag">Interactive Experiences</span>
-                <span class="svc-tag">Dashboards</span>
-              </div>
-            </div>
-          </div>
-          <!-- Temporarily hidden service
-          <div class="service-row">
-            <span class="svc-num">04</span>
-            <div class="svc-content">
-              <div class="svc-name">Brand Audit & Refresh</div>
-              <div class="svc-desc">
-                Already have a brand but it's not quite working? I'll review
-                what you have, identify what's off, and propose targeted
-                improvements — without throwing everything out.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">Audit</span>
-                <span class="svc-tag">Refresh</span>
-                <span class="svc-tag">Consistency Review</span>
-                <span class="svc-tag">QA Testing</span>
-              </div>
-            </div>
-          </div>
-          -->
-          <div class="service-row">
-            <span class="svc-num">04</span>
-            <div class="svc-content">
-              <div class="svc-name">AI &amp; Creative Process Optimization</div>
-              <div class="svc-desc">
-                I review creative workflows, identify repetitive steps, and
-                design practical improvements with clearer documentation,
-                digital tools, and AI where useful. The goal is less manual work
-                and a more consistent process.
-              </div>
-              <div class="svc-tags">
-                <span class="svc-tag">AI-Assisted Workflows</span>
-                <span class="svc-tag">Documentation &amp; QA</span>
-                <span class="svc-tag">Automation</span>
-              </div>
-            </div>
-          </div>
+          </article>
         </div>
 
-        <!-- <div class="section-divider"></div> -->
+        <section class="services-craft" aria-labelledby="services-craft-title">
+          <div class="page-eyebrow">Background</div>
+          <h2 class="services-section-heading" id="services-craft-title">The Experience Behind My Approach</h2>
+          <p class="services-craft-intro">
+            Fifteen years across graphic design, digital experiences and quality assurance have shaped how I approach creative work today. That background helps me understand not only what gets made, but the decisions, tools and steps that bring it together.
+          </p>
+          <div class="services-craft-grid">
+            <article class="services-craft-item">
+              <h3>Brand Identity</h3>
+              <p>Naming, logo and mark, color, typography, and branding.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>Visual Design</h3>
+              <p>Art direction, editorial, print, and packaging.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>Web Design &amp; Development</h3>
+              <p>Landing pages, interactive experiences, and dashboards.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>Digital Product Design</h3>
+              <p>Concepts, digital tools, and interactive experiences.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>UX/UI</h3>
+              <p>User flows, interface design, and prototypes.</p>
+            </article>
+            <article class="services-craft-item">
+              <h3>QA Testing</h3>
+              <p>Test plans, regression checks, and file verification.</p>
+            </article>
+          </div>
+        </section>
+
         <div class="page-eyebrow">Tools & stack</div>
-        <h3
-          style="
-            font-family: &quot;Syne&quot;, sans-serif;
-            font-weight: 800;
-            font-size: clamp(1.3rem, 3vw, 1.75rem);
-            line-height: 1;
-            color: var(--white);
-            margin-bottom: 1.25rem;
-          "
-        >
+        <h3 class="services-section-heading tools-section-heading">
           What I work with.
         </h3>
         <div class="tools-stack">
@@ -253,7 +431,7 @@
         <!-- Testimonials -->
         <section class="services-testimonials" aria-labelledby="testimonials-title">
           <div class="page-eyebrow">Testimonials</div>
-          <h3 class="testimonials-title" id="testimonials-title">Kind words from lovely people</h3>
+          <h3 class="testimonials-title services-section-heading" id="testimonials-title">Kind words from lovely people</h3>
           <p class="testimonials-intro">The work tells one part of the story. Clients and colleagues tell the rest.</p>
 
           <div class="testimonials-grid">
@@ -298,6 +476,7 @@
                   </p>
                   <p>She would be a valuable addition to any team. 🧡</p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -349,6 +528,7 @@
                     together, and I am glad to recommend her.
                   </p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -393,6 +573,7 @@
                     entrepreneurs and growing brands.
                   </p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -437,6 +618,7 @@
                   </p>
                   <p>Having her by your side is truly valuable.</p>
                 </div>
+                <button class="testimonial-read-more" type="button" aria-expanded="false">Read more</button>
 
                 <a
                   class="testimonial-link"
@@ -481,6 +663,28 @@
   </div>
 </footer> -->
 
+    <script>
+      document.querySelectorAll("#services .testimonial-read-more").forEach((button) => {
+        button.addEventListener("click", () => {
+          const cards = Array.from(document.querySelectorAll("#services .testimonial-card"));
+          const card = button.closest(".testimonial-card");
+          const rowTop = card.getBoundingClientRect().top;
+          const rowCards = cards.filter((item) =>
+            Math.abs(item.getBoundingClientRect().top - rowTop) < 2
+          );
+          const expanded = !card.classList.contains("is-expanded");
+
+          rowCards.forEach((item) => {
+            item.classList.toggle("is-expanded", expanded);
+            const rowButton = item.querySelector(".testimonial-read-more");
+            if (rowButton) {
+              rowButton.setAttribute("aria-expanded", String(expanded));
+              rowButton.textContent = expanded ? "Read less" : "Read more";
+            }
+          });
+        });
+      });
+    </script>
     <script src="/js/main.js?v=site-nav-20261013"></script>
   </body>
 </html>

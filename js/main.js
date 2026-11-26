@@ -71,24 +71,71 @@ function animateCounters() {
   });
 }
 
-function submitForm() {
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const message = document.getElementById('cf-message').value.trim();
-  if (!name || !email || !message) {
-    const empty = [
-      !name && document.getElementById('cf-name'),
-      !email && document.getElementById('cf-email'),
-      !message && document.getElementById('cf-message'),
-    ].filter(Boolean);
-    empty.forEach(el => {
-      el.style.borderColor = 'rgba(255,100,100,0.6)';
-      el.addEventListener('input', () => el.style.borderColor = '', {once:true});
-    });
-    return;
-  }
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').classList.add('show');
+const contactMessageForm = document.getElementById('contactMessageForm');
+
+if (contactMessageForm) {
+  contactMessageForm.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const errorMessage = document.getElementById('formError');
+    const successMessage = document.getElementById('formSuccess');
+    const submitButton = document.getElementById('contactSubmit');
+    const fields = [
+      document.getElementById('cf-name'),
+      document.getElementById('cf-email'),
+      document.getElementById('cf-message'),
+    ];
+
+    errorMessage.classList.remove('show');
+    errorMessage.textContent = '';
+
+    const emptyFields = fields.filter(field => !field.value.trim());
+    if (emptyFields.length) {
+      emptyFields.forEach(field => {
+        field.style.borderColor = 'rgba(255,100,100,0.6)';
+        field.addEventListener('input', () => field.style.borderColor = '', { once: true });
+      });
+      emptyFields[0].focus();
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Sending<span class="sending-dots" aria-hidden="true"><span>•</span><span>•</span><span>•</span></span>';
+
+    try {
+      const formData = Object.fromEntries(new FormData(contactMessageForm));
+      formData._subject = `Portfolio contact — ${fields[0].value.trim()}`;
+      formData._replyto = fields[1].value.trim();
+
+      const response = await fetch(contactMessageForm.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("I couldn't confirm that your message was sent. Please try again in a moment.");
+      }
+
+      if (!response.ok || result.success === false || result.success === 'false' || result.error) {
+        throw new Error(result.message || "I couldn't send your message. Please try again in a moment.");
+      }
+
+      document.getElementById('contactForm').style.display = 'none';
+      successMessage.classList.add('show');
+    } catch (error) {
+      errorMessage.textContent = error.message || 'Something went wrong. Please try again in a moment.';
+      errorMessage.classList.add('show');
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send message ⚡';
+    }
+  });
 }
 
 

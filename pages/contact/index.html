@@ -23,6 +23,87 @@
 <link rel="icon" type="image/jpg" href="/img/Favicon.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css?v=site-finish-20261014">
+<style>
+  /* Contact typography aligned with the Services page */
+  #contact .page-title {
+    font-size: clamp(2rem, 6vw, 2.7rem);
+    line-height: 1.05;
+  }
+  #contact .contact-sub {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  #contact .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  #contact .form-submit {
+    margin-top: 0;
+  }
+  #contact .contact-form .form-group {
+    margin-top: 0;
+    gap: 0.55rem;
+  }
+  #contact .form-group label {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    letter-spacing: 0.12em;
+  }
+  #contact .form-group input,
+  #contact .form-group textarea {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+  #contact .form-submit {
+    font-size: 0.78rem;
+  }
+  #contact .form-success h4 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+  #contact .form-success p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+  #contact .form-error {
+    display: none;
+    margin-top: 1rem;
+    color: #ff6464;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+  #contact .form-error.show {
+    display: block;
+  }
+  #contact .form-submit:disabled {
+    cursor: wait;
+    opacity: 0.85;
+    transform: none;
+  }
+  #contact .sending-dots {
+    display: inline-flex;
+    gap: 0.18em;
+    margin-left: 0.12em;
+    vertical-align: baseline;
+  }
+  #contact .sending-dots span {
+    animation: sendingDot 1s ease-in-out infinite;
+  }
+  #contact .sending-dots span:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  #contact .sending-dots span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  @keyframes sendingDot {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-2px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #contact .sending-dots span { animation: none; opacity: 1; }
+  }
+</style>
 </head>
 <body class="selection-branded">
 
@@ -67,8 +148,7 @@
       <!-- LEFT: FORM -->
       <div>
         <div class="contact-form" id="contactForm">
-          <form action="https://formsubmit.co/lauraamujica@gmail.com" method="POST">
-          <div class="form-row">
+          <form id="contactMessageForm" action="https://formsubmit.co/ajax/lauraamujica@gmail.com" method="POST">
             <div class="form-group">
               <label for="cf-name">Name*</label>
               <input type="text" id="cf-name" name="Name" required placeholder="Your name">
@@ -77,30 +157,18 @@
               <label for="cf-email">Email*</label>
               <input type="email" id="cf-email" name="Email" required placeholder="your@email.com">
             </div>
-          </div>
-          <div class="form-group">
-            <label for="cf-subject">What are you looking for?</label>
-            <select id="cf-subject" name="Subject" >
-              <option value="" required disabled selected>Select a service…*</option>
-              <option>Brand Identity</option>
-              <option>Visual Design</option>
-              <!-- <option>UI / UX Design</option> -->
-              <option>Web Design & Development</option>
-              <option>AI &amp; Creative Process Optimization</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="cf-message">Tell me about your project*</label>
-            <textarea id="cf-message" name="Message" required placeholder="A few lines about what you need, your timeline, any relevant context…"></textarea>
-          </div>
-          <button class="form-submit" onclick="submitForm()">Send message ⚡</button>
+            <div class="form-group">
+              <label for="cf-message">Tell me about your project*</label>
+              <textarea id="cf-message" name="Message" required placeholder="A few lines about what you need, your timeline, any relevant context…"></textarea>
+            </div>
+            <button class="form-submit" id="contactSubmit" type="submit">Send message ⚡</button>
           </form>
         </div>
+        <p class="form-error" id="formError" role="alert" aria-live="polite"></p>
         <div class="form-success" id="formSuccess">
           <div class="form-success-icon">⚡</div>
           <h4>Message sent!</h4>
-          <p>Thanks for reaching out. I'll get back to you shortly.</p>
+          <p>Thanks for getting in touch. I appreciate you taking the time to write.</p>
         </div>
       </div>
 
