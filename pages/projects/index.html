@@ -49,6 +49,46 @@
     font-size: 0.75rem;
     line-height: 1.5;
   }
+  #projects .proj-grid {
+    grid-template-columns: 1fr;
+  }
+  #projects .proj-card--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    padding: 0;
+    min-height: 280px;
+  }
+  #projects .proj-card--split .proj-card-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #projects .proj-card-image {
+    min-width: 0;
+    min-height: 280px;
+    height: 100%;
+    overflow: hidden;
+  }
+  #projects .proj-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+  }
+  @media (max-width: 640px) {
+    #projects .proj-card--split {
+      grid-template-columns: 1fr;
+    }
+    #projects .proj-card-image {
+      min-height: 220px;
+      max-height: 280px;
+    }
+    #projects .proj-card-image img {
+      min-height: 220px;
+    }
+  }
 </style>
 </head>
 <body class="selection-branded">
@@ -89,6 +129,21 @@
     <h1 class="page-title">Selected work.</h1>
 
     <div class="proj-grid">
+      <a class="proj-card proj-card--split" href="/pages/projects/vrs/">
+        <div class="proj-card-content">
+          <div class="proj-tag">Religion · Community · Charity</div>
+          <div class="proj-name">Variant Reconciliation System</div>
+          <div class="proj-desc">Editorial Design · Workflow Development</div>
+          <div class="proj-skills">
+            <span class="proj-skill">Diagnosis &amp; Problem Solving</span>
+            <span class="proj-skill">Information Architecture</span>
+            <span class="proj-skill">Creative Tool Development</span>
+          </div>
+        </div>
+        <div class="proj-card-image">
+          <img src="https://raw.githubusercontent.com/laumujica/variant-reconciliation-system/main/docs/assets/vrs-cover.jpg" alt="Variant Reconciliation System project cover">
+        </div>
+      </a>
       <a class="proj-card" href="/pages/projects/boredrawr/">
         <div class="proj-tag">Brand Identity · Digital Product</div>
         <div class="proj-name">Boredrawr</div>
@@ -121,16 +176,6 @@
           <span class="proj-skill">Prototyping</span>
         </div>
         <div class="proj-year">2022–2024 · Concept mobile app</div>
-      </a>
-      <a class="proj-card" href="/pages/projects/vrs/">
-        <div class="proj-tag">Workflow Design · Internal Tool</div>
-        <div class="proj-name">Variant Reconciliation System</div>
-        <div class="proj-desc">A tool for turning competing AI-generated variants into traceable, approved decisions.</div>
-        <div class="proj-skills">
-          <span class="proj-skill">Workflow design</span>
-          <span class="proj-skill">Automation</span>
-        </div>
-        <div class="proj-year">2026 · Client project</div>
       </a>
     </div>
     <div class="page-cta-block">
