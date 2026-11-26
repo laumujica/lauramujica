@@ -64,6 +64,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
     padding: 0;
+    height: 238px;
     min-height: 238px;
   }
   #projects .proj-card--split .proj-card-content {
@@ -88,13 +89,18 @@
   @media (max-width: 640px) {
     #projects .proj-card--split {
       grid-template-columns: 1fr;
+      grid-template-rows: 238px 187px;
+      height: 425px;
+      min-height: 425px;
     }
     #projects .proj-card-image {
       min-height: 187px;
-      max-height: 238px;
+      max-height: 187px;
+      height: 187px;
     }
     #projects .proj-card-image img {
       min-height: 187px;
+      height: 187px;
     }
   }
 </style>
@@ -155,15 +161,14 @@
       </a>
       <a class="proj-card proj-card--split" href="/pages/projects/boredrawr/">
         <div class="proj-card-content">
-          <div class="proj-tag">Brand Identity · Digital Product</div>
+          <div class="proj-tag">Digital Entertainment · Creative Tools</div>
           <div class="proj-name">Boredrawr</div>
-          <div class="proj-desc">A playful identity grown into a bilingual web app for quick creative prompts.</div>
+          <div class="proj-desc">Brand Identity · Digital Product Development</div>
           <div class="proj-skills">
             <span class="proj-skill">Concept Development</span>
             <span class="proj-skill">Product Thinking</span>
             <span class="proj-skill">AI-Assisted Development</span>
           </div>
-          <div class="proj-year">2023–present · Independent project</div>
         </div>
         <div class="proj-card-image">
           <img src="https://raw.githubusercontent.com/laumujica/lauramujica/main/img/projects/boredrawr/01_boredrawr_brand-hero.png" alt="Boredrawr brand logo">
