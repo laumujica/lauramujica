@@ -64,7 +64,6 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
     padding: 0;
-    height: 238px;
     min-height: 238px;
   }
   #projects .proj-card--split .proj-card-content {
@@ -86,21 +85,22 @@
     min-height: 187px;
     object-fit: cover;
   }
+  #projects .proj-card-image--white {
+    background: #fff;
+  }
+  #projects .proj-card-image--white img {
+    object-fit: contain;
+  }
   @media (max-width: 640px) {
     #projects .proj-card--split {
       grid-template-columns: 1fr;
-      grid-template-rows: 238px 187px;
-      height: 425px;
-      min-height: 425px;
     }
     #projects .proj-card-image {
       min-height: 187px;
-      max-height: 187px;
-      height: 187px;
+      max-height: 238px;
     }
     #projects .proj-card-image img {
       min-height: 187px;
-      height: 187px;
     }
   }
 </style>
@@ -170,7 +170,7 @@
             <span class="proj-skill">AI-Assisted Development</span>
           </div>
         </div>
-        <div class="proj-card-image">
+        <div class="proj-card-image proj-card-image--white">
           <img src="https://raw.githubusercontent.com/laumujica/lauramujica/main/img/projects/boredrawr/01_boredrawr_brand-hero.png" alt="Boredrawr brand logo">
         </div>
       </a>
