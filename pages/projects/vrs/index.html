@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Variant Reconciliation System — Workflow Design & Review Tool | Laura Mujica</title>
+<title>Variant Reconciliation System — Workflow Design &amp; Decision Support | Laura Mujica</title>
 <meta name="description" content="A workflow design case study: diagnosing a complex content review process, structuring decisions across multiple versions and directing AI-assisted development of a decision-support tool.">
 <meta name="theme-color" content="#0b1430">
 <link rel="icon" type="image/png" href="../../../img/Favicon.png">
@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://lauramujica.com/pages/projects/vrs/">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Variant Reconciliation System — Workflow Design & Review Tool | Laura Mujica">
+<meta property="og:title" content="Variant Reconciliation System — Workflow Design &amp; Decision Support | Laura Mujica">
 <meta property="og:description" content="Diagnosing a complex content review process, structuring decisions across multiple versions and directing AI-assisted development of a decision-support tool.">
 <meta property="og:url" content="https://lauramujica.com/pages/projects/vrs/">
 <meta property="og:image" content="https://raw.githubusercontent.com/laumujica/variant-reconciliation-system/main/docs/assets/vrs-cover.jpg">
@@ -520,7 +520,7 @@ td{color:var(--muted)}
     <div class="wrap sec-grid">
       <div class="sec-label"><span class="n">01</span><span class="t">The problem</span></div>
       <div>
-        <h2>No single version to build from.</h2>
+        <h2>No shared source of truth to work from.</h2>
         <div class="prose">
           <p>The client wanted to turn AI-generated page images into an editable printed book. But the same page existed in several versions, with differences in wording, layout, typography and visual elements. There was no approved version to reproduce.</p>
           <p>Across more than a hundred content pages, rebuilding first and resolving differences later would have meant investing production time before the content had been agreed. The team needed a way to compare alternatives, decide what to keep and make those decisions visible to the people responsible for approving the book.</p>
@@ -585,7 +585,7 @@ td{color:var(--muted)}
     <div class="wrap sec-grid">
       <div class="sec-label"><span class="n">03</span><span class="t">The process</span></div>
       <div>
-        <h2>Design the process before the interface.</h2>
+        <h2>Make the work—and its ownership—visible.</h2>
         <div class="prose">
           <p>The board depended on prepared source material. I designed the workflow around four stages, from organizing the alternatives to handing approved content to production.</p>
         </div>
@@ -645,23 +645,23 @@ td{color:var(--muted)}
           </div>
           <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
             <h3>Inspect the full references.</h3>
-            <p>Reviewers see each complete variant and can leave observations on it. Source notes and decision notes are separate on purpose: a comment on a draft is not a formal approval.</p>
+            <p>Open each complete variant and leave observations. Source notes stay separate from formal decision notes.</p>
           </div>
           <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
             <h3>Decide by component.</h3>
-            <p>Choose one option or several compatible ones, and approve with notes and reference files or links. Select <strong>None of these</strong>, which can be approved with a supplied alternative file or link, or exclude the component altogether.</p>
+            <p>Choose one or several options, provide an alternative reference, or exclude a component. Attach notes to the decision.</p>
           </div>
           <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
             <h3>See what has been kept.</h3>
-            <p>The approved summary gathers the retained material in one place. Reviewers can inspect the wording and copy approved text or reference images.</p>
+            <p>The summary gathers retained material, approved wording and reference images.</p>
           </div>
           <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
             <h3>Follow what happened.</h3>
-            <p>Activity lists recorded decisions and actions, so the reasoning behind the approved content stays traceable.</p>
+            <p>Activity records decisions and actions, keeping the review traceable.</p>
           </div>
           <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
             <h3>Check the wording, then hand it off.</h3>
-            <p>A producer verifies the extracted text against what was approved and exports a Markdown handoff. In the public edition, editing approved text invalidates its QA confirmation, so a checked state can't go stale.</p>
+            <p>A producer checks extracted text against the approved source before exporting a Markdown handoff. Editing approved text invalidates its QA confirmation.</p>
           </div>
         </div>
 
@@ -717,7 +717,7 @@ td{color:var(--muted)}
     <div class="wrap sec-grid">
       <div class="sec-label"><span class="n">06</span><span class="t">Feasibility</span></div>
       <div>
-        <h2>Testing how far automation could go.</h2>
+        <h2>Know where the workflow ends.</h2>
         <div class="prose">
           <p>Approved content was the input to the next phase: rebuilding the book in InDesign with live text, vector elements and replaceable images. A flattened AI page has none of those, so I tested whether one could become an independently editable page without losing its look.</p>
           <p>I ran <strong>four approaches across three source images</strong>, including vector conversion, scripted reconstruction and hybrid text-and-asset assembly.</p>
@@ -733,7 +733,7 @@ td{color:var(--muted)}
             </ul>
           </section>
           <section>
-            <h3><i aria-hidden="true"></i>What scaling would require</h3>
+            <h3><i aria-hidden="true"></i>What remained unresolved</h3>
             <ul>
               <li>Visual review defined what a full rebuild needs: exact placement, a complete icon family, decorative details and typographic matching.</li>
               <li>Those assets and rules weren't yet specified, so closing the gap meant more correction work than the agreed time and budget allowed.</li>
@@ -754,7 +754,7 @@ td{color:var(--muted)}
     <div class="wrap sec-grid">
       <div class="sec-label"><span class="n">07</span><span class="t">The public demo</span></div>
       <div>
-        <h2>The real workflow, with sample content.</h2>
+        <h2>Explore the workflow with sample content.</h2>
         <div class="prose">
           <p>The public edition condenses the working prototype and replaces everything that belonged to the client. It keeps the source and component relationships and the selection modes, so the interaction is the real one. The sample material, <em>Creative Collaboration</em>, illustrates the workflow and isn't presented as another client project.</p>
         </div>
@@ -794,9 +794,9 @@ td{color:var(--muted)}
       </div>
 
       <ul class="outcomes">
-        <li><b>Identity manual</b><span>The first manual was AI-generated. I vectorized it and refined it to reflect the final decisions, so it could serve as the base and the limits for the initial Markdown file of rules.</span></li>
-        <li><b>Review system</b><span>A working tool for reviewing variants, recording decisions and preparing checked content for a pilot.</span></li>
-        <li><b>Book production</b><span>Pilot layouts, print specifications and reconstruction tests that defined the requirements and limits of a scalable approach. The full five-volume book and print run went beyond the time and budget of my phase.</span></li>
+        <li><b>Workflow design</b><span>A component-based review structure that reduced unnecessary comparisons and clarified who needed to make content decisions.</span></li>
+        <li><b>Decision-support tool</b><span>A working interface for comparing alternatives, recording approvals and preparing checked content for handoff.</span></li>
+        <li><b>Feasibility assessment</b><span>Documented tests, production requirements and a specialist recommendation for the separate InDesign phase.</span></li>
       </ul>
 
       <div class="banner">
