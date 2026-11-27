@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Variant Reconciliation System — Workflow Design & Review Tool | Laura Mujica</title>
-<meta name="description" content="A structured review tool for deciding which content goes into production when every page exists in several AI-generated versions. Workflow design, interface behavior and AI-assisted development by Laura Mujica.">
+<meta name="description" content="A workflow design case study: diagnosing a complex content review process, structuring decisions across multiple versions and directing AI-assisted development of a decision-support tool.">
 <meta name="theme-color" content="#0b1430">
 <link rel="icon" type="image/png" href="../../../img/Favicon.png">
 <meta name="color-scheme" content="dark">
@@ -12,7 +12,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Variant Reconciliation System — Workflow Design & Review Tool | Laura Mujica">
-<meta property="og:description" content="A real creative workflow turned into a structured review tool: source variants, component decisions, approval states and a checked content handoff.">
+<meta property="og:description" content="Diagnosing a complex content review process, structuring decisions across multiple versions and directing AI-assisted development of a decision-support tool.">
 <meta property="og:url" content="https://lauramujica.com/pages/projects/vrs/">
 <meta property="og:image" content="https://raw.githubusercontent.com/laumujica/variant-reconciliation-system/main/docs/assets/vrs-cover.jpg">
 <meta property="og:image:alt" content="VRS, Variant Reconciliation System: three source variants converging into one approved component. Make the meaningful decisions visible.">
@@ -227,6 +227,13 @@ h3{font-size:1.2rem;letter-spacing:-.01em}
 .shot-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line-soft);background:rgba(6,11,26,.6)}
 .shot-url{flex:1;min-width:0;font-size:.8rem;color:var(--faint);background:var(--ink);border:1px solid var(--line-soft);border-radius:7px;padding:4px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .shot img{width:100%;height:auto}
+.screenshot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.screenshot-grid .shot{margin:0}
+.screenshot-placeholder{min-height:270px;padding:28px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;background:linear-gradient(135deg,var(--panel),var(--navy));border-bottom:1px solid var(--line-soft)}
+.screenshot-placeholder span{font-size:.72rem;letter-spacing:.1em;color:var(--accent);font-weight:600}
+.screenshot-placeholder strong{font-family:var(--display);font-size:1.5rem;color:var(--text)}
+.screenshot-placeholder small{font-size:.9rem;line-height:1.5;color:var(--muted);max-width:34ch}
+@media(max-width:760px){.screenshot-grid{grid-template-columns:1fr}.screenshot-placeholder{min-height:210px}}
 figcaption{padding:12px 16px;font-size:.88rem;color:var(--muted);border-top:1px solid var(--line-soft)}
 figure{margin:0}
 
@@ -430,10 +437,10 @@ td{color:var(--muted)}
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <p class="crumb"><strong>Selected work</strong><span class="sep">/</span><span>Workflow design &amp; internal tool</span><span class="sep">/</span><span>2026</span></p>
+          <p class="crumb"><strong>Selected work</strong><span class="sep">/</span><span>Workflow design</span><span class="sep">/</span><span>2026</span></p>
           <h1>Variant Reconciliation System</h1>
-          <p class="lede">A review tool that turns many versions of a page into one approved decision.</p>
-          <p class="intro">I built it during a client project to produce an editable printed book from AI-generated page images. Before layout could start, the team needed to know <strong>which differences mattered and what to keep</strong>. I designed the review process, defined how the interface behaves and directed its AI-assisted development. The client's identity and material are omitted; the public demo uses sample content.</p>
+          <p class="lede">A structured workflow for turning competing content versions into clear, traceable decisions.</p>
+          <p class="intro">During a book-production project, I found that the main obstacle was not page layout: it was deciding what the book should contain. I diagnosed the review problem, designed a workflow and built a tool that made those decisions easier to organize, assign and track. <strong>I did not write the book or decide its content.</strong> My role was to create the conditions for the right people to make and approve those decisions.</p>
           <div class="hero-actions">
             <a class="btn primary" href="https://laumujica.github.io/variant-reconciliation-system/demo/" target="_blank" rel="noopener">Open the demo ↗</a>
           </div>
@@ -501,9 +508,9 @@ td{color:var(--muted)}
     <div class="wrap">
       <dl>
         <div class="f"><dt>Role</dt><dd>Senior Graphic Designer<small>Extended into workflow design, UX and QA</small></dd></div>
-        <div class="f"><dt>Scope</dt><dd>Content audit, review process, interface behavior, handoff</dd></div>
+        <div class="f"><dt>Scope</dt><dd>Diagnosis, workflow design, decision structure, review tool</dd></div>
         <div class="f"><dt>Development</dt><dd>AI-assisted HTML, CSS &amp; JavaScript<small>Directed with ChatGPT and Claude</small></dd></div>
-        <div class="f"><dt>Status</dt><dd>Public demo, runs in the browser<small>Original: Firebase Firestore + Vercel</small></dd></div>
+        <div class="f"><dt>Outcome</dt><dd>Traceable review and approval workflow<small>Public demo with sample content</small></dd></div>
       </dl>
     </div>
   </div>
@@ -515,9 +522,9 @@ td{color:var(--muted)}
       <div>
         <h2>No single version to build from.</h2>
         <div class="prose">
-          <p>The client had generated page images with AI and wanted to turn them into a physical book. The files had to be <strong>editable</strong>, so someone could later change a sentence or swap an image without rebuilding a page.</p>
-          <p>The pages were not consistent with each other. Versions of the same page differed in wording, layout, logo treatment and typography, and similar-looking typefaces were not always the same one. Across more than a hundred content pages, there was nothing settled to reproduce.</p>
-          <p>The images also looked convincing on screen without proving anything about print: whether text stayed legible at physical size, whether assets had enough resolution, whether the files would meet a printer's requirements.</p>
+          <p>The client wanted to turn AI-generated page images into an editable printed book. But the same page existed in several versions, with differences in wording, layout, typography and visual elements. There was no approved version to reproduce.</p>
+          <p>Across more than a hundred content pages, rebuilding first and resolving differences later would have meant investing production time before the content had been agreed. The team needed a way to compare alternatives, decide what to keep and make those decisions visible to the people responsible for approving the book.</p>
+          <p>There was a second boundary to clarify: <strong>content decisions belonged to the client and the people responsible for the book, not to me as the designer building the production workflow.</strong> My role was to structure the process, make the choices understandable and prepare a reliable handoff—not to write or author the book.</p>
         </div>
 
         <div class="sources" role="group" aria-label="Source material">
@@ -526,7 +533,7 @@ td{color:var(--muted)}
           <div><b>2–9 versions</b><span>Per page, each one a different answer to the same content question.</span></div>
         </div>
 
-        <div class="callout"><p>Rebuilding every page first would have meant committing hours of production to content nobody had approved. The question to answer first was <em>“what should the book say?”</em></p></div>
+        <div class="callout"><p>Before asking how to produce the pages, the project needed to establish <em>who decides what belongs in them—and how those decisions are recorded.</em></p></div>
       </div>
     </div>
   </section>
@@ -538,14 +545,14 @@ td{color:var(--muted)}
       <div>
         <h2>Not every difference is a decision.</h2>
         <div class="prose">
-          <p>Choosing one complete page was too coarse: one version could have the strongest opening while another had the better sequence. Comparing every visible difference was too heavy: repeated wording didn't need repeated approval, and complementary content didn't have to compete.</p>
-          <p>So I split each page into components and sorted the differences into five kinds. Each kind gets the interaction that fits it.</p>
+          <p>Choosing one complete page was too coarse: one version could have the strongest opening while another had the better sequence. Comparing every visible difference individually was too heavy. Some content competed, some could coexist, some was repeated, and some could be left out.</p>
+          <p>I broke pages into components and classified the differences by the kind of decision they required. This reduced unnecessary comparisons and made the review responsibilities clearer.</p>
         </div>
 
         <ul class="types">
           <li>
             <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" fill="currentColor" style="fill:var(--accent)"/></svg></span>
-            <h3>Competing definitions</h3>
+            <h3>Competing alternatives</h3>
             <p class="how">Two versions can't both be right. The reviewer makes a <code>single selection</code>.</p>
           </li>
           <li>
@@ -560,13 +567,13 @@ td{color:var(--muted)}
           </li>
           <li>
             <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 8l8 8M16 8l-8 8"/></svg></span>
-            <h3>Supporting content</h3>
+            <h3>Content to exclude</h3>
             <p class="how">Useful in one version, not needed in the book. The reviewer can <code>exclude</code> it deliberately.</p>
           </li>
           <li>
             <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H10l-5 4z"/><path d="M9 9h6M9 12h4"/></svg></span>
-            <h3>Feedback that needs words</h3>
-            <p class="how">A specific wording instruction travels as a <code>note</code>, attached to the decision it explains.</p>
+            <h3>Decisions needing context</h3>
+            <p class="how">Attach notes to explain a choice or specify a wording instruction.</p>
           </li>
         </ul>
       </div>
@@ -580,25 +587,25 @@ td{color:var(--muted)}
       <div>
         <h2>Design the process before the interface.</h2>
         <div class="prose">
-          <p>The board only works if the material reaching it is already organized. So the workflow starts upstream, before anyone opens the tool.</p>
+          <p>The board depended on prepared source material. I designed the workflow around four stages, from organizing the alternatives to handing approved content to production.</p>
         </div>
 
         <ol class="steps">
           <li>
-            <h3>Identify sections</h3>
+            <h3>Structure the source material</h3>
             <p>Read each page as components, such as an introduction, a sequence or a callout, and locate the matching section in every variant.</p>
           </li>
           <li>
-            <h3>Recognize and extract text</h3>
+            <h3>Prepare the alternatives</h3>
             <p>Recover the wording from flattened images, keep its source references and check it against the originals. AI-assisted recognition and Python scripts helped prepare these inputs.</p>
           </li>
           <li>
-            <h3>Reconcile the alternatives</h3>
-            <p>Find duplicates, competing wording and compatible passages. Organize the meaningful choices with text and image crops for review. The shared folder with the source files was connected to Google Drive, so the board took its links from there and generated the crops that become the components in the Decisions view.</p>
+            <h3>Route decisions to the right people</h3>
+            <p>Present competing and compatible options in a consistent format, with space for notes and a clear record of each selection. Content approval remained with the client-side decision-makers.</p>
           </li>
           <li>
-            <h3>Review and verify</h3>
-            <p>Record selections and notes in the board, check the approved text and export a production reference.</p>
+            <h3>Verify and hand off</h3>
+            <p>Check the approved wording against its source and export a production reference. The tool organized and recorded decisions; it did not author or merge the book's text.</p>
           </li>
         </ol>
 
@@ -617,9 +624,9 @@ td{color:var(--muted)}
     <div class="wrap sec-grid">
       <div class="sec-label"><span class="n">04</span><span class="t">The review tool</span></div>
       <div>
-        <h2>Five views, one record.</h2>
+        <h2>One workflow, from source to approved handoff.</h2>
         <div class="prose">
-          <p>The Variant Decision Board is the interface of the system. It keeps the complete sources available while showing a focused view of their components, and it moves a reviewer from looking at drafts to approving a checked handoff.</p>
+          <p>The interface brings source references, component-level decisions and approval records into one place. Each view supports a different part of the review, while keeping the decision history connected.</p>
         </div>
 
         <figure class="shot" style="margin-top:32px">
@@ -658,6 +665,7 @@ td{color:var(--muted)}
           </div>
         </div>
 
+<div class="screenshot-grid" aria-label="Additional views of the public demo"><figure class="shot"><div class="screenshot-placeholder"><span>SCREENSHOT PLACEHOLDER</span><strong>02 · Decisions</strong><small>Replace with a high-resolution capture of component options, selections and decision notes.</small></div><figcaption>Decisions: component-level review and recorded choices.</figcaption></figure><figure class="shot"><div class="screenshot-placeholder"><span>SCREENSHOT PLACEHOLDER</span><strong>03 · Approved summary</strong><small>Replace with a capture showing the consolidated approved content.</small></div><figcaption>Approved summary: the selected material gathered for review.</figcaption></figure><figure class="shot"><div class="screenshot-placeholder"><span>SCREENSHOT PLACEHOLDER</span><strong>04 · Text QA &amp; Export</strong><small>Replace with a capture showing the text check and export state.</small></div><figcaption>Text QA &amp; Export: verification before the production handoff.</figcaption></figure></div>
         <div class="rules">
           <div><h3>Approval and QA are separate</h3><p>An approved crop identifies the intended material. Its extracted text still needs its own check.</p></div>
           <div><h3>Export is gated</h3><p>The review must be resolved and the applicable text checks confirmed before a handoff can be exported.</p></div>
@@ -672,16 +680,16 @@ td{color:var(--muted)}
     <div class="wrap sec-grid">
       <div class="sec-label"><span class="n">05</span><span class="t">AI &amp; development</span></div>
       <div>
-        <h2>I directed the build; AI wrote the code.</h2>
+        <h2>I designed the behavior and directed the build.</h2>
         <div class="prose">
-          <p>I defined what the tool should do and evaluated whether it did. My background in UX/UI and web development shaped navigation, component selection, feedback and approval states. My QA experience shaped what got tested.</p>
+          <p>I translated the diagnosed workflow into requirements for the interface: what information reviewers needed, which choices were possible, how decisions were recorded and what had to be checked before export. I used ChatGPT and Claude to implement the specifications, then evaluated and refined the results.</p>
         </div>
 
         <div class="dev">
           <div class="dev-row">
             <h3>Specify behavior</h3>
             <div>
-              <p>Selection modes, approval states, note types and the export rules came from the workflow, then went into written specifications for ChatGPT and Claude to implement.</p>
+              <p>Selection modes, approval states, note types, role boundaries and export conditions were specified from the workflow—not left for the code to decide.</p>
               <div class="stack"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Vanilla JavaScript</span><span class="chip">Markdown export</span></div>
             </div>
           </div>
@@ -782,7 +790,7 @@ td{color:var(--muted)}
     <div class="wrap">
       <h2>A system for deciding before producing.</h2>
       <div class="prose">
-        <p>The project took me across identity, content, interfaces, testing and physical production. I could direct AI-assisted implementation and judge its results because I understood the workflow and its dependencies, and that same judgment led to the decision to recommend specialist support.</p>
+        <p>I diagnosed where the project was getting stuck, designed a workflow that made content decisions easier to compare and track, and directed the AI-assisted development of a tool to support it. Just as importantly, the process clarified who needed to make those decisions—and where my responsibility as a designer ended.</p>
       </div>
 
       <ul class="outcomes">
